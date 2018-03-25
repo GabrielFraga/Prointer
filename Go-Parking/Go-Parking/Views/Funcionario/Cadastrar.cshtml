@@ -1,11 +1,11 @@
 ﻿@model Go_Parking.Models.RegisterViewModel
 @{
-    ViewBag.Title = "Cadastrar um novo Usuario";
+    ViewBag.Title = "Cadastro";
 }
 
 <h2>@ViewBag.Title.</h2>
 
-@using (Html.BeginForm("CadastrarUsuario", "Funcionario", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+@using (Html.BeginForm("Cadastrar", "Funcionario", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
     @Html.AntiForgeryToken()
     <h4>Create a new account.</h4>

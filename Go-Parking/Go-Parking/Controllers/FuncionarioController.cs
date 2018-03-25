@@ -52,6 +52,19 @@ namespace Go_Parking.Controllers
                 _userManager = value;
             }
         }
+
+
+        public ActionResult Index()
+        {
+            return View();
+        }
+
+
+        public ActionResult Admin()
+        {
+            return View();
+        }
+
         // GET: /FuncionarioLogin
         [AllowAnonymous]
         public ActionResult Login(string returnUrl)
@@ -75,10 +88,21 @@ namespace Go_Parking.Controllers
             // This doesn't count login failures towards account lockout
             // To enable password failures to trigger account lockout, change to shouldLockout: true
             var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
+            var user = await UserManager.FindAsync(model.Email, model.Password);
+
             switch (result)
             {
                 case SignInStatus.Success:
-                    return RedirectToLocal(returnUrl);
+                    {
+                        if (UserManager.IsInRole(user.Id, "Admin"))
+                            return RedirectToAction("admin", "Funcionario");
+
+                       else if (UserManager.IsInRole(user.Id, "Funcionário"))
+                            return RedirectToAction("Index", "Funcionario");
+
+                        return RedirectToLocal(returnUrl);
+                    }
+                    
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:
@@ -91,7 +115,7 @@ namespace Go_Parking.Controllers
         }
         // GET: /Account/Register
         [AllowAnonymous]
-        public ActionResult CadastrarUsuario()
+        public ActionResult Cadastrar()
         {
             ViewBag.Name = new SelectList(context.Roles.ToList(), "Name", "Name");
             return View();
@@ -102,7 +126,7 @@ namespace Go_Parking.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult>CadastrarUsuario(RegisterViewModel model)
+        public async Task<ActionResult>Cadastrar(RegisterViewModel model)
         {
             if (ModelState.IsValid)
             {
