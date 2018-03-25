@@ -21,7 +21,7 @@ namespace Go_Parking.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("DAL", throwIfV1Schema: false)
         {
         }
 

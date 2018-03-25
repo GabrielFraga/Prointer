@@ -80,6 +80,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -211,8 +213,13 @@
     <Compile Include="Migrations\201803182324563_initial.Designer.cs">
       <DependentUpon>201803182324563_initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201803251714419_cadastroFuncionario.cs" />
+    <Compile Include="Migrations\201803251714419_cadastroFuncionario.Designer.cs">
+      <DependentUpon>201803251714419_cadastroFuncionario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\DAL.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -232,6 +239,8 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Properties\PublishProfiles\go-parking - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\go-parking - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -282,8 +291,9 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Roles\Edit.cshtml" />
     <Content Include="Views\Roles\Index.cshtml" />
-    <Content Include="Views\Funcionario\CreateUser.cshtml" />
+    <Content Include="Views\Funcionario\CadastrarUsuario.cshtml" />
     <Content Include="Views\Funcionario\Login.cshtml" />
+    <Content Include="Views\Funcionario\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -302,6 +312,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201803182324563_initial.resx">
       <DependentUpon>201803182324563_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803251714419_cadastroFuncionario.resx">
+      <DependentUpon>201803251714419_cadastroFuncionario.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

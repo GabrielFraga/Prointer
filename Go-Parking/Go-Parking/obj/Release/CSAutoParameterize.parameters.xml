@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="&#xD;&#xA;         -Web.config Connection String" description="&#xD;&#xA;          Connection String used in web.config by the application to access the database." defaultValue="Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\aspnet-Go-Parking-20180318054751.mdf;Initial Catalog=aspnet-Go-Parking-20180318054751;Integrated Security=True" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\gabri\\Prointer\\Go-Parking\\Go-Parking\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='&#xD;&#xA;         ']/@connectionString" />
+  </parameter>
+  <parameter name="DAL-Web.config Connection String" description="DAL Connection String used in web.config by the application to access the database." defaultValue="data source=prointer.database.windows.net;initial catalog=go-parking;persist security info=True;user id=UsuarioProinter;password=Prointer@pitagoras;MultipleActiveResultSets=True;App=EntityFramework" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\gabri\\Prointer\\Go-Parking\\Go-Parking\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DAL']/@connectionString" />
+  </parameter>
+  <parameter name="DAL_DatabasePublish-Web.config Connection String" description="DAL_DatabasePublish Connection String used in web.config by the application to access the database." defaultValue="DAL_DatabasePublish.ConnetionString" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\gabri\\Prointer\\Go-Parking\\Go-Parking\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DAL_DatabasePublish']/@connectionString" />
+  </parameter>
+</parameters>

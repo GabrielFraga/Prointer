@@ -86,13 +86,14 @@ namespace Go_Parking.Controllers
                 case SignInStatus.Failure:
                 default:
                     ModelState.AddModelError("", "Invalid login attempt.");
-                    return View(model);
+                    return RedirectToAction("Index", "Funcionario");
             }
         }
         // GET: /Account/Register
         [AllowAnonymous]
-        public ActionResult Register()
+        public ActionResult CadastrarUsuario()
         {
+            ViewBag.Name = new SelectList(context.Roles.ToList(), "Name", "Name");
             return View();
         }
 
@@ -101,7 +102,7 @@ namespace Go_Parking.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Register(RegisterViewModel model)
+        public async Task<ActionResult>CadastrarUsuario(RegisterViewModel model)
         {
             if (ModelState.IsValid)
             {
@@ -109,6 +110,9 @@ namespace Go_Parking.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                    //Atribui o Peril ao usuário
+                    await this.UserManager.AddToRoleAsync(user.Id, model.Name);
+                    //termina aqui
                     await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
 
                     // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771

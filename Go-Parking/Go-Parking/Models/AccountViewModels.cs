@@ -65,6 +65,9 @@ namespace Go_Parking.Models
     public class RegisterViewModel
     {
        
+        [Display(Name ="Nome")]
+        public string Name { get; set; }
+
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]
