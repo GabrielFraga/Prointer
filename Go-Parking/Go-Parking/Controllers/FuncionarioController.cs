@@ -111,7 +111,7 @@ namespace Go_Parking.Controllers
                 case SignInStatus.Success:
                     {
                         if (UserManager.IsInRole(user.Id, "Admin"))
-                            return RedirectToAction("admin", "Funcionario");
+                            return RedirectToAction("Index", "Funcionario");
 
                        else if (UserManager.IsInRole(user.Id, "Funcionário"))
                             return RedirectToAction("Index", "Funcionario");

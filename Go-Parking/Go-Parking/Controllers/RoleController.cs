@@ -35,6 +35,7 @@ namespace Go_Parking.Controllers
         }
 
         // GET: Role
+       
         public ActionResult Index()
         {
             List<RoleViewModel> list = new List<RoleViewModel>();
