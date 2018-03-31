@@ -32,9 +32,9 @@
 
     <!--Selecione o Tipo de Perfil para o usuário-->
     <div class="form-group">
-        @Html.Label("Selecione o Tipo de Perfil do Usuário", new { @class = "col-md-2 control-label" })
+        @Html.LabelFor(m => m.RoleName, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
-            @Html.DropDownList("Name")
+        @Html.DropDownListFor(m=>m.RoleName, new SelectList(ViewBag.Roles,"Value", "Text"), new { @class = "form-control"})
         </div>
     </div>
   <!--termina aqui-->

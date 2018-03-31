@@ -16,5 +16,7 @@ namespace Go_Parking.Models
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
         }
+
+        public System.Data.Entity.DbSet<Go_Parking.Models.RoleViewModel> RoleViewModels { get; set; }
     }
 }

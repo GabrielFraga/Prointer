@@ -10,6 +10,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Go_Parking.Models;
 using Microsoft.AspNet.Identity.EntityFramework;
+using System.Collections.Generic;
 
 namespace Go_Parking.Controllers
 {
@@ -18,15 +19,30 @@ namespace Go_Parking.Controllers
         ApplicationDbContext context = new ApplicationDbContext();
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+        private ApplicationRoleManager _roleManager;
+
 
         public FuncionarioController()
         {
         }
 
-        public FuncionarioController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
+        public FuncionarioController(ApplicationUserManager userManager, ApplicationSignInManager signInManager, ApplicationRoleManager roleManager)
         {
             UserManager = userManager;
             SignInManager = signInManager;
+            RoleManager = roleManager;   
+        }
+        
+        public ApplicationRoleManager RoleManager
+        {
+            get
+            {
+                return _roleManager ?? HttpContext.GetOwinContext().Get<ApplicationRoleManager>();
+            }
+            private set
+            {
+                _roleManager = value;
+            }
         }
 
         public ApplicationSignInManager SignInManager
@@ -73,7 +89,7 @@ namespace Go_Parking.Controllers
             return View();
         }
 
-        //
+        
         // POST: /FuncionarioLogin
         [HttpPost]
         [AllowAnonymous]
@@ -113,11 +129,15 @@ namespace Go_Parking.Controllers
                     return RedirectToAction("Index", "Funcionario");
             }
         }
+        
         // GET: /Account/Register
         [AllowAnonymous]
         public ActionResult Cadastrar()
         {
-            ViewBag.Name = new SelectList(context.Roles.ToList(), "Name", "Name");
+            List<SelectListItem> list = new List<SelectListItem>();
+            foreach(var role in RoleManager.Roles)
+                list.Add(new SelectListItem() { Value = role.Name, Text = role.Name });
+            ViewBag.Roles = list;
             return View();
         }
 
@@ -135,7 +155,7 @@ namespace Go_Parking.Controllers
                 if (result.Succeeded)
                 {
                     //Atribui o Peril ao usuário
-                    await this.UserManager.AddToRoleAsync(user.Id, model.Name);
+                    result = await UserManager.AddToRoleAsync(user.Id, model.RoleName);
                     //termina aqui
                     await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
 
@@ -149,6 +169,14 @@ namespace Go_Parking.Controllers
                 }
                 AddErrors(result);
             }
+
+            List<SelectListItem> list = new List<SelectListItem>();
+            foreach(var role in RoleManager.Roles)
+            {
+                list.Add(new SelectListItem() { Value = role.Name, Text = role.Name });
+            }
+
+            ViewBag.Roles = list;
 
             // If we got this far, something failed, redisplay form
             return View(model);

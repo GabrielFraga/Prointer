@@ -30,4 +30,10 @@ namespace Go_Parking.Models
             return new ApplicationDbContext();
         }
     }
+    public class ApplicationRole : IdentityRole
+    {
+        public ApplicationRole() : base(){ }
+        public ApplicationRole(string roleName) : base(roleName) { }
+    }
+
 }

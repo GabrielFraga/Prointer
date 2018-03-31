@@ -201,7 +201,7 @@
     <Compile Include="Controllers\FuncionarioController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\RolesController.cs" />
+    <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -217,11 +217,20 @@
     <Compile Include="Migrations\201803251714419_cadastroFuncionario.Designer.cs">
       <DependentUpon>201803251714419_cadastroFuncionario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201803311514415_role.cs" />
+    <Compile Include="Migrations\201803311514415_role.Designer.cs">
+      <DependentUpon>201803311514415_role.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803311547511_role1.cs" />
+    <Compile Include="Migrations\201803311547511_role1.Designer.cs">
+      <DependentUpon>201803311547511_role1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\DAL.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\RoleViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -289,12 +298,15 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Roles\Edit.cshtml" />
-    <Content Include="Views\Roles\Index.cshtml" />
     <Content Include="Views\Funcionario\Cadastrar.cshtml" />
     <Content Include="Views\Funcionario\Login.cshtml" />
     <Content Include="Views\Funcionario\Index.cshtml" />
     <Content Include="Views\Funcionario\Admin.cshtml" />
+    <Content Include="Views\Role\Index.cshtml" />
+    <Content Include="Views\Role\Create.cshtml" />
+    <Content Include="Views\Role\Edit.cshtml" />
+    <Content Include="Views\Role\Details.cshtml" />
+    <Content Include="Views\Role\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -316,6 +328,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201803251714419_cadastroFuncionario.resx">
       <DependentUpon>201803251714419_cadastroFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803311514415_role.resx">
+      <DependentUpon>201803311514415_role.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803311547511_role1.resx">
+      <DependentUpon>201803311547511_role1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
