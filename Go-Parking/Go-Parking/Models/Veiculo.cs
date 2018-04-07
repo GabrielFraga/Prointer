@@ -13,6 +13,6 @@ namespace Go_Parking.Models
         public string placa { get; set; }
 
         public string UserId { get; set; }
-        public virtual ApplicationUser User { get; set; }
+        public virtual ApplicationUser Users { get; set; }
     }
 }

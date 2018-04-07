@@ -36,6 +36,9 @@ namespace Go_Parking.Models
             return new ApplicationDbContext();
         }
 
+        public System.Data.Entity.DbSet<Go_Parking.Models.RoleViewModel> RoleViewModels { get; set; }
+
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions
@@ -46,18 +49,20 @@ namespace Go_Parking.Models
                 .Property(p => p.Id)
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             modelBuilder.Entity<Veiculo>()
-                .HasRequired(c => c.User)
+                .HasRequired(c => c.Users)
                 .WithMany(v => v.Veiculos)
                 .HasForeignKey(v => v.UserId);
             modelBuilder.Entity<Veiculo>()
-                .HasRequired(c => c.User)
+                .HasRequired(c => c.Users)
                 .WithMany(v => v.Veiculos)
                 .HasForeignKey(v => v.UserId)
                 .WillCascadeOnDelete(true);
             base.OnModelCreating(modelBuilder);
         }
 
+        public DbSet<Veiculo> Veiculoes { get; set; }
 
+      //  public DbSet<ApplicationUser> Users { get; set; }
     }
     public class ApplicationRole : IdentityRole
     {

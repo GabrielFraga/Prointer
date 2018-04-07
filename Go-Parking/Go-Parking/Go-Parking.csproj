@@ -197,12 +197,12 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="Conexao\ContextoBanco.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\FuncionarioController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
+    <Compile Include="Controllers\VeiculoesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -222,9 +222,12 @@
     <Compile Include="Migrations\201803311514415_role.Designer.cs">
       <DependentUpon>201803311514415_role.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201804071944385_veiculo.cs" />
+    <Compile Include="Migrations\201804071944385_veiculo.Designer.cs">
+      <DependentUpon>201804071944385_veiculo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\DAL.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Menus.cs" />
@@ -306,9 +309,15 @@
     <Content Include="Views\Role\Details.cshtml" />
     <Content Include="Views\Role\Delete.cshtml" />
     <Content Include="Views\Funcionario\Index.cshtml" />
+    <Content Include="Views\Veiculoes\Create.cshtml" />
+    <Content Include="Views\Veiculoes\Delete.cshtml" />
+    <Content Include="Views\Veiculoes\Details.cshtml" />
+    <Content Include="Views\Veiculoes\Edit.cshtml" />
+    <Content Include="Views\Veiculoes\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Conexao\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -330,6 +339,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201803311514415_role.resx">
       <DependentUpon>201803311514415_role.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804071944385_veiculo.resx">
+      <DependentUpon>201804071944385_veiculo.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
