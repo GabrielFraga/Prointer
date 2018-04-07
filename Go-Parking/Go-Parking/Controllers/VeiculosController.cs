@@ -7,10 +7,12 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Go_Parking.Models;
+using Microsoft.AspNet.Identity;
 
 namespace Go_Parking.Controllers
 {
-    public class VeiculoesController : Controller
+    [Authorize (Roles ="Cliente")]
+    public class VeiculosController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
@@ -39,6 +41,7 @@ namespace Go_Parking.Controllers
         // GET: Veiculoes/Create
         public ActionResult Create()
         {
+            
             ViewBag.UserId = new SelectList(db.Users, "Id", "Email");
             return View();
         }
@@ -52,12 +55,12 @@ namespace Go_Parking.Controllers
         {
             if (ModelState.IsValid)
             {
+                veiculo.UserId = User.Identity.GetUserId();
                 db.Veiculoes.Add(veiculo);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
-            ViewBag.UserId = new SelectList(db.Users, "Id", "Email", veiculo.UserId);
+            ViewBag.UserId = new SelectList(db.Users, "Id", "Email");
             return View(veiculo);
         }
 

@@ -202,7 +202,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
-    <Compile Include="Controllers\VeiculoesController.cs" />
+    <Compile Include="Controllers\VeiculosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -309,11 +309,11 @@
     <Content Include="Views\Role\Details.cshtml" />
     <Content Include="Views\Role\Delete.cshtml" />
     <Content Include="Views\Funcionario\Index.cshtml" />
-    <Content Include="Views\Veiculoes\Create.cshtml" />
-    <Content Include="Views\Veiculoes\Delete.cshtml" />
-    <Content Include="Views\Veiculoes\Details.cshtml" />
-    <Content Include="Views\Veiculoes\Edit.cshtml" />
-    <Content Include="Views\Veiculoes\Index.cshtml" />
+    <Content Include="Views\Veiculos\Create.cshtml" />
+    <Content Include="Views\Veiculos\Delete.cshtml" />
+    <Content Include="Views\Veiculos\Details.cshtml" />
+    <Content Include="Views\Veiculos\Edit.cshtml" />
+    <Content Include="Views\Veiculos\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
