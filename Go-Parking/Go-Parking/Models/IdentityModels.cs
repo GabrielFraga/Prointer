@@ -3,12 +3,18 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using System.Collections.Generic;
+using System.Data.Entity.ModelConfiguration.Conventions;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Go_Parking.Models
 {
+
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit http://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
     {
+        public ICollection<Veiculo> Veiculos { get; set; }
+
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
@@ -21,7 +27,7 @@ namespace Go_Parking.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DAL", throwIfV1Schema: false)
+            : base("ContextoBanco", throwIfV1Schema: false)
         {
         }
 
@@ -29,6 +35,29 @@ namespace Go_Parking.Models
         {
             return new ApplicationDbContext();
         }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Conventions
+                .Remove<PluralizingTableNameConvention>();
+            modelBuilder.Entity<Veiculo>()
+                .HasKey(p => p.Id);
+            modelBuilder.Entity<Veiculo>()
+                .Property(p => p.Id)
+                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+            modelBuilder.Entity<Veiculo>()
+                .HasRequired(c => c.User)
+                .WithMany(v => v.Veiculos)
+                .HasForeignKey(v => v.UserId);
+            modelBuilder.Entity<Veiculo>()
+                .HasRequired(c => c.User)
+                .WithMany(v => v.Veiculos)
+                .HasForeignKey(v => v.UserId)
+                .WillCascadeOnDelete(true);
+            base.OnModelCreating(modelBuilder);
+        }
+
+
     }
     public class ApplicationRole : IdentityRole
     {

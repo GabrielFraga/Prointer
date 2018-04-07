@@ -255,4 +255,3 @@ C:\Users\gabri\Prointer\Go-Parking\Go-Parking\obj\Debug\Go-Parking.dll
 C:\Users\gabri\Prointer\Go-Parking\Go-Parking\obj\Debug\Go-Parking.pdb
 C:\Users\gabri\Prointer\Go-Parking\Go-Parking\obj\Debug\Go_Parking.Migrations.cadastroFuncionario.resources
 C:\Users\gabri\Prointer\Go-Parking\Go-Parking\obj\Debug\Go_Parking.Migrations.role.resources
-C:\Users\gabri\Prointer\Go-Parking\Go-Parking\obj\Debug\Go_Parking.Migrations.role1.resources
