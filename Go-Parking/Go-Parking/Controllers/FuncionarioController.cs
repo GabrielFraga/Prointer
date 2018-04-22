@@ -11,12 +11,14 @@ using Microsoft.Owin.Security;
 using Go_Parking.Models;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System.Collections.Generic;
+using System.Net;
+using System.Data.Entity;
 
 namespace Go_Parking.Controllers
 {
     public class FuncionarioController : Controller
     {
-        ApplicationDbContext context = new ApplicationDbContext();
+        ApplicationDbContext db = new ApplicationDbContext();
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
         private ApplicationRoleManager _roleManager;
@@ -76,10 +78,7 @@ namespace Go_Parking.Controllers
         }
 
 
-        public ActionResult Admin()
-        {
-            return View();
-        }
+       
 
         // GET: /FuncionarioLogin
         [AllowAnonymous]
@@ -130,18 +129,18 @@ namespace Go_Parking.Controllers
             }
         }
         
-        // GET: /Account/Register
+        // GET: /Registrar/Funcionário
         [AllowAnonymous]
         public ActionResult Cadastrar()
         {
             List<SelectListItem> list = new List<SelectListItem>();
-            foreach(var role in RoleManager.Roles)
+            foreach(var role in RoleManager.Roles.Where(r=>r.Name !="Cliente"))
                 list.Add(new SelectListItem() { Value = role.Name, Text = role.Name });
             ViewBag.Roles = list;
             return View();
         }
-
-        // POST: /Account/Register
+            
+        // POST: /Registrar/Funcionário
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
@@ -180,6 +179,114 @@ namespace Go_Parking.Controllers
             // If we got this far, something failed, redisplay form
             return View(model);
         }
+
+        public ActionResult Usuarios()
+        {
+
+            List<SelectListItem> list = new List<SelectListItem>();
+            foreach (var usuario in User.Identity.Name)
+                list.Add(new SelectListItem { Value = User.Identity.Name, Text =User.Identity.Name});
+            return View(list);
+
+        }
+
+
+        /*
+
+        [AllowAnonymous]
+        public ActionResult UserList()
+        {
+            var context = new Models.ApplicationDbContext();
+            return View(context.Users.ToList());
+        }
+        [AllowAnonymous]
+        public ActionResult UserDelete(string id)
+        {
+            var context = new Models.ApplicationDbContext();
+            var user = context.Users.Where(u => u.Id == id).FirstOrDefault();
+            return View(user);
+        }
+        [AllowAnonymous]
+        [HttpPost]
+        public ActionResult UserDelete(ApplicationUser appuser)
+        {
+            var context = new Models.ApplicationDbContext();
+            var user = context.Users.Where(u => u.Id == appuser.Id).FirstOrDefault();
+            context.Users.Remove(user);
+            context.SaveChanges();
+            //var user = context.Users.Where(u => u.Id == id.ToString()).FirstOrDefault();
+            return RedirectToAction("UserList");
+        }
+        [AllowAnonymous]
+        public ActionResult UserEdit(string id)
+        {
+            var context = new Models.ApplicationDbContext();
+            var user = context.Users.Where(u => u.Id == id).FirstOrDefault();
+            return View(user);
+        }
+        [AllowAnonymous]
+        [HttpPost]
+        public ActionResult UserEdit(ApplicationUser appuser)
+        {
+            var context = new Models.ApplicationDbContext();
+            var user = context.Users.Where(u => u.Id == appuser.Id).FirstOrDefault();
+            //context.Entry(appuser).State = EntityState.Modified;
+            user.Email = appuser.Email;
+            user.UserName = appuser.UserName;
+            user.PhoneNumber = appuser.PhoneNumber;
+            user.PasswordHash = user.PasswordHash;
+            context.SaveChanges();
+            //var user = context.Users.Where(u => u.Id == id.ToString()).FirstOrDefault();
+            return RedirectToAction("UserList");
+        }
+
+
+
+        /*
+                [Authorize(Roles = "Admin")]
+                public ActionResult Index()
+                {
+                    var Db = new ApplicationDbContext();
+                    var users = Db.Users;
+                    var model = new List<EditUserViewModel>();
+                    foreach (var user in users)
+                    {
+                        var u = new EditUserViewModel(user);
+                        model.Add(u);
+                    }
+                    return View(model);
+                }
+
+
+
+                [Authorize(Roles = "Admin")]
+                public ActionResult Delete(string id = null)
+                {
+                    var Db = new ApplicationDbContext();
+                    var user = Db.Users.First(u => u.UserName == id);
+                    var model = new EditUserViewModel(user);
+                    if (user == null)
+                    {
+                        return HttpNotFound();
+                    }
+                    return View(model);
+                }
+
+
+                [HttpPost, ActionName("Delete")]
+                [ValidateAntiForgeryToken]
+                [Authorize(Roles = "Admin")]
+                public ActionResult DeleteConfirmed(string id)
+                {
+                    var Db = new ApplicationDbContext();
+                    var user = Db.Users.First(u => u.UserName == id);
+                    Db.Users.Remove(user);
+                    Db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+
+            */
+
 
         private void AddErrors(IdentityResult result)
         {

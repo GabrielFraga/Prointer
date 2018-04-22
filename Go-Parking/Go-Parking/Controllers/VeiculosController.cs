@@ -13,13 +13,13 @@ namespace Go_Parking.Controllers
 {
     [Authorize (Roles ="Cliente")]
     public class VeiculosController : Controller
-    {
-        private ApplicationDbContext db = new ApplicationDbContext();
-
+    {       
+        private ApplicationDbContext db = new ApplicationDbContext();        
         // GET: Veiculoes
         public ActionResult Index()
         {
-            var veiculoes = db.Veiculoes.Include(v => v.Users);
+            string usuarioId = User.Identity.GetUserId();
+            var veiculoes = db.Veiculoes.Include(v=>v.Users).Where(v=>v.UserId.Equals(usuarioId));
             return View(veiculoes.ToList());
         }
 

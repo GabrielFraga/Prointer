@@ -202,6 +202,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
+    <Compile Include="Controllers\VagasController.cs" />
     <Compile Include="Controllers\VeiculosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -226,12 +227,20 @@
     <Compile Include="Migrations\201804071944385_veiculo.Designer.cs">
       <DependentUpon>201804071944385_veiculo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201804072258086_novaTabela.cs" />
+    <Compile Include="Migrations\201804072258086_novaTabela.Designer.cs">
+      <DependentUpon>201804072258086_novaTabela.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804221540063_vaga.cs" />
+    <Compile Include="Migrations\201804221540063_vaga.Designer.cs">
+      <DependentUpon>201804221540063_vaga.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\Menus.cs" />
     <Compile Include="Models\RoleViewModel.cs" />
+    <Compile Include="Models\Vaga.cs" />
     <Compile Include="Models\Veiculo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -302,7 +311,6 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Funcionario\Cadastrar.cshtml" />
     <Content Include="Views\Funcionario\Login.cshtml" />
-    <Content Include="Views\Funcionario\Admin.cshtml" />
     <Content Include="Views\Role\Index.cshtml" />
     <Content Include="Views\Role\Create.cshtml" />
     <Content Include="Views\Role\Edit.cshtml" />
@@ -314,6 +322,10 @@
     <Content Include="Views\Veiculos\Details.cshtml" />
     <Content Include="Views\Veiculos\Edit.cshtml" />
     <Content Include="Views\Veiculos\Index.cshtml" />
+    <Content Include="Views\Vagas\Index.cshtml" />
+    <Content Include="Views\Vagas\Details.cshtml" />
+    <Content Include="Views\Vagas\Reservar.cshtml" />
+    <Content Include="Views\Funcionario\Usuarios.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -342,6 +354,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201804071944385_veiculo.resx">
       <DependentUpon>201804071944385_veiculo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804072258086_novaTabela.resx">
+      <DependentUpon>201804072258086_novaTabela.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804221540063_vaga.resx">
+      <DependentUpon>201804221540063_vaga.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

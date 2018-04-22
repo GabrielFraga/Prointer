@@ -1,0 +1,23 @@
+﻿@model Go_Parking.Models.Vaga
+@{
+    ViewBag.Title = "DetalheVaga";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+
+<h2>Reservar Vaga</h2>
+<div class="form-group">
+    @Html.LabelFor(v => v.veiculo, new { @class = "col-md-2 control-label" })
+    <div class="col-md-10">
+        @Html.DropDownListFor(v => v.veiculo, new SelectList(ViewBag.Veiculos, "Value", "Text"), new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>   
+</div>
+}

@@ -6,6 +6,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using System.Collections.Generic;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.ComponentModel.DataAnnotations.Schema;
+using Go_Parking.Controllers;
 
 namespace Go_Parking.Models
 {
@@ -36,7 +37,6 @@ namespace Go_Parking.Models
             return new ApplicationDbContext();
         }
 
-        public System.Data.Entity.DbSet<Go_Parking.Models.RoleViewModel> RoleViewModels { get; set; }
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -60,9 +60,16 @@ namespace Go_Parking.Models
             base.OnModelCreating(modelBuilder);
         }
 
+
+        public DbSet<Vaga> Vagas { get; set; }
         public DbSet<Veiculo> Veiculoes { get; set; }
 
-      //  public DbSet<ApplicationUser> Users { get; set; }
+        public System.Data.Entity.DbSet<Go_Parking.Models.ApplicationUser> ApplicationUsers { get; set; }
+
+        //public DbSet<EditUserViewModel> EditUserViewModels { get; set; }
+        //public DbSet<Funcionario> Funcionario {get; set; }
+
+        //public System.Data.Entity.DbSet<Go_Parking.Models.RoleViewModel> RoleViewModels { get; set; }
     }
     public class ApplicationRole : IdentityRole
     {
