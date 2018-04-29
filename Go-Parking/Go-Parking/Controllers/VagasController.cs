@@ -59,13 +59,13 @@ namespace Go_Parking.Controllers
                 vaga.VeiculoId = veiculos;
                 vaga.UserId = usuarioId;
 
-                vaga.Modelo = Convert.ToString(from a in db.Veiculoes
+                vaga.Modelo = (from a in db.Veiculoes
                              where a.Id == (veiculos)
-                             select a.Modelo);
-                             
-                vaga.placa = Convert.ToString(from a in db.Veiculoes
-                                              where a.Id == veiculos/* && a.UserId == usuarioId*/
-                                              select a.placa);
+                             select a.Modelo).Single();                            
+                vaga.placa = (from a in db.Veiculoes
+                              where a.Id == veiculos
+                              select a.placa).Single();
+
                 db.Vagas.Add(vaga);
                 db.SaveChanges();
           
