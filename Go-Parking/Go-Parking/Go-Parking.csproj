@@ -235,6 +235,14 @@
     <Compile Include="Migrations\201804221540063_vaga.Designer.cs">
       <DependentUpon>201804221540063_vaga.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201804232349389_AlteracaoIDVaga.cs" />
+    <Compile Include="Migrations\201804232349389_AlteracaoIDVaga.Designer.cs">
+      <DependentUpon>201804232349389_AlteracaoIDVaga.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804281654366_idveiculo.cs" />
+    <Compile Include="Migrations\201804281654366_idveiculo.Designer.cs">
+      <DependentUpon>201804281654366_idveiculo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -325,7 +333,6 @@
     <Content Include="Views\Vagas\Index.cshtml" />
     <Content Include="Views\Vagas\Details.cshtml" />
     <Content Include="Views\Vagas\Reservar.cshtml" />
-    <Content Include="Views\Funcionario\Usuarios.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -360,6 +367,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201804221540063_vaga.resx">
       <DependentUpon>201804221540063_vaga.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804232349389_AlteracaoIDVaga.resx">
+      <DependentUpon>201804232349389_AlteracaoIDVaga.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804281654366_idveiculo.resx">
+      <DependentUpon>201804281654366_idveiculo.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

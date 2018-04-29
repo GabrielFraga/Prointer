@@ -180,7 +180,7 @@ namespace Go_Parking.Controllers
             return View(model);
         }
 
-        public ActionResult Usuarios()
+/*        public ActionResult Usuarios()
         {
 
             List<SelectListItem> list = new List<SelectListItem>();
@@ -189,7 +189,7 @@ namespace Go_Parking.Controllers
             return View(list);
 
         }
-
+        */
 
         /*
 

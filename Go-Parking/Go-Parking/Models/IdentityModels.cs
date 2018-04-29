@@ -64,7 +64,7 @@ namespace Go_Parking.Models
         public DbSet<Vaga> Vagas { get; set; }
         public DbSet<Veiculo> Veiculoes { get; set; }
 
-        public System.Data.Entity.DbSet<Go_Parking.Models.ApplicationUser> ApplicationUsers { get; set; }
+      //  public System.Data.Entity.DbSet<Go_Parking.Models.ApplicationUser> ApplicationUsers { get; set; }
 
         //public DbSet<EditUserViewModel> EditUserViewModels { get; set; }
         //public DbSet<Funcionario> Funcionario {get; set; }

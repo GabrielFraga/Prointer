@@ -24,7 +24,7 @@ namespace Go_Parking.Controllers
 
         public ActionResult DetalheVaga()
         {
-           /* string usuarioId = User.Identity.GetUserId();
+            /*string usuarioId = User.Identity.GetUserId();
 
             List<SelectListItem> list = new List<SelectListItem>();
             foreach (var veiculo in db.Veiculoes.Include(v => v.Users).Where(v => v.UserId.Equals(usuarioId)))
@@ -40,36 +40,46 @@ namespace Go_Parking.Controllers
 
             List<SelectListItem> list = new List<SelectListItem>();
             foreach (var veiculo in db.Veiculoes.Include(v => v.Users).Where(v => v.UserId.Equals(usuarioId)))
-            list.Add(new SelectListItem() { Value = veiculo.Modelo, Text = veiculo.Modelo });
-            ViewBag.Veiculos = list;
+            list.Add(new SelectListItem() { Value = veiculo.Id.ToString(), Text = veiculo.Modelo });
+            ViewBag.Veiculos = list; 
             return View();
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Reservar([Bind(Include = "Id,VeiculoId,Modelo,placa,UserId")] Vaga vaga)
+        public ActionResult Reservar(string Veiculo)
         {
 
             if (ModelState.IsValid)
             {        //Continuar daqui
+                int veiculos = Convert.ToInt32(Veiculo);
+                var vaga = new Vaga();
+                string usuarioId = User.Identity.GetUserId();
 
-                var veiculo = ViewBag.Veiculos;
-                   vaga.Modelo = veiculo.Modelo;
-                   vaga.placa = veiculo.placa;
-                   vaga.UserId = veiculo.UserId;
-                   vaga.VeiculoId = veiculo.Id;
-                   
-                db.Vagas.Add(vaga);               
+                //var teste = Convert.ToInt32();
+                vaga.VeiculoId = veiculos;
+                vaga.UserId = usuarioId;
+
+                vaga.Modelo = Convert.ToString(from a in db.Veiculoes
+                             where a.Id == (veiculos)
+                             select a.Modelo);
+                             
+                vaga.placa = Convert.ToString(from a in db.Veiculoes
+                                              where a.Id == veiculos/* && a.UserId == usuarioId*/
+                                              select a.placa);
+                db.Vagas.Add(vaga);
                 db.SaveChanges();
-
-                return RedirectToAction("Vagas/Details");
+          
             }
-            return View(vaga);
+            return RedirectToAction("Details");
         }
 
 
-        public ActionResult Details(int? id)
+        public ActionResult Details()
         {
-            return View();
+            string usuarioId = User.Identity.GetUserId();
+
+            var vaga = db.Vagas.Include( a => a.veiculo).Where(a => a.UserId.Equals(usuarioId));
+            return View(vaga.ToList());
 
         }
     }
