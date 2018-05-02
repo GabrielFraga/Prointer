@@ -50,12 +50,11 @@ namespace Go_Parking.Controllers
         {
 
             if (ModelState.IsValid)
-            {        //Continuar daqui
+            {       
                 int veiculos = Convert.ToInt32(Veiculo);
                 var vaga = new Vaga();
                 string usuarioId = User.Identity.GetUserId();
 
-                //var teste = Convert.ToInt32();
                 vaga.VeiculoId = veiculos;
                 vaga.UserId = usuarioId;
 
