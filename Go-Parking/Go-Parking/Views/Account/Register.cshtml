@@ -1,41 +1,41 @@
 ﻿@model Go_Parking.Models.RegisterViewModel
 @{
-    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_LoginStart.cshtml";
+    ViewBag.Title = "Registrar nova conta";
 }
+<div class="modal show" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="text-center">@ViewBag.Title</h2>
+                <h4 class="text-center">Por favor, preencha os dados.</h4>
+            </div>
+            <div class="modal-body">
 
-<h2>@ViewBag.Title.</h2>
-
-@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-{
-    @Html.AntiForgeryToken()
-    <h4>Create a new account.</h4>
-    <hr />
-    @Html.ValidationSummary("", new { @class = "text-danger" })
-    <div class="form-group">
-        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form col-md-12 center-block", role = "form" }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary("", new { @class = "text-danger" })
+                    <div class="form-group">
+                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control input-lg", @placeholder = "E-mail" })
+                    </div>
+                    <div class="form-group">
+                        @Html.PasswordFor(m => m.Password, new { @class = "form-control input-lg", @placeholder = "Senha" })
+                    </div>
+                    <div class="form-group">
+                        @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control input-lg", @placeholder = "Confirmação da senha" })
+                    </div>
+                    <div class="form-group">
+                        <div>
+                            <input type="submit" class="btn btn-primary btn-lg btn-block" value="Registrar" />
+                        </div>
+                    </div>
+                    <span><p>@Html.ActionLink("Agora não, obrigado!", "Login")</p></span>
+                }
+            </div>
         </div>
     </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" class="btn btn-default" value="Register" />
-        </div>
-    </div>
-}
-
+</div>
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }

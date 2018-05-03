@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace Go_Parking.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         public ActionResult Index()

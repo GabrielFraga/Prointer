@@ -25,6 +25,7 @@ namespace Go_Parking
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
+                      "~/Content/dashboard.css", //added
                       "~/Content/site.css"));
         }
     }
