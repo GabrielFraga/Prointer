@@ -6,21 +6,7 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-  <head>
-   <script type="text/javascript" src="~/scripts/jquery-1.12.4.min.js"></script>
-  <script type="text/javascript" src="/scripts/moment.min.js"></script>
-  <script type="text/javascript" src="~/scripts/moment-with-locales.js"></script>
-  <script type="text/javascript" src="~/scripts/moment-with-locales.min.js"></script>      
-  <script type="text/javascript" src="/scripts/bootstrap.min.js"></script>
-  <script type="text/javascript" src="/scripts/bootstrap-datetimepicker.js"></script>
-      
-  <!-- include your less or built css files  -->
-  <!-- 
-  bootstrap-datetimepicker-build.less will pull in "../bootstrap/variables.less" and "bootstrap-datetimepicker.less";
-  or
-  <link rel="stylesheet" href="/Content/bootstrap-datetimepicker.css" />
-  -->
-</head>
+
 
 <h2>Reservar Vaga</h2>
 <div class="form-group">
@@ -31,39 +17,10 @@
         @Html.DropDownListFor(v => v.veiculo, new SelectList(ViewBag.Veiculos, "Value", "Text"), new { @class = "form-control" })
     </div>
     <div class="form-group">
-        
-             <div class="col-md-offset-2 col-md-10">
-                 <input type="submit" value="Reservar" class="btn btn-default" />
-             </div>
-    </div>
-
-
-    <div class="container">
-        <div class="row">
-            <div class='col-sm-6'>
-                <div class="form-group">
-                    <div class='input-group date' id='datetimepicker2'>
-                        <input type='text' class="form-control" />
-                        <span class="input-group-addon">
-                            <span class="glyphicon glyphicon-calendar"></span>
-                        </span>
-                    </div>
-                </div>
-            </div> 
-            <script type="text/javascript">
-            $(function () {
-                $('#datetimepicker2').datetimepicker({
-                    locale: 'pt-br',
-                    minDate: moment(),
-                    enabledHours: [9, 10, 11, 12, 13, 14, 15, 16]
-                });
-            });
-            </script>
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Reservar" class="btn btn-default" />
         </div>
-    </div>
-        
-
-    }
+    </div> 
+        }
 </div>
 }
-    

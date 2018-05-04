@@ -50,21 +50,22 @@ namespace Go_Parking.Controllers
         {
 
             if (ModelState.IsValid)
-            {       
+            {        //Continuar daqui
                 int veiculos = Convert.ToInt32(Veiculo);
                 var vaga = new Vaga();
                 string usuarioId = User.Identity.GetUserId();
 
+                //var teste = Convert.ToInt32();
                 vaga.VeiculoId = veiculos;
                 vaga.UserId = usuarioId;
 
-                vaga.Modelo = (from a in db.Veiculoes
+                vaga.Modelo = Convert.ToString(from a in db.Veiculoes
                              where a.Id == (veiculos)
-                             select a.Modelo).Single();                            
-                vaga.placa = (from a in db.Veiculoes
-                              where a.Id == veiculos
-                              select a.placa).Single();
-
+                             select a.Modelo);
+                             
+                vaga.placa = Convert.ToString(from a in db.Veiculoes
+                                              where a.Id == veiculos/* && a.UserId == usuarioId*/
+                                              select a.placa);
                 db.Vagas.Add(vaga);
                 db.SaveChanges();
           
