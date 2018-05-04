@@ -14,7 +14,10 @@ namespace Go_Parking.Models
         public string placa { get; set; }
         public int VeiculoId { get; set; }
         public virtual Veiculo veiculo {get; set;}
+       
 
         
     }
+
+
 }

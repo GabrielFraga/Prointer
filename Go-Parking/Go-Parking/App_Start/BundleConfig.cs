@@ -9,7 +9,8 @@ namespace Go_Parking
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"));
+                        "~/Scripts/jquery-{version}.js",
+                        "~/Scripts/moment.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
@@ -21,12 +22,20 @@ namespace Go_Parking
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
-                      "~/Scripts/respond.js"));
+                      "~/Scripts/respond.js",
+                      "~/Scripts/bootstrap-datetimepicker.js"
+                      ));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
+<<<<<<< HEAD
                       "~/Content/dashboard.css", //added
                       "~/Content/site.css"));
+=======
+                      "~/Content/site.css",
+                      "~/Content/bootstrap-datetimepicker.css"
+                      ));
+>>>>>>> 62a04fa4fccb727e8669d623a8e01087280ba671
         }
     }
 }
