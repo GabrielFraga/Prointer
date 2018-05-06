@@ -2,25 +2,53 @@
 @{
     ViewBag.Title = "DetalheVaga";
 }
+<head>
+    <script type="text/javascript" src="~/scripts/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="/scripts/moment.min.js"></script>
+    <script type="text/javascript" src="~/scripts/moment-with-locales.js"></script>
+    <script type="text/javascript" src="~/scripts/moment-with-locales.min.js"></script>
+    <script type="text/javascript" src="/scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/scripts/bootstrap-datetimepicker.js"></script>
+
+    <!-- include your less or built css files  -->
+    <!--
+    +  bootstrap-datetimepicker-build.less will pull in "../bootstrap/variables.less" and "bootstrap-datetimepicker.less";
+    +  or
+    +  <link rel="stylesheet" href="/Content/bootstrap-datetimepicker.css" />
+    +  -->
+</head>
+
+
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
 
-<h2>Reservar Vaga</h2>
-<div class="form-group">
-    @Html.LabelFor(v => v.veiculo, new { @class = "col-md-2 control-label" })
-    @using (Html.BeginForm())
-    {
-    <div class="col-md-10">       
-        @Html.DropDownListFor(v => v.veiculo, new SelectList(ViewBag.Veiculos, "Value", "Text"), new { @class = "form-control" })
-    </div>
+    <h2>Reservar Vaga</h2>
     <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Reservar" class="btn btn-default" />
-        </div>
-    </div> 
+        @Html.LabelFor(v => v.veiculo, new { @class = "col-md-2 control-label" })
+        @using (Html.BeginForm())
+        {
+            <div class="col-md-10">
+                @Html.DropDownListFor(v => v.veiculo, new SelectList(ViewBag.Veiculos, "Value", "Text"), new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(d => d.HoraEntrada, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    <p>Teste <%@ViewData["Entrada"] %></p>
+
+                </div>
+                <div class="col-md-10">
+                    <p>@TempData["Saida"]</p>
+                </div>
+
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Reservar" class="btn btn-default" />
+                </div>
+            </div>
         }
-</div>
+    </div>
 }

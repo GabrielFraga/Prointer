@@ -368,3 +368,5 @@ C:\Users\gabri\Prointer\Go-Parking\Go-Parking\bin\pt-br\System.Web.WebPages.reso
 C:\Users\gabri\Prointer\Go-Parking\Go-Parking\bin\pt-br\System.Web.WebPages.Deployment.resources.dll
 C:\Users\gabri\Prointer\Go-Parking\Go-Parking\bin\pt-br\System.Web.WebPages.Razor.resources.dll
 C:\Users\gabri\Prointer\Go-Parking\Go-Parking\obj\Debug\Go-Parking.csproj.CopyComplete
+C:\Users\gabri\Prointer\Go-Parking\Go-Parking\obj\Debug\Go_Parking.Migrations.DataHoraVagas.resources
+C:\Users\gabri\Prointer\Go-Parking\Go-Parking\obj\Debug\Go_Parking.Migrations.AlteraçãoNaClasseData.resources

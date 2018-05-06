@@ -22,6 +22,19 @@ namespace Go_Parking.Controllers
             return View();
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Index(DateTimeOffset? Entrada, DateTimeOffset? Saida)
+        {
+           var Ent = Entrada;
+            TempData["Entrada"] = Ent;
+            var Sai = Saida;
+            TempData["Saida"] = Sai;
+            TempData.Keep();
+
+            return RedirectToAction("Reservar");
+        }
+
         public ActionResult DetalheVaga()
         {
             /*string usuarioId = User.Identity.GetUserId();
@@ -30,12 +43,22 @@ namespace Go_Parking.Controllers
             foreach (var veiculo in db.Veiculoes.Include(v => v.Users).Where(v => v.UserId.Equals(usuarioId)))
             list.Add(new SelectListItem() { Value = veiculo.Modelo , Text = veiculo.Modelo });
             ViewBag.Veiculos = list;*/
+
+           
             return View();
         }
         
-        
+        [HttpGet]
         public ActionResult Reservar()
         {
+            TempData.Keep();
+            var Entrada = TempData["Entrada"] as DateTimeOffset?;
+             var Saida = TempData["Saida"] as DateTimeOffset?;
+            ViewData["Entrada"] = Entrada;
+            ViewData["Saida"] = Saida;
+            
+
+
             string usuarioId = User.Identity.GetUserId();
 
             List<SelectListItem> list = new List<SelectListItem>();
@@ -44,6 +67,8 @@ namespace Go_Parking.Controllers
             ViewBag.Veiculos = list; 
             return View();
         }
+
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Reservar(string Veiculo)
@@ -59,13 +84,13 @@ namespace Go_Parking.Controllers
                 vaga.VeiculoId = veiculos;
                 vaga.UserId = usuarioId;
 
-                vaga.Modelo = Convert.ToString(from a in db.Veiculoes
-                             where a.Id == (veiculos)
-                             select a.Modelo);
-                             
-                vaga.placa = Convert.ToString(from a in db.Veiculoes
-                                              where a.Id == veiculos/* && a.UserId == usuarioId*/
-                                              select a.placa);
+                vaga.Modelo = (from a in db.Veiculoes
+                               where a.Id == (veiculos)
+                               select a.Modelo).Single();
+                vaga.placa = (from a in db.Veiculoes
+                              where a.Id == veiculos
+                              select a.placa).Single();
+
                 db.Vagas.Add(vaga);
                 db.SaveChanges();
           
