@@ -10,28 +10,32 @@
                 <h2 class="text-center">@ViewBag.Title</h2>
                 <h4 class="text-center">Por favor, preencha os dados.</h4>
             </div>
-            <div class="modal-body">
+            <div class="modal-body text-center">
 
                 @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form col-md-12 center-block", role = "form" }))
-                {
-                    @Html.AntiForgeryToken()
-                    @Html.ValidationSummary("", new { @class = "text-danger" })
-                    <div class="form-group">
-                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control input-lg", @placeholder = "E-mail" })
-                    </div>
-                    <div class="form-group">
-                        @Html.PasswordFor(m => m.Password, new { @class = "form-control input-lg", @placeholder = "Senha" })
-                    </div>
-                    <div class="form-group">
-                        @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control input-lg", @placeholder = "Confirmação da senha" })
-                    </div>
-                    <div class="form-group">
-                        <div>
-                            <input type="submit" class="btn btn-primary btn-lg btn-block" value="Registrar" />
-                        </div>
-                    </div>
-                    <span><p>@Html.ActionLink("Agora não, obrigado!", "Login")</p></span>
-                }
+    {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary("", new { @class = "text-danger" })
+            <div class=" form-group">
+                @Html.TextBoxFor(m => m.Nome, new { @class = "form-control input-lg", @placeholder = "Name" })
+            </div>
+
+            <div class="form-group">
+                @Html.TextBoxFor(m => m.Email, new { @class = "form-control input-lg", @placeholder = "E-mail" })
+            </div>
+            <div class="form-group">
+                @Html.PasswordFor(m => m.Password, new { @class = "form-control input-lg", @placeholder = "Senha" })
+            </div>
+            <div class="form-group">
+                @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control input-lg", @placeholder = "Confirmação da senha" })
+            </div>
+            <div class="form-group">
+                <div>
+                    <input type="submit" class="btn btn-primary btn-lg btn-block" value="Registrar" />
+                </div>
+            </div>
+            <!-- <span><p>@Html.ActionLink("Agora não, obrigado!", "Login")</p></span>-->
+}
             </div>
         </div>
     </div>

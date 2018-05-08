@@ -11,7 +11,8 @@
                 <h2 class="text-center">GoParking :)</h2>
                 <h4 class="text-center">Por favor, digite o seu usuário e senha.</h4>
             </div>
-            <div class="modal-body">
+            <div class="modal-body text-center">
+
                 <section id="loginForm">
                     @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form col-md-12 center-block", role = "form" }))
                     {
@@ -35,7 +36,7 @@
                         </div>
                         <div class="form-group">
                             <div>
-                                <input type="submit" value="Log in" class="btn btn-primary btn-lg btn-block" />
+                                <input type="submit" value="Entrar" class="btn btn-primary btn-lg btn-block" />
                             </div>
                         </div>
                         <p>
@@ -43,7 +44,9 @@
                         <span><p>@Html.ActionLink("Esqueceu sua senha?", "ForgotPassword")</p></span>
                         </p>
                     }
-                </section>
+                </section>        
+
+
             </div>
         </div>
     </div>

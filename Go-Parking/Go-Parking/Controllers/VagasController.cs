@@ -58,7 +58,6 @@ namespace Go_Parking.Controllers
             ViewData["Saida"] = Saida;
             
 
-
             string usuarioId = User.Identity.GetUserId();
 
             List<SelectListItem> list = new List<SelectListItem>();

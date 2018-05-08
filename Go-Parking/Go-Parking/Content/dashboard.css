@@ -45,7 +45,7 @@ body {
         padding: 20px;
         overflow-x: hidden;
         overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
-        background-color: #428bca;
+        background-color: #333;
         border-right: 1px solid #eee;
     }
 }
@@ -60,11 +60,12 @@ body {
     .nav-sidebar li a:hover,
     .nav-sidebar li a:focus {
         outline: none;
-        background-color: #3671a4 !important;
+        background-color: #333 !important;
+        color:#fff;
     }
 
     .nav-sidebar > li > a {
-        color: #fff;
+        color: #9d9d9d;
         padding-right: 20px;
         padding-left: 20px;
     }
