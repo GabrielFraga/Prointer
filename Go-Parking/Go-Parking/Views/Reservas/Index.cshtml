@@ -1,0 +1,91 @@
+﻿@model Go_Parking.Models.FazerReserva
+
+@{
+    ViewBag.Title = "Index";
+}
+<head>
+    <script type="text/javascript" src="~/scripts/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="/scripts/moment.min.js"></script>
+    <script type="text/javascript" src="~/scripts/moment-with-locales.js"></script>
+    <script type="text/javascript" src="~/scripts/moment-with-locales.min.js"></script>
+    <script type="text/javascript" src="/scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/scripts/bootstrap-datetimepicker.js"></script>
+</head>
+
+    <h2>Index</h2>
+
+    @using (Html.BeginForm("Index", "Reservas", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <h4>FazerReserva</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.Entrada, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    <div class='input-group date' id='datetimepicker1'>
+                        @Html.EditorFor(model => model.Entrada, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Entrada, "", new { @class = "text-danger" })
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Saida, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    <div class='input-group date' id='datetimepicker2'>
+                        @Html.EditorFor(model => model.Saida, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Saida, "", new { @class = "text-danger" })
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form group ">
+                @Html.LabelFor(model => model.Veiculos , htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownList("Veiculos", Model.Veiculos, new { htmlAttributes = new { @class = "form-control " } })
+                </div>
+            </div>
+            <div class="form group">
+                @{
+                    foreach (var vaga in Model.Vagas)
+                    {
+                        <div class="col-md-10">
+                            @Html.RadioButtonFor(model => model.Vagas, vaga.Id)
+                            @Html.Label("Vagas" + vaga.Id, vaga.Nome)
+                        </div>
+                    }
+                }
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Reservar" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            $(function () {
+                $('#datetimepicker1').datetimepicker({
+                    locale: 'pt-br',
+                    minDate: moment(),
+                    enabledHours: [9, 10, 11, 12, 13, 14, 15, 16]
+                });
+                $('#datetimepicker2').datetimepicker({
+                    locale: 'pt-br',
+                    minDate: moment(),
+                    enabledHours: [9, 10, 11, 12, 13, 14, 15, 16]
+                });
+            });
+        </script>
+
+
+    }

@@ -370,3 +370,7 @@ C:\Users\gabri\Prointer\Go-Parking\Go-Parking\bin\pt-br\System.Web.WebPages.Razo
 C:\Users\gabri\Prointer\Go-Parking\Go-Parking\obj\Debug\Go-Parking.csproj.CopyComplete
 C:\Users\gabri\Prointer\Go-Parking\Go-Parking\obj\Debug\Go_Parking.Migrations.DataHoraVagas.resources
 C:\Users\gabri\Prointer\Go-Parking\Go-Parking\obj\Debug\Go_Parking.Migrations.AlteraçãoNaClasseData.resources
+C:\Users\gabri\Prointer\Go-Parking\Go-Parking\obj\Debug\Go_Parking.Migrations.ClasseReservaCriada.resources
+C:\Users\gabri\Prointer\Go-Parking\Go-Parking\obj\Debug\Go_Parking.Migrations.ALteraçõesEmReserva.resources
+C:\Users\gabri\Prointer\Go-Parking\Go-Parking\obj\Debug\Go_Parking.Migrations.VagaNovamente.resources
+C:\Users\gabri\Prointer\Go-Parking\Go-Parking\obj\Debug\Go_Parking.Migrations.ObjetoVagaReserva.resources

@@ -19,7 +19,7 @@ namespace Go_Parking.Controllers
         public ActionResult Index()
         {
             string usuarioId = User.Identity.GetUserId();
-            var veiculoes = db.Veiculoes.Include(v=>v.Users).Where(v=>v.UserId.Equals(usuarioId));
+            var veiculoes = db.Veiculos.Include(v=>v.Users).Where(v=>v.UserId.Equals(usuarioId));
             return View(veiculoes.ToList());
         }
 
@@ -30,7 +30,7 @@ namespace Go_Parking.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Veiculo veiculo = db.Veiculoes.Find(id);
+            Veiculo veiculo = db.Veiculos.Find(id);
             if (veiculo == null)
             {
                 return HttpNotFound();
@@ -56,7 +56,7 @@ namespace Go_Parking.Controllers
             if (ModelState.IsValid)
             {
                 veiculo.UserId = User.Identity.GetUserId();
-                db.Veiculoes.Add(veiculo);
+                db.Veiculos.Add(veiculo);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -71,7 +71,7 @@ namespace Go_Parking.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Veiculo veiculo = db.Veiculoes.Find(id);
+            Veiculo veiculo = db.Veiculos.Find(id);
             if (veiculo == null)
             {
                 return HttpNotFound();
@@ -104,7 +104,7 @@ namespace Go_Parking.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Veiculo veiculo = db.Veiculoes.Find(id);
+            Veiculo veiculo = db.Veiculos.Find(id);
             if (veiculo == null)
             {
                 return HttpNotFound();
@@ -117,11 +117,25 @@ namespace Go_Parking.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Veiculo veiculo = db.Veiculoes.Find(id);
-            db.Veiculoes.Remove(veiculo);
+            Veiculo veiculo = db.Veiculos.Find(id);
+            db.Veiculos.Remove(veiculo);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+
+        public ActionResult VeiculosDropDown()
+        {
+
+            var usuarioId = User.Identity.GetUserId();
+
+            var list = db.Veiculos.Include(v => v.Users)
+                         .Where(v => v.UserId == usuarioId)
+                         .Select(v => new SelectListItem() { Value = v.Id.ToString(), Text = v.Modelo });
+            ViewBag.Veiculos = list;
+            return View("_VeiculosDropDown");
+        }
+
 
         protected override void Dispose(bool disposing)
         {

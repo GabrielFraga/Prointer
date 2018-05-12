@@ -10,7 +10,7 @@ namespace Go_Parking.Models
     {
         public int Id { get; set; }
         public string Modelo { get; set; }
-        public string placa { get; set; }
+        public string Placa { get; set; }
 
         public string UserId { get; set; }
         public virtual ApplicationUser Users { get; set; }

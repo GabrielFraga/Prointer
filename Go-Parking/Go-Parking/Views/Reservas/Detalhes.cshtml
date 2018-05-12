@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Go_Parking.Models.Reserva>
+
+@{
+    ViewBag.Title = "Detalhes";
+}
+
+<h2>Detalhes</h2>
+
+<table class="table">
+    <tr><th>
+            @Html.DisplayNameFor(model => model.Veiculos.Modelo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Vagas.Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Entrada)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Saida)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Veiculos.Modelo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Vagas.Id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Entrada)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Saida)
+        </td>
+        
+    </tr>
+}
+
+</table>

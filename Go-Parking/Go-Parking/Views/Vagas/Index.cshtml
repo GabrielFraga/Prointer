@@ -1,83 +1,33 @@
-﻿@model Go_Parking.Models.Vaga
+﻿@model IEnumerable<Go_Parking.Models.Vaga>
 
 @{
-    ViewBag.Title = " ";
+    ViewBag.Title = "Index";
 }
 
-<head>
-    <script type="text/javascript" src="~/scripts/jquery-1.12.4.min.js"></script>
-    <script type="text/javascript" src="/scripts/moment.min.js"></script>
-    <script type="text/javascript" src="~/scripts/moment-with-locales.js"></script>
-    <script type="text/javascript" src="~/scripts/moment-with-locales.min.js"></script>
-    <script type="text/javascript" src="/scripts/bootstrap.min.js"></script>
-    <script type="text/javascript" src="/scripts/bootstrap-datetimepicker.js"></script>
+<h2>Index</h2>
 
-    <!-- include your less or built css files  -->
-    <!--
-    +  bootstrap-datetimepicker-build.less will pull in "../bootstrap/variables.less" and "bootstrap-datetimepicker.less";
-    +  or
-    +  <link rel="stylesheet" href="/Content/bootstrap-datetimepicker.css" />
-    +  -->
-</head>
-@using (Html.BeginForm("Index", "Vagas", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-{
-    @Html.AntiForgeryToken()
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th></th>
+    </tr>
 
-    <h2>Escolha o horário de estacionamento</h2>
-    <div class="container">
-
-        <div class='col-md-5'>
-            <div class="form-group">
-                <span><b>Hora de Entrada</b></span>
-                <div class='input-group date' id='datetimepicker1'>
-                    @Html.EditorFor(model => model.HoraEntrada, new { htmlAttributes = new { @class="form-control"} } )
-                    <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                    </span>
-                </div>
-            </div>  
-        </div>
-        <div class='col-md-5'>
-            <div class="form-group">
-                <span><b>Hora de Saída</b></span>
-                <div class='input-group date' id='datetimepicker2'>
-                    @Html.EditorFor(model => model.HoraSaida, new { htmlAttributes = new { @class = "form-control" } })
-                    <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                    </span>
-                </div>
-            </div>
-        </div>
-
-    </div>
-    <div class="container">
-
-        <div class="panel">
-            <div class="col-md-5">
-                <div class="panel-body list-group text-center" style="background-color:#428bca">
-                    <input type="submit" value="Vaga 1" class="btn btn-default" />
-                </div>
-            </div>
-            <div class="col-md-5">
-                <div class="panel-body list-group text-center" style="background-color:#428bca">
-                    @Html.ActionLink("Vaga2", "Reservar", "Vagas")
-                </div>
-            </div>
-        </div>
-
-    </div>
-    <script type="text/javascript">
-        $(function () {
-            $('#datetimepicker1').datetimepicker({
-                locale: 'pt-br',
-                minDate: moment(),
-                enabledHours: [9, 10, 11, 12, 13, 14, 15, 16]
-            });
-            $('#datetimepicker2').datetimepicker({
-                locale: 'pt-br',
-                minDate: moment(),
-                enabledHours: [9, 10, 11, 12, 13, 14, 15, 16]
-            });
-        });
-    </script>
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
 }
+
+</table>

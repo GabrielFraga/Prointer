@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Go_Parking.Models.Vaga>
+﻿@model Go_Parking.Models.Vaga
 
 @{
     ViewBag.Title = "Details";
@@ -6,32 +6,21 @@
 
 <h2>Details</h2>
 
+<div>
+    <h4>Vaga</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
 
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.UserId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Modelo)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.placa)
-        </th>
-        <th></th>
-    </tr>
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.UserId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Modelo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.placa)
-            </td>
-         </tr>
-     }       
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

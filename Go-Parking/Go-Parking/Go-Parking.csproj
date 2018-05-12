@@ -201,6 +201,7 @@
     <Compile Include="Controllers\FuncionarioController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ReservasController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Controllers\VagasController.cs" />
     <Compile Include="Controllers\VeiculosController.cs" />
@@ -251,10 +252,27 @@
     <Compile Include="Migrations\201805062221476_AlteraçãoNaClasseData.Designer.cs">
       <DependentUpon>201805062221476_AlteraçãoNaClasseData.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805090350344_ClasseReservaCriada.cs" />
+    <Compile Include="Migrations\201805090350344_ClasseReservaCriada.Designer.cs">
+      <DependentUpon>201805090350344_ClasseReservaCriada.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805092051309_ALteraçõesEmReserva.cs" />
+    <Compile Include="Migrations\201805092051309_ALteraçõesEmReserva.Designer.cs">
+      <DependentUpon>201805092051309_ALteraçõesEmReserva.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805092225417_VagaNovamente.cs" />
+    <Compile Include="Migrations\201805092225417_VagaNovamente.Designer.cs">
+      <DependentUpon>201805092225417_VagaNovamente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805112350167_ObjetoVagaReserva.cs" />
+    <Compile Include="Migrations\201805112350167_ObjetoVagaReserva.Designer.cs">
+      <DependentUpon>201805112350167_ObjetoVagaReserva.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\ReservaViewModel.cs" />
     <Compile Include="Models\RoleViewModel.cs" />
     <Compile Include="Models\Vaga.cs" />
     <Compile Include="Models\Veiculo.cs" />
@@ -434,11 +452,16 @@
     <Content Include="Views\Veiculos\Details.cshtml" />
     <Content Include="Views\Veiculos\Edit.cshtml" />
     <Content Include="Views\Veiculos\Index.cshtml" />
-    <Content Include="Views\Vagas\Index.cshtml" />
-    <Content Include="Views\Vagas\Details.cshtml" />
-    <Content Include="Views\Vagas\Reservar.cshtml" />
     <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
+    <Content Include="Views\Reservas\Index.cshtml" />
+    <Content Include="Views\Reservas\Detalhes.cshtml" />
     <None Include="Views\Shared\_LoginStart.cshtml" />
+    <Content Include="Views\Veiculos\_VeiculosDropDown.cshtml" />
+    <Content Include="Views\Vagas\Create.cshtml" />
+    <Content Include="Views\Vagas\Delete.cshtml" />
+    <Content Include="Views\Vagas\Details.cshtml" />
+    <Content Include="Views\Vagas\Edit.cshtml" />
+    <Content Include="Views\Vagas\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -481,6 +504,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805062221476_AlteraçãoNaClasseData.resx">
       <DependentUpon>201805062221476_AlteraçãoNaClasseData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805090350344_ClasseReservaCriada.resx">
+      <DependentUpon>201805090350344_ClasseReservaCriada.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805092051309_ALteraçõesEmReserva.resx">
+      <DependentUpon>201805092051309_ALteraçõesEmReserva.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805092225417_VagaNovamente.resx">
+      <DependentUpon>201805092225417_VagaNovamente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805112350167_ObjetoVagaReserva.resx">
+      <DependentUpon>201805112350167_ObjetoVagaReserva.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
