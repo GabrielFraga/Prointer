@@ -35,7 +35,7 @@ namespace Go_Parking.Models
 
         [DataType(DataType.Password)]
         [Display(Name = "Confirm new password")]
-        [Compare("NewPassword", ErrorMessage = "The new password and confirmation password do not match.")]
+        [Compare("NewPassword", ErrorMessage = "Senha inconpatível.")]
         public string ConfirmPassword { get; set; }
     }
 
