@@ -16,20 +16,20 @@
     {
             @Html.AntiForgeryToken()
             @Html.ValidationSummary("", new { @class = "text-danger" })
-            <div class=" form-group">
-                @Html.TextBoxFor(m => m.Nome, new { @class = "form-control input-lg", @placeholder = "Name" })
+            <div class="form-group" style="padding-left:128px">
+                @Html.TextBoxFor(m => m.Nome, new { @class = "form-control input-lg", @placeholder = "Nome" })
             </div>
 
-            <div class="form-group">
+            <div class="form-group" style="padding-left:128px">
                 @Html.TextBoxFor(m => m.Email, new { @class = "form-control input-lg", @placeholder = "E-mail" })
             </div>
-            <div class="form-group">
+            <div class="form-group" style="padding-left:128px">
                 @Html.PasswordFor(m => m.Password, new { @class = "form-control input-lg", @placeholder = "Senha" })
             </div>
-            <div class="form-group">
+            <div class="form-group" style="padding-left:128px">
                 @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control input-lg", @placeholder = "Confirmação da senha" })
             </div>
-            <div class="form-group">
+            <div class="form-group" style="padding-left:128px">
                 <div>
                     <input type="submit" class="btn btn-primary btn-lg btn-block" value="Registrar" />
                 </div>

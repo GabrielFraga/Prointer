@@ -14,16 +14,18 @@
             <div class="modal-body text-center">
 
                 <section id="loginForm">
-                    @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form col-md-12 center-block", role = "form" }))
+                    @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form col-md-12", role = "form" }))
                     {
                         @Html.AntiForgeryToken()
                         @Html.ValidationSummary(true, "", new { @class = "alert alert-danger" })
-                        <div class="form-group">
-                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control input-lg", @placeholder = "Username" })
-                            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
-                        </div>
-                        <div class="form-group">
-                            @Html.PasswordFor(m => m.Password, new { @class = "form-control  input-lg", @placeholder = "Senha" })
+                        <div class="form-group" style="padding-left:128px">
+                           
+                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control ", @placeholder = "E-mail" })
+                                @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                           
+                         </div>
+                        <div class="form-group" style="padding-left:128px">
+                            @Html.PasswordFor(m => m.Password, new { @class = "form-control", @placeholder = "Senha" })
                             @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
                         </div>
                         <div class="form-group">
@@ -34,14 +36,15 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group" style="padding-left:128px">
                             <div>
                                 <input type="submit" value="Entrar" class="btn btn-primary btn-lg btn-block" />
                             </div>
                         </div>
                         <p>
-                            <span><p class="pull-right">@Html.ActionLink("Registrar uma nova conta!", "Register")</p></span>
-                        <span><p>@Html.ActionLink("Esqueceu sua senha?", "ForgotPassword")</p></span>
+                            <span>
+                        <p>@Html.ActionLink("Esqueceu sua senha?", "ForgotPassword")</p></span>
+                            <span><p>@Html.ActionLink("Registrar uma nova conta!", "Register")</p></span>
                         </p>
                     }
                 </section>        
