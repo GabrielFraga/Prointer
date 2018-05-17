@@ -4,40 +4,77 @@
     ViewBag.Title = "Detalhes";
 }
 
+<head>
+    <script type="text/javascript" src="~/scripts/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="~/scripts/jszip.min.js"></script>
+    <script type="text/javascript" src="~/scripts/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="~/scripts/DataTables/jquery.dataTables.js"></script>
+    <script type="text/javascript" src="~/scripts/DataTables/buttons.html5.min.js"></script>
+    
+    <link rel="stylesheet" href="~/Content/DataTables/css/jquery.dataTables.css" />
+    <link rel="stylesheet" href="~/Content/buttons.dataTables.min.css" />
+
+ 
+</head>
+
+
+
 <h2>Detalhes</h2>
 
-<table class="table">
-    <tr><th>
-            @Html.DisplayNameFor(model => model.Veiculos.Modelo)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Vagas.Id)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Entrada)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Saida)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Veiculos.Modelo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Vagas.Id)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Entrada)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Saida)
-        </td>
-        
-    </tr>
-}
+<table id="reservas" class="table" style="width:100%">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Veiculos.Modelo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vagas.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Entrada)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Saida)
+            </th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Veiculos.Modelo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Vagas.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Entrada)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Saida)
+                </td>
+
+            </tr>
+        }
+    </tbody>
 
 </table>
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $('reservas').DataTable({
+            dom: 'Bfrtip',
+            buttons: [{
+                extend: 'excelHtml5',
+                customize: function (xlsx) {
+                    var sheet = xlsx.xl.worksheets['sheet1.xml'];
+
+                    $('row c[r^="C"]', sheet).attr('s', '2');
+                }
+            }]
+        });
+    });
+</script>

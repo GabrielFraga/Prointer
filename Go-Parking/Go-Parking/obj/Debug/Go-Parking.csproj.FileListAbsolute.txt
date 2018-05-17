@@ -1,173 +1,3 @@
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\bin\ApplicationInsights.config
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\bin\roslyn\csc.exe
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\bin\roslyn\Microsoft.CodeAnalysis.dll
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\bin\roslyn\Microsoft.CSharp.Core.targets
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\bin\roslyn\Microsoft.VisualBasic.Core.targets
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\bin\roslyn\System.Collections.Immutable.dll
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\bin\roslyn\System.Reflection.Metadata.dll
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\bin\roslyn\vbc.exe
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\bin\roslyn\VBCSCompiler.exe
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\bin\roslyn\VBCSCompiler.exe.config
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\bin\Go-Parking.dll.config
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\bin\Go-Parking.dll
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\bin\Go-Parking.pdb
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\bin\Antlr3.Runtime.dll
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\bin\EntityFramework.dll
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\bin\EntityFramework.SqlServer.dll
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\bin\Microsoft.AI.Agent.Intercept.dll
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\bin\Microsoft.AI.DependencyCollector.dll
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\bin\Microsoft.AI.PerfCounterCollector.dll
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\bin\Microsoft.AI.ServerTelemetryChannel.dll
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\bin\Microsoft.AI.Web.dll
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\bin\Microsoft.AI.WindowsServer.dll
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\bin\Microsoft.ApplicationInsights.dll
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\bin\Microsoft.AspNet.Identity.Core.dll
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\bin\Microsoft.AspNet.Identity.EntityFramework.dll
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\bin\Microsoft.AspNet.Identity.Owin.dll
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\bin\Microsoft.Owin.dll
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\bin\Microsoft.Owin.Host.SystemWeb.dll
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\bin\Microsoft.Owin.Security.Cookies.dll
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\bin\Microsoft.Owin.Security.dll
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\bin\Microsoft.Owin.Security.Facebook.dll
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\bin\Microsoft.Owin.Security.Google.dll
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\bin\Microsoft.Owin.Security.OAuth.dll
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\bin\Microsoft.Owin.Security.Twitter.dll
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\bin\Microsoft.Web.Infrastructure.dll
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\bin\Newtonsoft.Json.dll
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\bin\Owin.dll
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\bin\System.Web.Helpers.dll
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\bin\System.Web.Mvc.dll
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\bin\System.Web.Optimization.dll
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\bin\System.Web.Razor.dll
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\bin\System.Web.WebPages.Deployment.dll
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\bin\System.Web.WebPages.dll
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\bin\System.Web.WebPages.Razor.dll
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\bin\WebGrease.dll
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\bin\Microsoft.AI.DependencyCollector.xml
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\bin\Microsoft.AI.ServerTelemetryChannel.xml
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\bin\Microsoft.AI.Web.xml
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\bin\Microsoft.AI.WindowsServer.xml
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\bin\Microsoft.ApplicationInsights.xml
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\bin\System.Web.Helpers.xml
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\bin\System.Web.Mvc.xml
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\bin\System.Web.Optimization.xml
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\bin\System.Web.Razor.xml
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\bin\System.Web.WebPages.xml
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\bin\System.Web.WebPages.Deployment.xml
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\bin\System.Web.WebPages.Razor.xml
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\bin\Antlr3.Runtime.pdb
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\bin\Newtonsoft.Json.xml
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\bin\EntityFramework.xml
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\bin\EntityFramework.SqlServer.xml
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\bin\Microsoft.AspNet.Identity.Core.xml
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\bin\Microsoft.AspNet.Identity.Owin.xml
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\bin\Microsoft.AspNet.Identity.EntityFramework.xml
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\bin\Microsoft.Owin.xml
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\bin\Microsoft.Owin.Host.SystemWeb.xml
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\bin\Microsoft.Owin.Security.xml
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\bin\Microsoft.Owin.Security.Facebook.xml
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\bin\Microsoft.Owin.Security.Cookies.xml
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\bin\Microsoft.Owin.Security.OAuth.xml
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\bin\Microsoft.Owin.Security.Google.xml
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\bin\Microsoft.Owin.Security.Twitter.xml
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\obj\Debug\Go-Parking.csprojResolveAssemblyReference.cache
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\obj\Debug\Go-Parking.dll
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\obj\Debug\Go-Parking.pdb
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\obj\Debug\Go_Parking.Migrations.InitialCreate.resources
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\obj\Debug\Go-Parking.csproj.GenerateResource.Cache
-c:\users\ff\documents\visual studio 2015\Projects\Go-Parking\Go-Parking\obj\Debug\Go_Parking.Migrations.initial.resources
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\bin\ApplicationInsights.config
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\bin\roslyn\csc.exe
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\bin\roslyn\Microsoft.CodeAnalysis.dll
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\bin\roslyn\Microsoft.CSharp.Core.targets
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\bin\roslyn\Microsoft.VisualBasic.Core.targets
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\bin\roslyn\System.Collections.Immutable.dll
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\bin\roslyn\System.Reflection.Metadata.dll
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\bin\roslyn\vbc.exe
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\bin\roslyn\VBCSCompiler.exe
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\bin\roslyn\VBCSCompiler.exe.config
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\bin\Go-Parking.dll.config
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\bin\Go-Parking.dll
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\bin\Go-Parking.pdb
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\bin\Antlr3.Runtime.dll
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\bin\EntityFramework.dll
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\bin\EntityFramework.SqlServer.dll
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\bin\Microsoft.AI.Agent.Intercept.dll
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\bin\Microsoft.AI.DependencyCollector.dll
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\bin\Microsoft.AI.PerfCounterCollector.dll
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\bin\Microsoft.AI.ServerTelemetryChannel.dll
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\bin\Microsoft.AI.Web.dll
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\bin\Microsoft.AI.WindowsServer.dll
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\bin\Microsoft.ApplicationInsights.dll
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\bin\Microsoft.AspNet.Identity.Core.dll
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\bin\Microsoft.AspNet.Identity.EntityFramework.dll
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\bin\Microsoft.AspNet.Identity.Owin.dll
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\bin\Microsoft.Owin.dll
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\bin\Microsoft.Owin.Host.SystemWeb.dll
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\bin\Microsoft.Owin.Security.Cookies.dll
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\bin\Microsoft.Owin.Security.dll
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\bin\Microsoft.Owin.Security.Facebook.dll
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\bin\Microsoft.Owin.Security.Google.dll
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\bin\Microsoft.Owin.Security.OAuth.dll
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\bin\Microsoft.Owin.Security.Twitter.dll
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\bin\Microsoft.Web.Infrastructure.dll
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\bin\Newtonsoft.Json.dll
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\bin\Owin.dll
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\bin\System.Web.Helpers.dll
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\bin\System.Web.Mvc.dll
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\bin\System.Web.Optimization.dll
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\bin\System.Web.Razor.dll
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\bin\System.Web.WebPages.Deployment.dll
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\bin\System.Web.WebPages.dll
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\bin\System.Web.WebPages.Razor.dll
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\bin\WebGrease.dll
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\bin\Microsoft.AI.DependencyCollector.xml
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\bin\Microsoft.AI.ServerTelemetryChannel.xml
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\bin\Microsoft.AI.Web.xml
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\bin\Microsoft.AI.WindowsServer.xml
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\bin\Microsoft.ApplicationInsights.xml
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\bin\System.Web.Helpers.xml
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\bin\System.Web.Mvc.xml
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\bin\System.Web.Optimization.xml
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\bin\System.Web.Razor.xml
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\bin\System.Web.WebPages.xml
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\bin\System.Web.WebPages.Deployment.xml
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\bin\System.Web.WebPages.Razor.xml
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\bin\Antlr3.Runtime.pdb
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\bin\Newtonsoft.Json.xml
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\bin\EntityFramework.xml
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\bin\EntityFramework.SqlServer.xml
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\bin\Microsoft.AspNet.Identity.Core.xml
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\bin\Microsoft.AspNet.Identity.Owin.xml
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\bin\Microsoft.AspNet.Identity.EntityFramework.xml
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\bin\Microsoft.Owin.xml
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\bin\Microsoft.Owin.Host.SystemWeb.xml
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\bin\Microsoft.Owin.Security.xml
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\bin\Microsoft.Owin.Security.Facebook.xml
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\bin\Microsoft.Owin.Security.Cookies.xml
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\bin\Microsoft.Owin.Security.OAuth.xml
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\bin\Microsoft.Owin.Security.Google.xml
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\bin\Microsoft.Owin.Security.Twitter.xml
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\obj\Debug\Go-Parking.csprojResolveAssemblyReference.cache
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\obj\Debug\Go_Parking.Migrations.InitialCreate.resources
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\obj\Debug\Go_Parking.Migrations.initial.resources
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\obj\Debug\Go-Parking.csproj.GenerateResource.Cache
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\obj\Debug\Go-Parking.dll
-C:\Users\FF\Documents\RepositorioGIT\Go-Parking\Go-Parking\obj\Debug\Go-Parking.pdb
 C:\Users\gabri\Prointer\Go-Parking\Go-Parking\bin\ApplicationInsights.config
 C:\Users\gabri\Prointer\Go-Parking\Go-Parking\bin\roslyn\csc.exe
 C:\Users\gabri\Prointer\Go-Parking\Go-Parking\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -210,6 +40,7 @@ C:\Users\gabri\Prointer\Go-Parking\Go-Parking\bin\Microsoft.Owin.Security.Twitte
 C:\Users\gabri\Prointer\Go-Parking\Go-Parking\bin\Microsoft.Web.Infrastructure.dll
 C:\Users\gabri\Prointer\Go-Parking\Go-Parking\bin\Newtonsoft.Json.dll
 C:\Users\gabri\Prointer\Go-Parking\Go-Parking\bin\Owin.dll
+C:\Users\gabri\Prointer\Go-Parking\Go-Parking\bin\PagedList.dll
 C:\Users\gabri\Prointer\Go-Parking\Go-Parking\bin\System.Web.Helpers.dll
 C:\Users\gabri\Prointer\Go-Parking\Go-Parking\bin\System.Web.Mvc.dll
 C:\Users\gabri\Prointer\Go-Parking\Go-Parking\bin\System.Web.Optimization.dll
@@ -224,6 +55,7 @@ C:\Users\gabri\Prointer\Go-Parking\Go-Parking\bin\Microsoft.AI.Web.xml
 C:\Users\gabri\Prointer\Go-Parking\Go-Parking\bin\Microsoft.AI.WindowsServer.xml
 C:\Users\gabri\Prointer\Go-Parking\Go-Parking\bin\Microsoft.ApplicationInsights.xml
 C:\Users\gabri\Prointer\Go-Parking\Go-Parking\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\gabri\Prointer\Go-Parking\Go-Parking\bin\PagedList.xml
 C:\Users\gabri\Prointer\Go-Parking\Go-Parking\bin\System.Web.Helpers.xml
 C:\Users\gabri\Prointer\Go-Parking\Go-Parking\bin\System.Web.Mvc.xml
 C:\Users\gabri\Prointer\Go-Parking\Go-Parking\bin\System.Web.Optimization.xml
@@ -247,12 +79,15 @@ C:\Users\gabri\Prointer\Go-Parking\Go-Parking\bin\Microsoft.Owin.Security.OAuth.
 C:\Users\gabri\Prointer\Go-Parking\Go-Parking\bin\Microsoft.Owin.Security.Google.xml
 C:\Users\gabri\Prointer\Go-Parking\Go-Parking\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\gabri\Prointer\Go-Parking\Go-Parking\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\gabri\Prointer\Go-Parking\Go-Parking\bin\pt-br\System.Web.Helpers.resources.dll
+C:\Users\gabri\Prointer\Go-Parking\Go-Parking\bin\pt-br\System.Web.Mvc.resources.dll
+C:\Users\gabri\Prointer\Go-Parking\Go-Parking\bin\pt-br\System.Web.Razor.resources.dll
+C:\Users\gabri\Prointer\Go-Parking\Go-Parking\bin\pt-br\System.Web.WebPages.resources.dll
+C:\Users\gabri\Prointer\Go-Parking\Go-Parking\bin\pt-br\System.Web.WebPages.Deployment.resources.dll
+C:\Users\gabri\Prointer\Go-Parking\Go-Parking\bin\pt-br\System.Web.WebPages.Razor.resources.dll
 C:\Users\gabri\Prointer\Go-Parking\Go-Parking\obj\Debug\Go-Parking.csprojResolveAssemblyReference.cache
 C:\Users\gabri\Prointer\Go-Parking\Go-Parking\obj\Debug\Go_Parking.Migrations.InitialCreate.resources
 C:\Users\gabri\Prointer\Go-Parking\Go-Parking\obj\Debug\Go_Parking.Migrations.initial.resources
-C:\Users\gabri\Prointer\Go-Parking\Go-Parking\obj\Debug\Go-Parking.csproj.GenerateResource.Cache
-C:\Users\gabri\Prointer\Go-Parking\Go-Parking\obj\Debug\Go-Parking.dll
-C:\Users\gabri\Prointer\Go-Parking\Go-Parking\obj\Debug\Go-Parking.pdb
 C:\Users\gabri\Prointer\Go-Parking\Go-Parking\obj\Debug\Go_Parking.Migrations.cadastroFuncionario.resources
 C:\Users\gabri\Prointer\Go-Parking\Go-Parking\obj\Debug\Go_Parking.Migrations.role.resources
 C:\Users\gabri\Prointer\Go-Parking\Go-Parking\obj\Debug\Go_Parking.Migrations.veiculo.resources
@@ -260,222 +95,12 @@ C:\Users\gabri\Prointer\Go-Parking\Go-Parking\obj\Debug\Go_Parking.Migrations.no
 C:\Users\gabri\Prointer\Go-Parking\Go-Parking\obj\Debug\Go_Parking.Migrations.vaga.resources
 C:\Users\gabri\Prointer\Go-Parking\Go-Parking\obj\Debug\Go_Parking.Migrations.AlteracaoIDVaga.resources
 C:\Users\gabri\Prointer\Go-Parking\Go-Parking\obj\Debug\Go_Parking.Migrations.idveiculo.resources
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\ApplicationInsights.config
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\roslyn\csc.exe
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\roslyn\Microsoft.CodeAnalysis.dll
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\roslyn\Microsoft.CSharp.Core.targets
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\roslyn\Microsoft.VisualBasic.Core.targets
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\roslyn\System.Collections.Immutable.dll
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\roslyn\System.Reflection.Metadata.dll
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\roslyn\vbc.exe
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\roslyn\VBCSCompiler.exe
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\roslyn\VBCSCompiler.exe.config
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\Go-Parking.dll.config
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\Go-Parking.dll
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\Go-Parking.pdb
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\Antlr3.Runtime.dll
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\EntityFramework.dll
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\EntityFramework.SqlServer.dll
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\Microsoft.AI.Agent.Intercept.dll
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\Microsoft.AI.DependencyCollector.dll
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\Microsoft.AI.PerfCounterCollector.dll
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\Microsoft.AI.ServerTelemetryChannel.dll
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\Microsoft.AI.Web.dll
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\Microsoft.AI.WindowsServer.dll
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\Microsoft.ApplicationInsights.dll
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\Microsoft.AspNet.Identity.Core.dll
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\Microsoft.AspNet.Identity.EntityFramework.dll
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\Microsoft.AspNet.Identity.Owin.dll
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\Microsoft.Owin.dll
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\Microsoft.Owin.Host.SystemWeb.dll
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\Microsoft.Owin.Security.Cookies.dll
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\Microsoft.Owin.Security.dll
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\Microsoft.Owin.Security.Facebook.dll
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\Microsoft.Owin.Security.Google.dll
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\Microsoft.Owin.Security.OAuth.dll
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\Microsoft.Owin.Security.Twitter.dll
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\Microsoft.Web.Infrastructure.dll
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\Newtonsoft.Json.dll
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\Owin.dll
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\System.Web.Helpers.dll
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\System.Web.Mvc.dll
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\System.Web.Optimization.dll
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\System.Web.Razor.dll
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\System.Web.WebPages.Deployment.dll
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\System.Web.WebPages.dll
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\System.Web.WebPages.Razor.dll
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\WebGrease.dll
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\Microsoft.AI.DependencyCollector.xml
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\Microsoft.AI.ServerTelemetryChannel.xml
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\Microsoft.AI.Web.xml
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\Microsoft.AI.WindowsServer.xml
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\Microsoft.ApplicationInsights.xml
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\System.Web.Helpers.xml
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\System.Web.Mvc.xml
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\System.Web.Optimization.xml
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\System.Web.Razor.xml
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\System.Web.WebPages.xml
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\System.Web.WebPages.Deployment.xml
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\System.Web.WebPages.Razor.xml
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\Antlr3.Runtime.pdb
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\Newtonsoft.Json.xml
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\EntityFramework.xml
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\EntityFramework.SqlServer.xml
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\Microsoft.AspNet.Identity.Core.xml
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\Microsoft.AspNet.Identity.Owin.xml
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\Microsoft.AspNet.Identity.EntityFramework.xml
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\Microsoft.Owin.xml
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\Microsoft.Owin.Host.SystemWeb.xml
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\Microsoft.Owin.Security.xml
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\Microsoft.Owin.Security.Facebook.xml
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\Microsoft.Owin.Security.Cookies.xml
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\Microsoft.Owin.Security.OAuth.xml
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\Microsoft.Owin.Security.Google.xml
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\Microsoft.Owin.Security.Twitter.xml
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\pt-br\System.Web.Helpers.resources.dll
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\pt-br\System.Web.Mvc.resources.dll
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\pt-br\System.Web.Razor.resources.dll
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\pt-br\System.Web.WebPages.resources.dll
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\pt-br\System.Web.WebPages.Deployment.resources.dll
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\bin\pt-br\System.Web.WebPages.Razor.resources.dll
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\obj\Debug\Go-Parking.csprojResolveAssemblyReference.cache
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\obj\Debug\Go_Parking.Migrations.InitialCreate.resources
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\obj\Debug\Go_Parking.Migrations.initial.resources
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\obj\Debug\Go_Parking.Migrations.cadastroFuncionario.resources
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\obj\Debug\Go_Parking.Migrations.role.resources
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\obj\Debug\Go_Parking.Migrations.veiculo.resources
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\obj\Debug\Go_Parking.Migrations.novaTabela.resources
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\obj\Debug\Go_Parking.Migrations.vaga.resources
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\obj\Debug\Go_Parking.Migrations.AlteracaoIDVaga.resources
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\obj\Debug\Go_Parking.Migrations.idveiculo.resources
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\obj\Debug\Go-Parking.csproj.GenerateResource.cache
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\obj\Debug\Go-Parking.csproj.CoreCompileInputs.cache
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\obj\Debug\Go-Parking.csproj.CopyComplete
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\obj\Debug\Go-Parking.dll
-E:\Dados Usuario\Desktop\Go-Parking\Go-Parking\obj\Debug\Go-Parking.pdb
-C:\Users\gabri\Prointer\Go-Parking\Go-Parking\obj\Debug\Go-Parking.csproj.CoreCompileInputs.cache
-C:\Users\gabri\Prointer\Go-Parking\Go-Parking\bin\pt-br\System.Web.Helpers.resources.dll
-C:\Users\gabri\Prointer\Go-Parking\Go-Parking\bin\pt-br\System.Web.Mvc.resources.dll
-C:\Users\gabri\Prointer\Go-Parking\Go-Parking\bin\pt-br\System.Web.Razor.resources.dll
-C:\Users\gabri\Prointer\Go-Parking\Go-Parking\bin\pt-br\System.Web.WebPages.resources.dll
-C:\Users\gabri\Prointer\Go-Parking\Go-Parking\bin\pt-br\System.Web.WebPages.Deployment.resources.dll
-C:\Users\gabri\Prointer\Go-Parking\Go-Parking\bin\pt-br\System.Web.WebPages.Razor.resources.dll
-C:\Users\gabri\Prointer\Go-Parking\Go-Parking\obj\Debug\Go-Parking.csproj.CopyComplete
 C:\Users\gabri\Prointer\Go-Parking\Go-Parking\obj\Debug\Go_Parking.Migrations.DataHoraVagas.resources
 C:\Users\gabri\Prointer\Go-Parking\Go-Parking\obj\Debug\Go_Parking.Migrations.AlteraçãoNaClasseData.resources
-<<<<<<< HEAD
 C:\Users\gabri\Prointer\Go-Parking\Go-Parking\obj\Debug\Go_Parking.Migrations.ClasseReservaCriada.resources
 C:\Users\gabri\Prointer\Go-Parking\Go-Parking\obj\Debug\Go_Parking.Migrations.ALteraçõesEmReserva.resources
 C:\Users\gabri\Prointer\Go-Parking\Go-Parking\obj\Debug\Go_Parking.Migrations.VagaNovamente.resources
 C:\Users\gabri\Prointer\Go-Parking\Go-Parking\obj\Debug\Go_Parking.Migrations.ObjetoVagaReserva.resources
-=======
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\ApplicationInsights.config
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\roslyn\csc.exe
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\roslyn\Microsoft.CodeAnalysis.dll
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\roslyn\Microsoft.CSharp.Core.targets
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\roslyn\Microsoft.VisualBasic.Core.targets
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\roslyn\System.Collections.Immutable.dll
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\roslyn\System.Reflection.Metadata.dll
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\roslyn\vbc.exe
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\roslyn\VBCSCompiler.exe
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\roslyn\VBCSCompiler.exe.config
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\Go-Parking.dll.config
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\Go-Parking.dll
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\Go-Parking.pdb
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\Antlr3.Runtime.dll
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\EntityFramework.dll
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\EntityFramework.SqlServer.dll
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\Microsoft.AI.Agent.Intercept.dll
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\Microsoft.AI.DependencyCollector.dll
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\Microsoft.AI.PerfCounterCollector.dll
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\Microsoft.AI.ServerTelemetryChannel.dll
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\Microsoft.AI.Web.dll
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\Microsoft.AI.WindowsServer.dll
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\Microsoft.ApplicationInsights.dll
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\Microsoft.AspNet.Identity.Core.dll
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\Microsoft.AspNet.Identity.EntityFramework.dll
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\Microsoft.AspNet.Identity.Owin.dll
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\Microsoft.Owin.dll
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\Microsoft.Owin.Host.SystemWeb.dll
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\Microsoft.Owin.Security.Cookies.dll
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\Microsoft.Owin.Security.dll
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\Microsoft.Owin.Security.Facebook.dll
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\Microsoft.Owin.Security.Google.dll
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\Microsoft.Owin.Security.OAuth.dll
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\Microsoft.Owin.Security.Twitter.dll
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\Microsoft.Web.Infrastructure.dll
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\Newtonsoft.Json.dll
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\Owin.dll
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\System.Web.Helpers.dll
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\System.Web.Mvc.dll
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\System.Web.Optimization.dll
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\System.Web.Razor.dll
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\System.Web.WebPages.Deployment.dll
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\System.Web.WebPages.dll
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\System.Web.WebPages.Razor.dll
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\WebGrease.dll
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\Microsoft.AI.DependencyCollector.xml
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\Microsoft.AI.ServerTelemetryChannel.xml
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\Microsoft.AI.Web.xml
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\Microsoft.AI.WindowsServer.xml
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\Microsoft.ApplicationInsights.xml
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\System.Web.Helpers.xml
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\System.Web.Mvc.xml
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\System.Web.Optimization.xml
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\System.Web.Razor.xml
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\System.Web.WebPages.xml
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\System.Web.WebPages.Deployment.xml
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\System.Web.WebPages.Razor.xml
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\Antlr3.Runtime.pdb
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\Newtonsoft.Json.xml
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\EntityFramework.xml
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\EntityFramework.SqlServer.xml
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\Microsoft.AspNet.Identity.Core.xml
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\Microsoft.AspNet.Identity.Owin.xml
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\Microsoft.AspNet.Identity.EntityFramework.xml
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\Microsoft.Owin.xml
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\Microsoft.Owin.Host.SystemWeb.xml
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\Microsoft.Owin.Security.xml
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\Microsoft.Owin.Security.Facebook.xml
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\Microsoft.Owin.Security.Cookies.xml
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\Microsoft.Owin.Security.OAuth.xml
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\Microsoft.Owin.Security.Google.xml
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\Microsoft.Owin.Security.Twitter.xml
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\pt-br\System.Web.Helpers.resources.dll
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\pt-br\System.Web.Mvc.resources.dll
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\pt-br\System.Web.Razor.resources.dll
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\pt-br\System.Web.WebPages.resources.dll
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\pt-br\System.Web.WebPages.Deployment.resources.dll
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\bin\pt-br\System.Web.WebPages.Razor.resources.dll
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\obj\Debug\Go-Parking.csprojResolveAssemblyReference.cache
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\obj\Debug\Go_Parking.Migrations.InitialCreate.resources
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\obj\Debug\Go_Parking.Migrations.initial.resources
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\obj\Debug\Go_Parking.Migrations.cadastroFuncionario.resources
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\obj\Debug\Go_Parking.Migrations.role.resources
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\obj\Debug\Go_Parking.Migrations.veiculo.resources
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\obj\Debug\Go_Parking.Migrations.novaTabela.resources
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\obj\Debug\Go_Parking.Migrations.vaga.resources
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\obj\Debug\Go_Parking.Migrations.AlteracaoIDVaga.resources
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\obj\Debug\Go_Parking.Migrations.idveiculo.resources
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\obj\Debug\Go_Parking.Migrations.DataHoraVagas.resources
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\obj\Debug\Go_Parking.Migrations.AlteraçãoNaClasseData.resources
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\obj\Debug\Go-Parking.csproj.GenerateResource.cache
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\obj\Debug\Go-Parking.csproj.CoreCompileInputs.cache
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\obj\Debug\Go-Parking.csproj.CopyComplete
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\obj\Debug\Go-Parking.dll
-E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\obj\Debug\Go-Parking.pdb
->>>>>>> 9b72d1565b1726440ff22bb577134bfc4ec2b79f
+C:\Users\gabri\Prointer\Go-Parking\Go-Parking\obj\Debug\Go-Parking.csproj.GenerateResource.Cache
+C:\Users\gabri\Prointer\Go-Parking\Go-Parking\obj\Debug\Go-Parking.dll
+C:\Users\gabri\Prointer\Go-Parking\Go-Parking\obj\Debug\Go-Parking.pdb

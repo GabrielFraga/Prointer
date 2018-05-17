@@ -1388,10 +1388,72 @@ pre code {
   overflow-y: scroll;
 }
 .container {
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
+display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.container input {
+  position: relative;
+  opacity: 0;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 45px;
+  width: 300px;
+  background-color: #eee;
+  border-radius: 5px 5px;
+ 
+}
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+/* When the radio button is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:before {
+  top: 12px;
+  bottom:9px;
+  width: 300px;
+  height: 35px;
+  content:"Selecionar vaga";
+  position: absolute;
+  display: block;
+}
+.checkmark:after {
+ 
+  content:"Vaga selecionada";
+  position: absolute;
+  display: none;
+}
+.container input:checked ~ .checkmark:before {
+  display: none;
+}
+/* Show the indicator (dot/circle) when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+/* Style the indicator (dot/circle) */
+.container .checkmark:after {
+  top: 12px;
+  bottom:9px;
+  width: 300px;
+  height: 35px;
 }
 @media (min-width: 768px) {
   .container {
@@ -1762,6 +1824,7 @@ pre code {
   }
   .col-md-6 {
     width: 50%;
+    text-align: -webkit-center;
   }
   .col-md-5 {
     width: 41.66666667%;
@@ -4649,8 +4712,8 @@ a.list-group-item.active > .badge,
   margin-left: 3px;
 }
 .jumbotron {
-  padding: 30px 15px;
-  margin-bottom: 30px;
+  padding: 20px 15px;
+  margin-bottom: 15px;
   color: inherit;
   background-color: #eee;
 }
@@ -5101,6 +5164,7 @@ a.list-group-item-danger.active:focus {
 }
 .panel-body {
   padding: 15px;
+  
 }
 .panel-heading {
   padding: 10px 15px;
@@ -6120,6 +6184,13 @@ button.close {
   margin-right: auto;
   margin-left: auto;
 
+}
+.central{
+  position: absolute;
+top: 0; bottom: 0;
+left: 0; right: 0;
+margin: auto;
+min-height:15px;
 }
 .pull-right {
   float: right !important;

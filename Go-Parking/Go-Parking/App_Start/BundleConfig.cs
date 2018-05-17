@@ -31,6 +31,8 @@ namespace Go_Parking
                       "~/Content/bootstrap.css",
                       "~/Content/dashboard.css", //added
                       "~/Content/bootstrap-datetimepicker.css",
+                      "~/Content/buttons.dataTables.min.css",
+                      "~/Content/DataTables/css/jquery.dataTables.css",
                       "~/Content/site.css"));
         }
     }

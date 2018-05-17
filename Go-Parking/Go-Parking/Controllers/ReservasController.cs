@@ -8,6 +8,7 @@ using Microsoft.AspNet.Identity;
 
 namespace Go_Parking.Controllers
 {
+    [Authorize]
     public class ReservasController : Controller
     {
         ApplicationDbContext db = new ApplicationDbContext();
@@ -17,11 +18,13 @@ namespace Go_Parking.Controllers
         {
             var usuarioId = User.Identity.GetUserId();
 
-            var model = new FazerReserva();
-            model.Vagas = db.Vagas.ToList();
-            model.Veiculos = db.Veiculos
+            var model = new FazerReserva
+            {
+                Vagas = db.Vagas.ToList(),
+                Veiculos = db.Veiculos
                          .Where(v => v.UserId == usuarioId)
-                         .Select(v => new SelectListItem() { Value = v.Id.ToString(), Text = v.Modelo });
+                         .Select(v => new SelectListItem() { Value = v.Id.ToString(), Text = v.Modelo })
+            };
             return View(model);
         }
 
@@ -49,6 +52,7 @@ namespace Go_Parking.Controllers
         public ActionResult Detalhes()
         {
             var model = db.Reservas;
+
             return View(model.ToList());
         }
 
