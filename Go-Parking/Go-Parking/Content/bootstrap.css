@@ -904,7 +904,7 @@ body {
   font-size: 14px;
   line-height: 1.42857143;
   color: #333;
-  background-color: #fff;
+  background-color: #f0f3f4;
 }
 input,
 button,
@@ -1394,10 +1394,12 @@ display: block;
   margin-bottom: 12px;
   cursor: pointer;
   font-size: 16px;
+  color:#333;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  font-weight:bold;
 }
 
 /* Hide the browser's default radio button */
@@ -1405,31 +1407,46 @@ display: block;
   position: relative;
   opacity: 0;
 }
-
+.vaga{
+    padding-top:15px;
+    padding-left:5px;
+    padding-right:15px;
+    padding-bottom:60px;
+    margin:15px;
+    background-color: #fff;
+        box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),
+                    0 3px 1px -2px rgba(0,0,0,.2),
+                    0 1px 5px 0 rgba(0,0,0,.12);
+}
 /* Create a custom radio button */
 .checkmark {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 15px;
+  left: -20px;
   height: 45px;
-  width: 300px;
-  background-color: #eee;
-  border-radius: 5px 5px;
+  width: 283px;
+  background-color: #bbffbc;
+  
  
 }
 /* On mouse-over, add a grey background color */
 .container:hover input ~ .checkmark {
-  background-color: #ccc;
+  background-color:#44c55e;
 }
 /* When the radio button is checked, add a blue background */
 .container input:checked ~ .checkmark {
-  background-color: #2196F3;
+  background-color: #13d43a;
+  color:#fff;
 }
+.container vaga ~.checkmark{
+    padding-bottom:300px;
+}
+
 /* Create the indicator (the dot/circle - hidden when not checked) */
 .checkmark:before {
   top: 12px;
   bottom:9px;
-  width: 300px;
+  width: 100%;
   height: 35px;
   content:"Selecionar vaga";
   position: absolute;
@@ -1452,7 +1469,7 @@ display: block;
 .container .checkmark:after {
   top: 12px;
   bottom:9px;
-  width: 300px;
+  width: 100%;
   height: 35px;
 }
 @media (min-width: 768px) {
@@ -2378,7 +2395,6 @@ label {
   display: inline-block;
   max-width: 100%;
   margin-bottom: 5px;
-  font-weight: bold;
 }
 input[type="search"] {
   -webkit-box-sizing: border-box;
@@ -2864,6 +2880,30 @@ select[multiple].form-group-lg .form-control {
   background-image: none;
   border: 1px solid transparent;
   border-radius: 4px;
+}
+.btn-reservar {
+ display: inline-block;
+  padding: 16px 70px 16px 70px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  box-shadow:0 2px 2px 0 rgba(0,0,0,.14),
+             0 3px 1px -2px rgba(0,0,0,.2),
+             0 1px 5px 0 rgba(0,0,0,.12);
+
 }
 .btn:focus,
 .btn:active:focus,
@@ -3650,6 +3690,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .input-group-btn,
 .input-group .form-control {
   display: table-cell;
+    left:20px;
 }
 .input-group-addon:not(:first-child):not(:last-child),
 .input-group-btn:not(:first-child):not(:last-child),
@@ -4713,9 +4754,12 @@ a.list-group-item.active > .badge,
 }
 .jumbotron {
   padding: 20px 15px;
-  margin-bottom: 15px;
+  margin: 15px;
   color: inherit;
-  background-color: #eee;
+  background-color: #fff;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),
+       0 3px 1px -2px rgba(0,0,0,.2),
+       0 1px 5px 0 rgba(0,0,0,.12);
 }
 .jumbotron h1,
 .jumbotron .h1 {
@@ -4728,11 +4772,10 @@ a.list-group-item.active > .badge,
 }
 .jumbotron > hr {
   border-top-color: #d5d5d5;
-}
-.container .jumbotron,
+}/*.container .jumbotron,
 .container-fluid .jumbotron {
   border-radius: 6px;
-}
+}*/
 .jumbotron .container {
   max-width: 100%;
 }
@@ -4754,7 +4797,7 @@ a.list-group-item.active > .badge,
   padding: 4px;
   margin-bottom: 20px;
   line-height: 1.42857143;
-  background-color: #fff;
+  background-color: #eee;
   border: 1px solid #ddd;
   border-radius: 4px;
   -webkit-transition: border .2s ease-in-out;

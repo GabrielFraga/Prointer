@@ -7897,11 +7897,11 @@
     factory(moment);
 }(function (moment) {
     return moment.defineLocale('pt-br', {
-        months : 'janeiro_fevereiro_março_abril_maio_junho_julho_agosto_setembro_outubro_novembro_dezembro'.split('_'),
-        monthsShort : 'jan_fev_mar_abr_mai_jun_jul_ago_set_out_nov_dez'.split('_'),
-        weekdays : 'domingo_segunda-feira_terça-feira_quarta-feira_quinta-feira_sexta-feira_sábado'.split('_'),
-        weekdaysShort : 'dom_seg_ter_qua_qui_sex_sáb'.split('_'),
-        weekdaysMin : 'dom_2ª_3ª_4ª_5ª_6ª_sáb'.split('_'),
+        months : 'janeiro_fevereiro_março_abril_Maio_Junho_julho_agosto_setembro_outubro_novembro_dezembro'.split('_'),
+        monthsShort : 'jan_fev_mar_abr_Mai_Jun_jul_ago_set_out_nov_dez'.split('_'),
+        weekdays : 'Domingo_Segunda-feira_Terça-feira_Quarta-feira_Quinta-feira_Sexta-feira_Sábado'.split('_'),
+        weekdaysShort : 'Dom_Seg_Ter_Qua_Qui_Sex_Sáb'.split('_'),
+        weekdaysMin : 'DOM_SEG_TER_QUA_QUI_SEX_SÁB'.split('_'),
         longDateFormat : {
             LT : 'HH:mm',
             LTS : 'LT:ss',

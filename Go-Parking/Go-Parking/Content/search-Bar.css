@@ -1,10 +1,7 @@
-﻿/*
- * Base structure
- */
-
-/* Move down content because we have a fixed navbar that is 50px tall */
+﻿/* Move down content because we have a fixed navbar that is 50px tall */
 body {
     padding-top: 50px;
+    
 }
 
 
@@ -25,30 +22,24 @@ body {
     border: 0;
 }
 
-/*
- * Sidebar
- */
 
-/* Hide for mobile, show later */
-.sidebar {
+.middlebar {
     display: none;
 }
 
-@media (min-width: 768px) {
-    .sidebar {
+@media (min-width: 100px) {
+    .middlebar {
         position: fixed;
-        top: 50px;
-        bottom: 0;
-        left: 0;
-        z-index: 1000;
+        top: 47px;
+        bottom: 410px;
+        left: 226px;
+        z-index: 998;
         display: block;
         padding: 20px;
-        overflow-x: hidden;
-        overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
         background-color: #fff;
-        box-shadow: 1px 0px 3px 4px rgba(0, 0, 0, 0), 
-                    0 3px 1px -2px rgba(0,0,0,.2), 
-                    0 1px 5px 0 rgba(0,0,0,.12);
+        box-shadow:0 2px 2px 0 rgba(0,0,0,.14),
+                   0 1px 5px 0 rgba(0,0,0,.12);
+        colo
     }
 }
 
@@ -87,13 +78,15 @@ body {
  */
 
 .main {
-    padding: 20px;
+    padding: 40px;
 }
 
 @media (min-width: 768px) {
     .main {
         padding-right: 40px;
         padding-left: 40px;
+        padding-top:180px;
+
     }
 }
 
