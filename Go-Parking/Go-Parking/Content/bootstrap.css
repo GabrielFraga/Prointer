@@ -904,7 +904,7 @@ body {
   font-size: 14px;
   line-height: 1.42857143;
   color: #cacaca;
-  background-color: #212020;
+  background-color: #212020e6;
 
 
 }
@@ -5747,6 +5747,8 @@ button.close {
     -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
     box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
     overflow:hidden;
+        background-image: linear-gradient(#555,#11111140);
+
 }
 .modal-backdrop {
   position: fixed;
