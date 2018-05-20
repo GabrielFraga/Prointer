@@ -1,5 +1,15 @@
 ﻿@model Go_Parking.Models.Reserva
 
+<head>
+    <script>
+        function funcao1() {
+            alert("Vaga reservada :)");
+        }
+    </script>
+
+</head>
+
+
 <div class="modal show modal-overlay" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -44,7 +54,7 @@
                         <div class="form-group">
                             <div class="col-md-offset-2">
                                 <a href="@Url.Action("Index", "Reservas")">
-                                    <input type="submit" value="Cancelar" class="btn-cancelar pull-left" />
+                                    <input type="submit" value="Cancelar"  name="Cancelar" class="btn-cancelar pull-left" />
                                 </a>
                             </div>
                         </div>
@@ -73,7 +83,7 @@
                         
                         <div class="form-group">
                             <div class="col-md-offset-2">
-                                <input type="submit" value="Confirmar" class="btn-reservar btn-primary" />
+                                <input type="submit" value="Confirmar" onclick="funcao1()" class="btn-reservar btn-primary" />
                             </div>
                         </div>
 
