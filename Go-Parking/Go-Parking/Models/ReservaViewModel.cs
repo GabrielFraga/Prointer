@@ -12,10 +12,20 @@ namespace Go_Parking.Models
     public class FazerReserva
     {
         public List<Reserva> Reservas{ get; set; }
-        public List<Vaga> Vagas { get; set; }
+        public List<Vaga> Vagas { get; set; }        
         public IEnumerable <SelectListItem> Veiculos { get; set; }
         public DateTimeOffset Entrada { get; set; }
         public DateTimeOffset Saida { get; set; }
+        public string Pagamentos { get; set; }
+
+        public List<string> FormasPagamentos()
+        {
+            return new List<string>{
+                {"Dinheiro"},
+                {"Crédito"},
+                {"Débito"}
+            };
+        }
     }
 
     public class Reserva
@@ -28,5 +38,8 @@ namespace Go_Parking.Models
         public  virtual Veiculo Veiculos { get; set; }
         public DateTimeOffset Entrada { get; set; }
         public DateTimeOffset Saida { get; set; }
+        [Display(Name = "Forma de Pagamento")]
+        public string FormaPagamento { get; set; }
+        public double Valor { get; set; }
     }
 }

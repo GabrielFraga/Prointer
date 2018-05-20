@@ -5,7 +5,7 @@
 }
 <div class="modal show" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
-        <div class="modal-content">
+        <div class="modal-content" style="margin: 70px 100px">
             <div class="modal-header">
                 <h2 class="text-center">@ViewBag.Title</h2>
                 <h4 class="text-center">Por favor, preencha os dados.</h4>
@@ -16,25 +16,25 @@
     {
             @Html.AntiForgeryToken()
             @Html.ValidationSummary("", new { @class = "text-danger" })
-            <div class="form-group" style="padding-left:128px">
-                @Html.TextBoxFor(m => m.Nome, new { @class = "form-control input-lg", @placeholder = "Nome" })
+            <div class="form-group" style="padding-left:100px">
+                @Html.TextBoxFor(m => m.Nome, new { @class = "form-control", @placeholder = "Nome" })
             </div>
 
-            <div class="form-group" style="padding-left:128px">
-                @Html.TextBoxFor(m => m.Email, new { @class = "form-control input-lg", @placeholder = "E-mail" })
+            <div class="form-group" style="padding-left:100px">
+                @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @placeholder = "E-mail" })
             </div>
-            <div class="form-group" style="padding-left:128px">
-                @Html.PasswordFor(m => m.Password, new { @class = "form-control input-lg", @placeholder = "Senha" })
+            <div class="form-group" style="padding-left:100px">
+                @Html.PasswordFor(m => m.Password, new { @class = "form-control", @placeholder = "Senha" })
             </div>
-            <div class="form-group" style="padding-left:128px">
-                @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control input-lg", @placeholder = "Confirmação da senha" })
+            <div class="form-group" style="padding-left:100px">
+                @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", @placeholder = "Confirmação da senha" })
             </div>
-            <div class="form-group" style="padding-left:128px">
+            <div class="form-group" style="padding-left:100px">
                 <div>
-                    <input type="submit" class="btn btn-primary btn-lg btn-block" value="Registrar" />
+                    <input type="submit" class="btn btn-padrao" value="Registrar" />
                 </div>
             </div>
-            <!-- <span><p>@Html.ActionLink("Agora não, obrigado!", "Login")</p></span>-->
+            <span><p>@Html.ActionLink("Eu possuo uma conta", "Login")</p></span>
 }
             </div>
         </div>

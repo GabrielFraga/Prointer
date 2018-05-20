@@ -275,6 +275,14 @@
     <Compile Include="Migrations\201805192131529_OcupacaoVagas.Designer.cs">
       <DependentUpon>201805192131529_OcupacaoVagas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805200031188_NovaColuna.cs" />
+    <Compile Include="Migrations\201805200031188_NovaColuna.Designer.cs">
+      <DependentUpon>201805200031188_NovaColuna.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805200343044_ColunaValor.cs" />
+    <Compile Include="Migrations\201805200343044_ColunaValor.Designer.cs">
+      <DependentUpon>201805200343044_ColunaValor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -703,6 +711,7 @@
     <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
     <Content Include="Views\Reservas\Index.cshtml" />
     <Content Include="Views\Reservas\Detalhes.cshtml" />
+    <Content Include="Views\Reservas\_Confirmacao.cshtml" />
     <None Include="Views\Shared\_LoginStart.cshtml" />
     <Content Include="Views\Vagas\Create.cshtml" />
     <Content Include="Views\Vagas\Delete.cshtml" />
@@ -766,6 +775,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805192131529_OcupacaoVagas.resx">
       <DependentUpon>201805192131529_OcupacaoVagas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805200031188_NovaColuna.resx">
+      <DependentUpon>201805200031188_NovaColuna.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805200343044_ColunaValor.resx">
+      <DependentUpon>201805200343044_ColunaValor.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

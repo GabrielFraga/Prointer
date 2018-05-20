@@ -1,0 +1,86 @@
+﻿@model Go_Parking.Models.Reserva
+
+<div class="modal show modal-overlay" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body text-center">
+                <h3>Confirmação de reserva</h3>
+
+                <div class="col-md-6">
+                    <div class="form-group col-md-13">
+                        <table class="table" style="width:100%">
+
+                            <tr>
+                                <td>
+                                    <span style="font-weight:bold" class="pull-left">Nome:</span>
+                                    @Html.DisplayFor(model => model.Veiculos.Users.UserName)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span style="font-weight:bold" class="pull-left">Entrada:</span>
+                                    @Html.DisplayFor(model => model.Entrada.DateTime)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span style="font-weight:bold" class="pull-left">Saída:</span>
+                                    @Html.DisplayFor(model => model.Saida.DateTime)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span style="font-weight:bold" class="pull-left">Veiculo:</span>
+                                    @Html.DisplayFor(model => model.Veiculos.Modelo)
+                                    @Html.DisplayFor(model => model.Veiculos.Placa)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span style="font-weight:bold" class="pull-left">Vaga Selecionada:</span>
+                                    @Html.DisplayFor(model => model.Vagas.Id)
+                                </td>
+                        </table>
+                        <div class="form-group">
+                            <div class="col-md-offset-2">
+                                <a href="@Url.Action("Index", "Reservas")">
+                                    <input type="submit" value="Cancelar" class="btn-cancelar pull-left" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>                  
+
+                </div>
+                <div class="form-group col-md-6">
+                    <span style="font-weight:bold" class="pull-left">Horas Reservadas:</span>
+                    @Session["Diferenca"] Horas
+                </div>
+                <div class="form-group col-md-6">
+                    <span style="font-weight:bold" class="pull-left">Valor Calculado:</span>
+                    R$@Html.DisplayFor(model => model.Valor)
+                </div>
+                
+                    
+                    @using (Html.BeginForm("Confirmacao", "Reservas", FormMethod.Post, new { @class = "form-horizontal" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <div class="form-group col-md-6">
+                            <span style="font-weight:bold" class="pull-left control-label">Forma de Pagamento:</span>
+                            <div class="col-md-6">
+                                @Html.DropDownList("FormaPagamentos", new SelectList(ViewBag.FormaPagamentos, "Value", "Text"), new { @class = "form-control " })
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <div class="col-md-offset-2">
+                                <input type="submit" value="Confirmar" class="btn-reservar btn-primary" />
+                            </div>
+                        </div>
+
+                    }
+              
+
+            </div>
+        </div>
+    </div>
+</div>
