@@ -903,8 +903,10 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
-  color: #9d9d9d;
+  color: #cacaca;
   background-color: #212020;
+
+
 }
 input,
 button,
@@ -1412,9 +1414,11 @@ display: block;
     padding-left:5px;
     padding-right:15px;
     padding-bottom:60px;
-    margin:15px;
-    color:#9d9d9d;
+    margin:12px;
+    color:#cacaca;
     background-color: #333;
+    background-image: linear-gradient(#555,#11111140);
+
         box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),
                     0 3px 1px -2px rgba(0,0,0,.2),
                     0 1px 5px 0 rgba(0,0,0,.12);
@@ -4462,7 +4466,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   color: #ccc;
 }
 .navbar-inverse {
-  background-color: #222;
+  background-color: #151515;
   border-color: #080808;
 }
 .navbar-inverse .navbar-brand {
@@ -4823,6 +4827,8 @@ a.list-group-item.active > .badge,
   margin: 15px;
   color: inherit;
   background-color: #333;
+  background-image: linear-gradient(#555,#11111140);
+
   box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),
        0 3px 1px -2px rgba(0,0,0,.2),
        0 1px 5px 0 rgba(0,0,0,.12);

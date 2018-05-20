@@ -19,7 +19,10 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("GOParking", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                <a href="@Url.Action("Index", "Home")">
+                    <img src="~/Content/imagens/png branco/GOParking4_PNG.png" width="100" height="50" />
+
+                </a>
             </div>
             <div class="navbar-collapse collapse">
                 @Html.Partial("_LoginPartial")
