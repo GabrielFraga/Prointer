@@ -271,6 +271,10 @@
     <Compile Include="Migrations\201805112350167_ObjetoVagaReserva.Designer.cs">
       <DependentUpon>201805112350167_ObjetoVagaReserva.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805192131529_OcupacaoVagas.cs" />
+    <Compile Include="Migrations\201805192131529_OcupacaoVagas.Designer.cs">
+      <DependentUpon>201805192131529_OcupacaoVagas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -631,6 +635,8 @@
     <Content Include="Scripts\jquery-1.12.4.min.js" />
     <Content Include="Scripts\jquery-1.12.4.min.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -698,7 +704,6 @@
     <Content Include="Views\Reservas\Index.cshtml" />
     <Content Include="Views\Reservas\Detalhes.cshtml" />
     <None Include="Views\Shared\_LoginStart.cshtml" />
-    <Content Include="Views\Veiculos\_VeiculosDropDown.cshtml" />
     <Content Include="Views\Vagas\Create.cshtml" />
     <Content Include="Views\Vagas\Delete.cshtml" />
     <Content Include="Views\Vagas\Details.cshtml" />
@@ -758,6 +763,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805112350167_ObjetoVagaReserva.resx">
       <DependentUpon>201805112350167_ObjetoVagaReserva.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805192131529_OcupacaoVagas.resx">
+      <DependentUpon>201805192131529_OcupacaoVagas.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

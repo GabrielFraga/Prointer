@@ -212,3 +212,4 @@ E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\obj\Debug\Go-Pa
 E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\obj\Debug\Go-Parking.csproj.CopyComplete
 E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\obj\Debug\Go-Parking.dll
 E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\obj\Debug\Go-Parking.pdb
+C:\Users\gabri\Prointer\Go-Parking\Go-Parking\obj\Debug\Go_Parking.Migrations.OcupacaoVagas.resources

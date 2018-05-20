@@ -8,22 +8,56 @@
     <script type="text/javascript" src="~/Scripts/bootstrap.min.js"></script>
     <script type="text/javascript" src="~/Scripts/bootstrap-datetimepicker.min.js"></script>
     <link rel="stylesheet" href="~/Content/search-bar.css"/>
+    <script type="text/javascript">
+        $(function () {
+            $('#datetimepicker1').datetimepicker({
+            locale: 'pt-br',
+                useCurrent: 'hour',
+                minDate: moment(),
+                sideBySide: true,
+                format: 'D/MM/YYYY  HH:00',
+                enabledHours: [9, 10, 11, 12, 13, 14, 15, 16]
+            });
+            $('#datetimepicker2').datetimepicker({
+            locale: 'pt-br',
+                minDate: moment(),
+                sideBySide: true,
+                format: 'D/MM/YYYY  HH:00',
+                enabledHours: [9, 10, 11, 12, 13, 14, 15, 16]
+            });
+
+
+        });
+
+        jQuery(function () {
+            jQuery('#Reservar').on('submit', checkRadio);
+        })
+
+        function checkRadio() {
+            var isChecked = jQuery("input[name=Vagas]:checked").val();
+
+            var booleanVlaueIsChecked = false;
+            if (!isChecked) {
+                booleanVlaueIsChecked = true;
+                alert('Selecione uma vaga!');
+                return false;
+            }
+        }
+    </script>
 
 </head>
-
-
-
-@using (Html.BeginForm("Index", "Reservas", FormMethod.Post))
+@using (Html.BeginForm("Index", "Reservas", FormMethod.Post, new { @class = "form-horizontal", role = "form",  id = "Reservar", name ="Reservar"}))
 {
     @Html.AntiForgeryToken()
 
     <div class="col-md-12 col-xl-12 middlebar">
+
         <div class="col-xs-6">
             <h4 class="text-center"> Defina o intervalo de reserva</h4> <br />
-             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
             <div class="form-group">
                 @Html.LabelFor(model => model.Entrada, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class='input-group date' id='datetimepicker1' style="width:70%">
+                <div class='input-group date' id='datetimepicker1'>
                     @Html.EditorFor(model => model.Entrada, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.Entrada, "", new { @class = "text-danger" })
                     <span class="input-group-addon">
@@ -33,7 +67,7 @@
             </div>
             <div class="form-group">
                 @Html.LabelFor(model => model.Saida, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class='input-group date' id='datetimepicker2' style="width:70%">
+                <div class='input-group date' id='datetimepicker2'>
                     @Html.EditorFor(model => model.Saida, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.Saida, "", new { @class = "text-danger" })
                     <span class="input-group-addon">
@@ -42,6 +76,7 @@
                 </div>
             </div>
         </div>
+
         <div class="col-xs-5">
             <h4 class="text-center">Selecione o veículo</h4> <br />
             <div class="col-xs-12">
@@ -52,56 +87,53 @@
                     </div>
                 </div>
             </div>
-        </div>
-
+        </div>        
     </div>
 
-    <div class="col-xs-12">
 
+    <div class="col-xs-12" id="ListaVagas">
         <div class="form group">
-    @{
-        foreach (var vaga in Model.Vagas)
-        {
-            <div class="col-md-4">
-                <div class="vaga">
-                   <h4 class="text-center"> @Html.Label(vaga.Nome)</h4>
-                        <div class="col-md-6">
-                            <label class="container">
-                                @Html.RadioButtonFor(model => model.Vagas, vaga.Id, new { @class = "radio" })
-                                <span class="checkmark"></span>
-                            </label>
-                        </div>                        
-                 </div>          
-        </div>           
-        }
-    }
+            @{
+                foreach (var vaga in Model.Vagas)
+                {
+
+                    <div class="col-md-4">
+                        <div class="vaga">
+                            <h4 class="text-center"> @Html.Label(vaga.Nome)</h4>
+
+                            @if (vaga.Ocupada)
+                            {
+                                <div class="col-md-6">
+                                    <label class="container">
+                                        @Html.RadioButtonFor(model => model.Vagas, vaga.Id, new { @class = "radio" })
+                                        <span class="checkmark disabled"></span>
+                                    </label>
+                                </div>
+
+                            }
+                            else { 
+                            <div class="col-md-6">
+                                <label class="container">
+                                    @Html.RadioButtonFor(model => model.Vagas, vaga.Id, new { @class = "radio" })
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            }
+                        </div>
+                    </div>
+                }
+            }
 
         </div>
     </div>
+
+
+
+
     <div class="form-group">
         <div class="col-md-offset-2">
-            <input type="submit" value="Reservar" class="btn-reservar btn-primary pull-right" />
+            <input type="submit" value="Reservar" id="Reservar" name="Reservar" class="btn-reservar btn-primary pull-right" />
         </div>
     </div>
 
-
-    <script type="text/javascript">
-        $(function () {
-            $('#datetimepicker1').datetimepicker({
-                locale: 'pt-br',
-                useCurrent: 'hour',
-                minDate: moment(),
-                sideBySide: true,
-                format: 'dddd, D [de] MMMM [de] YYYY - HH:00',
-                enabledHours: [9, 10, 11, 12, 13, 14, 15, 16]
-            });
-            $('#datetimepicker2').datetimepicker({
-                locale: 'pt-br',
-                minDate: moment(),
-                sideBySide: true,
-                format: 'dddd, D [de] MMMM [de] YYYY - HH:00',
-                enabledHours: [9, 10, 11, 12, 13, 14, 15, 16]
-            });
-        });
-    </script>
 }

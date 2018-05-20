@@ -14,10 +14,7 @@ namespace Go_Parking.Models
         [Display(Name = "Vaga Id")]
         public int Id { get; set; }
         [Display(Name = "Vaga")]
-        public string Nome { get; set; }       
+        public string Nome { get; set; }
+        public bool Ocupada { get; set; }
     }
-
-
-
-
 }
