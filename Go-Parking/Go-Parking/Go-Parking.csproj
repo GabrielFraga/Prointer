@@ -283,6 +283,22 @@
     <Compile Include="Migrations\201805200343044_ColunaValor.Designer.cs">
       <DependentUpon>201805200343044_ColunaValor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805210005082_correcao.cs" />
+    <Compile Include="Migrations\201805210005082_correcao.Designer.cs">
+      <DependentUpon>201805210005082_correcao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805210015263_correcao2.cs" />
+    <Compile Include="Migrations\201805210015263_correcao2.Designer.cs">
+      <DependentUpon>201805210015263_correcao2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805210212072_correcao3.cs" />
+    <Compile Include="Migrations\201805210212072_correcao3.Designer.cs">
+      <DependentUpon>201805210212072_correcao3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805210242526_correcao4.cs" />
+    <Compile Include="Migrations\201805210242526_correcao4.Designer.cs">
+      <DependentUpon>201805210242526_correcao4.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -712,6 +728,7 @@
     <Content Include="Views\Reservas\Index.cshtml" />
     <Content Include="Views\Reservas\Detalhes.cshtml" />
     <Content Include="Views\Reservas\_Confirmacao.cshtml" />
+    <Content Include="Views\Reservas\Deletar.cshtml" />
     <None Include="Views\Shared\_LoginStart.cshtml" />
     <Content Include="Views\Vagas\Create.cshtml" />
     <Content Include="Views\Vagas\Delete.cshtml" />
@@ -781,6 +798,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805200343044_ColunaValor.resx">
       <DependentUpon>201805200343044_ColunaValor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805210005082_correcao.resx">
+      <DependentUpon>201805210005082_correcao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805210015263_correcao2.resx">
+      <DependentUpon>201805210015263_correcao2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805210212072_correcao3.resx">
+      <DependentUpon>201805210212072_correcao3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805210242526_correcao4.resx">
+      <DependentUpon>201805210242526_correcao4.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -42,22 +42,12 @@ namespace Go_Parking.Models
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions
-                .Remove<PluralizingTableNameConvention>();
-            modelBuilder.Entity<Veiculo>()
-                .HasKey(p => p.Id);
+                .Remove<PluralizingTableNameConvention>();          
             modelBuilder.Entity<Veiculo>()
                 .Property(p => p.Id)
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
-            modelBuilder.Entity<Veiculo>()
-                .HasRequired(c => c.Users)
-                .WithMany(v => v.Veiculos)
-                .HasForeignKey(v => v.UserId);
-            modelBuilder.Entity<Veiculo>()
-                .HasRequired(c => c.Users)
-                .WithMany(v => v.Veiculos)
-                .HasForeignKey(v => v.UserId)
-                .WillCascadeOnDelete(true);
-            base.OnModelCreating(modelBuilder);
+            base.OnModelCreating(modelBuilder);         
+
         }
 
         public DbSet<Reserva> Reservas { get; set; }

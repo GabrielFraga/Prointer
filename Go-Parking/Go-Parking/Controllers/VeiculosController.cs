@@ -19,7 +19,8 @@ namespace Go_Parking.Controllers
         public ActionResult Index()
         {
             string usuarioId = User.Identity.GetUserId();
-            var veiculos = db.Veiculos.Include(v=>v.Users).Where(v=>v.UserId.Equals(usuarioId));
+            var veiculos = db.Veiculos.Where(v => v.UserId == usuarioId);
+
             return View(veiculos.ToList());
         }
 
@@ -129,7 +130,7 @@ namespace Go_Parking.Controllers
 
             var usuarioId = User.Identity.GetUserId();
 
-            var list = db.Veiculos.Include(v => v.Users)
+            var list = db.Veiculos
                          .Where(v => v.UserId == usuarioId)
                          .Select(v => new SelectListItem() { Value = v.Id.ToString(), Text = v.Modelo });
             ViewBag.Veiculos = list;

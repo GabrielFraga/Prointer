@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using Go_Parking.Models;
 using Microsoft.AspNet.Identity;
 using System.Globalization;
+using System.Net;
 
 namespace Go_Parking.Controllers
 {
@@ -39,28 +40,44 @@ namespace Go_Parking.Controllers
             var VeiculoID = Convert.ToInt32(Request.Form["Veiculos"]);
             var usuarioId = User.Identity.GetUserId();
 
-            model.Vagas= db.Vagas
+            model.UserId = usuarioId;
+
+            model.VagaId = db.Vagas
                       .Where(v => v.Id == VagaID)
-                      .FirstOrDefault();
-             model.Vagas.Ocupada = true;
+                      .Select(v => v.Id)
+                      .FirstOrDefault();         
 
-             model.Veiculos = db.Veiculos
+             model.VeiculoId  = db.Veiculos
                       .Where(v => v.Id == VeiculoID)
+                      .Select(v=> v.Id)
                       .FirstOrDefault();
-            model.Veiculos.Users.UserName = db.Users.Find(usuarioId).UserName;
 
-
-            var j = new FazerReserva();
-            var li = new List<SelectListItem>();
-
-            foreach (var item in j.FormasPagamentos())
-                li.Add(new SelectListItem() { Value = item, Text = item });
-            ViewBag.FormaPagamentos = li;
+            var Pagamentos = new FazerReserva();
+            var listaPagamentos = new List<SelectListItem>();
+            foreach (var item in Pagamentos.FormasPagamentos())
+            listaPagamentos.Add(new SelectListItem() { Value = item, Text = item });
+            ViewBag.FormaPagamentos = listaPagamentos;
 
             var diff = model.Saida.Subtract(model.Entrada).Hours;
-            Session["Diferenca"] = diff;
+            ViewBag.Diferenca = diff;
             model.Valor = 10 * diff;
-            Session["Reserva"] = model;
+
+            ViewBag.VeiculoModelo= db.Veiculos
+                      .Where(v => v.Id == VeiculoID)
+                      .Select(v => v.Modelo)
+                      .FirstOrDefault();
+
+            ViewBag.VeiculoPlaca = db.Veiculos
+                      .Where(v => v.Id == VeiculoID)
+                      .Select(v => v.Placa)
+                      .FirstOrDefault();
+
+            ViewBag.Vaga= db.Vagas
+                      .Where(v => v.Id == VagaID)
+                      .Select(v => v.Nome)
+                      .FirstOrDefault();
+
+            TempData["Reserva"] = model;
 
 
             return View("_Confirmacao", model);
@@ -76,21 +93,60 @@ namespace Go_Parking.Controllers
         [HttpPost]
         public ActionResult Confirmacao()
         {
-                   
-            var model = (Reserva)Session["Reserva"];
-            model.FormaPagamento=(Request.Form["FormaPagamentos"]).ToString();
+                  
+            var model = (Reserva)TempData["Reserva"];
+         //   model.FormaPagamento=(Request.Form["FormaPagamentos"]).ToString();
 
-            db.Reservas.Add(model);
+            var teste = new Reserva();
+            teste = model;        
+                
+            db.Reservas.Add(teste);
             db.SaveChanges();
-            return View("Detalhes");
+
+            return RedirectToAction("Detalhes");
         }
 
-       
+
         public ActionResult Detalhes()
         {
             var model = db.Reservas;
 
             return View(model.ToList());
         }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                db.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        public ActionResult Deletar(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Reserva reserva = db.Reservas.Find(id);
+            if (reserva== null)
+            {
+                return HttpNotFound();
+            }
+            return View(reserva);
+        }
+
+        // POST: Veiculoes/Delete/5
+        [HttpPost, ActionName("Deletar")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            Reserva reserva = db.Reservas.Find(id);
+            db.Reservas.Remove(reserva);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
     }
 }

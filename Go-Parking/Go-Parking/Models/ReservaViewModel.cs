@@ -34,12 +34,19 @@ namespace Go_Parking.Models
         [Key]
         [Display(Name = "Reserva ID")]
         public int Id { get; set; }
-        public  virtual Vaga Vagas { get; set; }
-        public  virtual Veiculo Veiculos { get; set; }
+
         public DateTimeOffset Entrada { get; set; }
         public DateTimeOffset Saida { get; set; }
         [Display(Name = "Forma de Pagamento")]
         public string FormaPagamento { get; set; }
         public double Valor { get; set; }
+
+        public virtual string UserId { get; set; }
+        public virtual int VagaId { get; set; }
+        public virtual int VeiculoId { get; set; }
+
+        public virtual ApplicationUser User { get; set; }
+        public virtual Vaga Vagas { get; set; }
+        public virtual Veiculo Veiculos { get; set; }
     }
 }
