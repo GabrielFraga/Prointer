@@ -1,8 +1,5 @@
 ﻿@model IEnumerable<Go_Parking.Models.Reserva>
-
-@{
-    ViewBag.Title = "Detalhes";
-}
+    
 
 <head>
     <script type="text/javascript" src="~/scripts/jquery-1.12.4.min.js"></script>
@@ -17,75 +14,81 @@
  
 </head>
 
+<div class="jumbotron">
+
+    @{
+        ViewBag.Title = "Detalhes";
+    }
+    <div class="col-xl-12" style="padding:0 20px">
+        <h2>Detalhes</h2>
 
 
-<h2>Detalhes</h2>
+        <table id="reservas" class="table" style="width:100%">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.UserId)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.VagaId)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.VeiculoId)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Entrada)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Saida)
+                    </th>
+                </tr>
+            </thead>
 
+            <tbody>
+                @foreach (var item in Model)
+            {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.UserId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.VagaId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.VeiculoId)
+                        </td>
+                        <td>
 
-<table id="reservas" class="table" style="width:100%">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.UserId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.VagaId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.VeiculoId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Entrada) 
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Saida)
-            </th>
-        </tr>
-    </thead>
-
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.UserId)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.VagaId)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.VeiculoId)
-                </td>
-                <td>
-
-                    @Html.DisplayFor(modelItem => item.Entrada.DateTime)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Saida.DateTime)
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                    @Html.ActionLink("Deletar", "Deletar", new { id = item.Id })
-                </td>
-            </tr>
-        }
-    </tbody>
-
-</table>
-<script type="text/javascript">
-
-    $(document).ready(function () {
-        $('reservas').DataTable({
-            dom: 'Bfrtip',
-            buttons: [{
-                extend: 'excelHtml5',
-                customize: function (xlsx) {
-                    var sheet = xlsx.xl.worksheets['sheet1.xml'];
-
-                    $('row c[r^="C"]', sheet).attr('s', '2');
+                            @Html.DisplayFor(modelItem => item.Entrada.DateTime)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Saida.DateTime)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                            @Html.ActionLink("Deletar", "Deletar", new { id = item.Id })
+                        </td>
+                    </tr>
                 }
-            }]
-        });
-    });
-</script>
+            </tbody>
+
+        </table>
+        <script type="text/javascript">
+
+            $(document).ready(function () {
+                $('reservas').DataTable({
+                    dom: 'Bfrtip',
+                    buttons: [{
+                        extend: 'excelHtml5',
+                        customize: function (xlsx) {
+                            var sheet = xlsx.xl.worksheets['sheet1.xml'];
+
+                            $('row c[r^="C"]', sheet).attr('s', '2');
+                        }
+                    }]
+                });
+            });
+        </script>
+    </div>
+</div>

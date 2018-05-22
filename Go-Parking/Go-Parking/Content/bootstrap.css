@@ -904,7 +904,7 @@ body {
   font-size: 14px;
   line-height: 1.42857143;
   color: #cacaca;
-  background-color: #212020e6;
+  background-color: #a5a5a5;
 
 
 }
@@ -1409,6 +1409,26 @@ display: block;
   position: relative;
   opacity: 0;
 }
+
+.boxPagina {
+  padding: 20px 15px;
+  margin: 15px;
+  color: inherit;
+  background-color: #333;
+  background-image: linear-gradient(#555,#111111c9);
+
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),
+       0 3px 1px -2px rgba(0,0,0,.2),
+       0 1px 5px 0 rgba(0,0,0,.12);
+}
+
+.textoTopo{
+    padding-top:15px;
+    padding-left:15px;
+    padding-right:15px;
+    padding-bottom:255px;
+}
+
 .vaga{
     padding-top:15px;
     padding-left:5px;

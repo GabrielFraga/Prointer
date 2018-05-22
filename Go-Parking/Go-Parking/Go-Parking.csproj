@@ -729,6 +729,7 @@
     <Content Include="Views\Reservas\Detalhes.cshtml" />
     <Content Include="Views\Reservas\_Confirmacao.cshtml" />
     <Content Include="Views\Reservas\Deletar.cshtml" />
+    <Content Include="Views\Account\Funcionario.cshtml" />
     <None Include="Views\Shared\_LoginStart.cshtml" />
     <Content Include="Views\Vagas\Create.cshtml" />
     <Content Include="Views\Vagas\Delete.cshtml" />

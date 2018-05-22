@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -15,6 +16,7 @@ namespace Go_Parking.Models
             Name = role.Name;
         }
         public string Id { get; set; }
+        [Display(Name="Perfil")]
         public string Name { get; set; }
     }
 }

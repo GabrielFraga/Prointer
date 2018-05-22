@@ -16,7 +16,7 @@ namespace Go_Parking.Controllers
         ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Reservas
-        public ActionResult Index(FazerReserva teste)
+        public ActionResult Index()
         {
             var usuarioId = User.Identity.GetUserId();
             var model = new FazerReserva
@@ -27,7 +27,11 @@ namespace Go_Parking.Controllers
                          .Select(v => new SelectListItem() { Value = v.Id.ToString(), Text = v.Modelo }),
                 Reservas = db.Reservas.ToList()         
             };
+         
             
+                      
+
+
             return View(model);
         }
 
@@ -35,7 +39,10 @@ namespace Go_Parking.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Index(Reserva model)
         {
-                      
+                
+
+                                                            
+
             var VagaID = Convert.ToInt32(Request.Form["Vagas"]);
             var VeiculoID = Convert.ToInt32(Request.Form["Veiculos"]);
             var usuarioId = User.Identity.GetUserId();
@@ -95,7 +102,7 @@ namespace Go_Parking.Controllers
         {
                   
             var model = (Reserva)TempData["Reserva"];
-         //   model.FormaPagamento=(Request.Form["FormaPagamentos"]).ToString();
+            model.FormaPagamento=(Request.Form["FormaPagamentos"]).ToString();
 
             var teste = new Reserva();
             teste = model;        
