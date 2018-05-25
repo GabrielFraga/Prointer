@@ -903,8 +903,8 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
-  color: #cacaca;
-  background-color: #a5a5a5;
+  color: #333;
+  background-color: #cfd8dc;
 
 
 }
@@ -1414,8 +1414,8 @@ display: block;
   padding: 20px 15px;
   margin: 15px;
   color: inherit;
-  background-color: #333;
-  background-image: linear-gradient(#555,#111111c9);
+  background-color: #eceff1;
+  /*background-image: linear-gradient(#555,#111111c9);*/
 
   box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),
        0 3px 1px -2px rgba(0,0,0,.2),
@@ -1435,9 +1435,9 @@ display: block;
     padding-right:15px;
     padding-bottom:60px;
     margin:12px;
-    color:#cacaca;
-    background-color: #333;
-    background-image: linear-gradient(#555,#11111140);
+    color:#333;
+    background-color: #eceff1;
+   /* background-image: linear-gradient(#555,#11111140);*/
 
         box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),
                     0 3px 1px -2px rgba(0,0,0,.2),
@@ -1450,17 +1450,17 @@ display: block;
   left: -20px;
   height: 45px;
   width: 283px;
-  background-color: #bbffbc;
+  background-color: #bbe0ff;
   
  
 }
 /* On mouse-over, add a grey background color */
 .container:hover input ~ .checkmark {
-  background-color:#44c55e;
+  background-color:#4c91cc;
 }
 /* When the radio button is checked, add a blue background */
 .container input:checked ~ .checkmark {
-  background-color: #13d43a;
+  background-color: #2e7ec1;
   color:#fff;
 }
 .container vaga ~.checkmark{
@@ -2459,7 +2459,7 @@ output {
 }
 .form-control {
   display: block;
-  width: 100%;
+ /* width: 100%;*/
   height: 34px;
   padding: 6px 12px;
   font-size: 14px;
@@ -3789,7 +3789,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .input-group-addon,
 .input-group-btn {
-  width: 11%;
+  width: 18%;
   white-space: nowrap;
   vertical-align: middle;
 }
@@ -4486,7 +4486,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   color: #ccc;
 }
 .navbar-inverse {
-  background-color: #151515;
+  background-color: #263238;
   border-color: #080808;
 }
 .navbar-inverse .navbar-brand {
@@ -4846,8 +4846,8 @@ a.list-group-item.active > .badge,
   padding: 20px 15px;
   margin: 15px;
   color: inherit;
-  background-color: #333;
-  background-image: linear-gradient(#555,#11111140);
+  background-color: #eceff1;
+ /* background-image: linear-gradient(#555,#11111140);*/
 
   box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),
        0 3px 1px -2px rgba(0,0,0,.2),
@@ -5757,7 +5757,7 @@ button.close {
 }
 .modal-content {
      position: relative; 
-    background-color: #212020;
+    background-color: #eceff1;
     -webkit-background-clip: padding-box;
     background-clip: padding-box;
     border: 1px solid #999;
@@ -5767,7 +5767,7 @@ button.close {
     -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
     box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
     overflow:hidden;
-        background-image: linear-gradient(#555,#11111140);
+        /*background-image: linear-gradient(#555,#11111140);*/
 
 }
 .modal-backdrop {

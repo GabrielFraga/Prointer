@@ -84,7 +84,6 @@ namespace Go_Parking.Models
         [Compare("Password", ErrorMessage = "As senhas não conferem")]
         public string ConfirmPassword { get; set; }
         
-        [Required]
         [Display(Name ="Perfil")]
         public string RoleName { get; set; }
     }

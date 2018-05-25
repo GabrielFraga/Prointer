@@ -45,11 +45,11 @@ body {
         padding: 20px;
         overflow-x: hidden;
         overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
-        background-color: #333;
+        background-color: #37474f;
         box-shadow: 1px 0px 3px 4px rgba(0, 0, 0, 0), 
                     0 3px 1px -2px rgba(0,0,0,.2), 
                     0 1px 5px 0 rgba(0,0,0,.12);
-        background-image: linear-gradient(#555,#11111140);
+      /*  background-image: linear-gradient(#555,#11111140);*/
 
     }
 }
@@ -65,7 +65,7 @@ body {
     .nav-sidebar li a:hover,
     .nav-sidebar li a:focus {
         outline: none;
-        background-color: #333 !important;
+        background-color: #4f646f !important;
         color:#fff;
     }
 

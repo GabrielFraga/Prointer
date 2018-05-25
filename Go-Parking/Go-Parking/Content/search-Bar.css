@@ -36,9 +36,9 @@ body {
         z-index: 998;
         display: block;
         padding: 20px;
-        color:#cacaca;
-        background-color: #333;
-        background-image: linear-gradient(#555,#11111140);
+        color:#333;
+        background-color: #eceff1;
+                   /* background-image: linear-gradient(#555,#11111140);*/
         box-shadow:0 2px 2px 0 rgba(0,0,0,.14),
                    0 1px 5px 0 rgba(0,0,0,.12);
         

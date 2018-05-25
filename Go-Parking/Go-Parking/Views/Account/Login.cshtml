@@ -5,7 +5,7 @@
 @using Go_Parking.Models
 @model LoginViewModel
 
-<div class="modal show modal-fundo" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal show  modal-overlay" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content" style="margin: 70px 100px">
             <div class="modal-header">
@@ -23,12 +23,12 @@
 
                             <div class="form-group" style="padding-left:100px">
 
-                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control col-xl-12 ", @placeholder = "E-mail" })
+                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control col-xl-12 ", @style = "width:100%", @placeholder = "E-mail" })
                                 @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
 
                             </div>
                             <div class="form-group" style="padding-left:100px">
-                                @Html.PasswordFor(m => m.Password, new { @class = "form-control", @placeholder = "Senha" })
+                                @Html.PasswordFor(m => m.Password, new { @class = "form-control", @style="width:100%", @placeholder = "Senha" })
                                 @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
                             </div>
                            

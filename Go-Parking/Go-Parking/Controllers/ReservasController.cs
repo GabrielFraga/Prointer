@@ -27,11 +27,11 @@ namespace Go_Parking.Controllers
                          .Select(v => new SelectListItem() { Value = v.Id.ToString(), Text = v.Modelo }),
                 Reservas = db.Reservas.ToList()         
             };
-         
-            
-                      
 
-
+            var listaHorarios = new List<SelectListItem>();
+            foreach (var item in model.HorasReserva())
+                listaHorarios.Add(new SelectListItem() { Value = item, Text = item });
+            ViewBag.ListaHorarios = listaHorarios;
             return View(model);
         }
 
@@ -39,49 +39,36 @@ namespace Go_Parking.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Index(Reserva model)
         {
-                
+            model.Entrada = model.Entrada.Add(TimeSpan.Parse((Request.Form["ListaEntrada"]).ToString()));
+            model.Saida = model.Saida.Add(TimeSpan.Parse((Request.Form["ListaSaida"]).ToString()));
 
-                                                            
-
-            var VagaID = Convert.ToInt32(Request.Form["Vagas"]);
-            var VeiculoID = Convert.ToInt32(Request.Form["Veiculos"]);
-            var usuarioId = User.Identity.GetUserId();
-
-            model.UserId = usuarioId;
-
-            model.VagaId = db.Vagas
-                      .Where(v => v.Id == VagaID)
-                      .Select(v => v.Id)
-                      .FirstOrDefault();         
-
-             model.VeiculoId  = db.Veiculos
-                      .Where(v => v.Id == VeiculoID)
-                      .Select(v=> v.Id)
-                      .FirstOrDefault();
-
-            var Pagamentos = new FazerReserva();
+            model.VagaId = Convert.ToInt32(Request.Form["Vagas"]);
+            model.VeiculoId = Convert.ToInt32(Request.Form["Veiculos"]);
+            model.UserId = User.Identity.GetUserId();
+                       
+            var modelo = new FazerReserva();
             var listaPagamentos = new List<SelectListItem>();
-            foreach (var item in Pagamentos.FormasPagamentos())
-            listaPagamentos.Add(new SelectListItem() { Value = item, Text = item });
+            foreach (var item in modelo.FormasPagamentos())
+                listaPagamentos.Add(new SelectListItem() { Value = item, Text = item });
             ViewBag.FormaPagamentos = listaPagamentos;
 
-            var diff = model.Saida.Subtract(model.Entrada).Hours;
-            ViewBag.Diferenca = diff;
-            model.Valor = 10 * diff;
+            var tempoReservado = model.Saida.Subtract(model.Entrada).Hours;           
+            ViewBag.TempoReservado = tempoReservado;
+            model.Valor = 10 * tempoReservado;
 
             ViewBag.VeiculoModelo= db.Veiculos
-                      .Where(v => v.Id == VeiculoID)
+                      .Where(v => v.Id == model.VeiculoId)
                       .Select(v => v.Modelo)
                       .FirstOrDefault();
 
             ViewBag.VeiculoPlaca = db.Veiculos
-                      .Where(v => v.Id == VeiculoID)
+                      .Where(v => v.Id == model.VeiculoId)
                       .Select(v => v.Placa)
                       .FirstOrDefault();
 
             ViewBag.Vaga= db.Vagas
-                      .Where(v => v.Id == VagaID)
-                      .Select(v => v.Nome)
+                      .Where(v => v.Id == model.VagaId)
+                    .Select(v => v.Nome)
                       .FirstOrDefault();
 
             TempData["Reserva"] = model;
@@ -102,12 +89,9 @@ namespace Go_Parking.Controllers
         {
                   
             var model = (Reserva)TempData["Reserva"];
-            model.FormaPagamento=(Request.Form["FormaPagamentos"]).ToString();
-
-            var teste = new Reserva();
-            teste = model;        
+            model.FormaPagamento=(Request.Form["FormaPagamentos"]).ToString();                 
                 
-            db.Reservas.Add(teste);
+            db.Reservas.Add(model);
             db.SaveChanges();
 
             return RedirectToAction("Detalhes");

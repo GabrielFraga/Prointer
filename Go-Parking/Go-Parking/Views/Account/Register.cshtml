@@ -3,7 +3,7 @@
     Layout = "~/Views/Shared/_LoginStart.cshtml";
     ViewBag.Title = "Registrar nova conta";
 }
-<div class="modal show modal-fundo" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal show" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content" style="margin: 70px 100px">
             <div class="modal-header">
@@ -17,17 +17,17 @@
             @Html.AntiForgeryToken()
             @Html.ValidationSummary("", new { @class = "text-danger" })
             <div class="form-group" style="padding-left:100px">
-                @Html.TextBoxFor(m => m.Nome, new { @class = "form-control", @placeholder = "Nome" })
+                @Html.TextBoxFor(m => m.Nome, new { @class = "form-control", @style = "width:100%", @placeholder = "Nome" })
             </div>
 
             <div class="form-group" style="padding-left:100px">
-                @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @placeholder = "E-mail" })
+                @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @style = "width:100%", @placeholder = "E-mail" })
             </div>
             <div class="form-group" style="padding-left:100px">
-                @Html.PasswordFor(m => m.Password, new { @class = "form-control", @placeholder = "Senha" })
+                @Html.PasswordFor(m => m.Password, new { @class = "form-control", @style = "width:100%", @placeholder = "Senha" })
             </div>
             <div class="form-group" style="padding-left:100px">
-                @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", @placeholder = "Confirmação da senha" })
+                @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", @style = "width:100%", @placeholder = "Confirmação da senha" })
             </div>
             <div class="form-group" style="padding-left:100px">
                 <div>
