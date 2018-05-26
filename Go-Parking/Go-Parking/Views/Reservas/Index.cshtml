@@ -46,17 +46,28 @@
             }
         }
 
-        function validarData(input) {
-            if (input.value == document.getElementById('Entrada').value) {
-                input.setCustomValidity('Data inválida');
-            } else {
-                input.setCustomValidity('');
+        
+       jQuery(function () {
+            jQuery('#Reservar').on('submit', validarData);
+        })
+
+        function validarData() {
+            entrada = $('#ListaEntrada :selected').text();
+            saida = $('#ListaSaida :selected').text();
+            var diff = parseFloat(saida) - parseFloat(entrada);
+
+            var booleanVlaueIsChecked = false;
+            if (diff <= 0) {
+                booleanVlaueIsChecked = true;
+                alert("Tempo de reserva inválido. Por favor, Tente novamente.");
+                return false;
             }
         }
-    </script>
-
+    </script>    
 </head>
 <body>
+
+
 @using (Html.BeginForm("Index", "Reservas", FormMethod.Post, new { @class = "form-horizontal", role = "form", id = "Reservar", name = "Reservar" }))
 {
     @Html.AntiForgeryToken()
@@ -80,7 +91,7 @@
                 <div class="form-group">
                     @Html.LabelFor(model => model.Saida, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class='input-group date' id='datetimepicker2' name="Saida" oninput="validarData(this)">
-                        @Html.EditorFor(model => model.Saida, new { htmlAttributes = new { @class = "form-control", @style = "width:90%", oninput = "validarData(this)" } })
+                        @Html.EditorFor(model => model.Saida, new { htmlAttributes = new { @class = "form-control", @style = "width:90%"} })
                         @Html.ValidationMessageFor(model => model.Saida, "", new { @class = "text-danger" })
                         <span class="input-group-addon">
                             <span class="glyphicon glyphicon-calendar"></span>
@@ -91,11 +102,11 @@
            <div class="col-md-5"> 
                 <div class="form-group">
                     <label style="font-weight:bold" class="control-label col-md-2">Hora:</label>
-                    @Html.DropDownList("ListaEntrada", new SelectList(ViewBag.ListaHorarios, "Value", "Text"), new { @class = "form-control"})
+                    @Html.DropDownList("ListaEntrada", new SelectList(ViewBag.ListaHorarios, "Value", "Text"), new { @class = "form-control", @Id = "ListaEntrada", @name="ListaEntrada"})
                 </div>
             <div class="form-group">
                 <label style="font-weight:bold" class="control-label col-md-2">Hora:</label>
-                @Html.DropDownList("ListaSaida", new SelectList(ViewBag.ListaHorarios, "Value", "Text"), new { @class = "form-control " })
+                @Html.DropDownList("ListaSaida", new SelectList(ViewBag.ListaHorarios, "Value", "Text"), new { @class = "form-control", @Id = "ListaSaida", @name ="ListaSaida"})
             </div>
            </div> 
         </div>
@@ -111,20 +122,16 @@
                     </div>
                 </div>
             </div>
-        </div>
-    
+        </div> 
 
     <div class="col-xs-12" id="ListaVagas">
         <div class="form group">
             @{
                 foreach (var vaga in Model.Vagas)
                 {
-
                     <div class="col-md-4">
                         <div class="vaga">
                             <h4 class="text-center"> @Html.Label(vaga.Nome)</h4>
-
-
                             <div class="col-md-6">
                                 <label class="container">
                                     @Html.RadioButtonFor(model => model.Vagas, vaga.Id, new { @class = "radio" })

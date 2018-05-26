@@ -1,9 +1,11 @@
-﻿@{
+﻿@model Go_Parking.Models.LoginViewModel
+
+
+@{
     Layout = "~/Views/Shared/_LoginStart.cshtml";
 }
 
-@using Go_Parking.Models
-@model LoginViewModel
+
 
 <div class="modal show  modal-overlay" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
@@ -39,7 +41,10 @@
                             </div>
                             <p>
                                 <span>
-                            <p>@Html.ActionLink("Esqueceu sua senha?", "ForgotPassword")</p></span>
+                            <p>
+                             @Html.ActionLink("Esqueceu sua senha?", "ForgotPassword")
+                            </p>
+                            </span>
                             <span><p>@Html.ActionLink("Registrar uma nova conta!", "Register")</p></span>
                             </p>
                         </div>
