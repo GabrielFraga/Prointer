@@ -54,6 +54,10 @@
         function validarData() {
             entrada = $('#ListaEntrada :selected').text();
             saida = $('#ListaSaida :selected').text();
+
+
+
+
             var diff = parseFloat(saida) - parseFloat(entrada);
 
             var booleanVlaueIsChecked = false;
@@ -73,13 +77,13 @@
     @Html.AntiForgeryToken()
 
     <div class="col-md-12 middlebar">
-        <div class="col-md-7">
-            <h4 class="text-center"> Defina o intervalo de reserva</h4> <br />
-            <div class="col-md-5">
+        <div class="col-md-12" style="margin-left:110px">
+            <h4 style="margin-left:320px">Agendamento de reserva</h4> <br />
+            <div class="col-md-3">
 
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 <div class="form-group">
-                    @Html.LabelFor(model => model.Entrada, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.LabelFor(model => model.Entrada, htmlAttributes: new { @class = "control-label col-md-2", @style = "font-weight:bold" })
                     <div class='input-group date' id='datetimepicker1' name="Entrada">
                         @Html.EditorFor(model => model.Entrada, new { htmlAttributes = new { @class = "form-control", @style = "width:90%"} })
                         @Html.ValidationMessageFor(model => model.Entrada, "", new { @class = "text-danger" })
@@ -89,8 +93,8 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    @Html.LabelFor(model => model.Saida, htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class='input-group date' id='datetimepicker2' name="Saida" oninput="validarData(this)">
+                    @Html.LabelFor(model => model.Saida, htmlAttributes: new { @class = "control-label col-md-2", @style = "font-weight:bold" })
+                    <div class='input-group date' id='datetimepicker2' name="Saida" >
                         @Html.EditorFor(model => model.Saida, new { htmlAttributes = new { @class = "form-control", @style = "width:90%"} })
                         @Html.ValidationMessageFor(model => model.Saida, "", new { @class = "text-danger" })
                         <span class="input-group-addon">
@@ -99,31 +103,35 @@
                     </div>
                 </div>
             </div>
-           <div class="col-md-5"> 
+           <div class="col-md-1"> 
                 <div class="form-group">
-                    <label style="font-weight:bold" class="control-label col-md-2">Hora:</label>
+                 <!--    <label style="font-weight:bold" class="control-label col-md-2">Hora:</label>-->
                     @Html.DropDownList("ListaEntrada", new SelectList(ViewBag.ListaHorarios, "Value", "Text"), new { @class = "form-control", @Id = "ListaEntrada", @name="ListaEntrada"})
                 </div>
             <div class="form-group">
-                <label style="font-weight:bold" class="control-label col-md-2">Hora:</label>
+             <!--   <label style="font-weight:bold" class="control-label col-md-2">Hora:</label>-->
                 @Html.DropDownList("ListaSaida", new SelectList(ViewBag.ListaHorarios, "Value", "Text"), new { @class = "form-control", @Id = "ListaSaida", @name ="ListaSaida"})
             </div>
-           </div> 
-        </div>
-
-            <div class="col-md-3">
-                <h4 class="text-center">Selecione o veículo</h4> <br />
-                <div class="col-xs-12">
-                    <div class="form group ">
-                        @Html.LabelFor(model => model.Veiculos, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
-                            @Html.DropDownList("Veiculos", Model.Veiculos, new { @class = "form-control " })
-                        </div>
+           </div>
+            
+            <div class="col-md-4">
+                <div class="form group ">
+                    @Html.LabelFor(model => model.Veiculos, htmlAttributes: new { @class = "control-label col-md-2", @style = "font-weight:bold" })
+                    <div class="col-md-10">
+                        @Html.DropDownList("Veiculos", Model.Veiculos, new { @class = "form-control " })
                     </div>
                 </div>
-            </div>
-        </div> 
+                </div> 
+        </div>
 
+            <!--   <div class="col-md-3">
+                <h4 class="text-center">Selecione o veículo</h4> <br />
+                <div class="col-xs-12">
+                   
+                </div>
+            </div>
+             -->
+</div>
     <div class="col-xs-12" id="ListaVagas">
         <div class="form group">
             @{

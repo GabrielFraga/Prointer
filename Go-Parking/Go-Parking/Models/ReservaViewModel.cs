@@ -13,6 +13,7 @@ namespace Go_Parking.Models
     {
         public List<Reserva> Reservas{ get; set; }
         public List<Vaga> Vagas { get; set; }        
+        [Display(Name ="Veículo")]
         public IEnumerable <SelectListItem> Veiculos { get; set; }
         public DateTimeOffset Entrada { get; set; }
         public DateTimeOffset Saida { get; set; }

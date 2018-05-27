@@ -31,7 +31,7 @@ namespace Go_Parking.Controllers
                 Vagas = db.Vagas.ToList(), //Lista de vagas vinda do banco
                 Veiculos = db.Veiculos     //Lista de veículos que possuíem o id do usuário (Veículos do usuário logado)
                          .Where(v => v.UserId == usuarioId)
-                         .Select(v => new SelectListItem() { Value = v.Id.ToString(), Text = v.Modelo }),
+                         .Select(v => new SelectListItem() { Value = v.Id.ToString(), Text = v.Modelo +" - "+ v.Placa }),
                 Reservas = db.Reservas.ToList()         
             };
 
