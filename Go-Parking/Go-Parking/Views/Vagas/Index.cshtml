@@ -7,14 +7,16 @@
     <h2>Vagas</h2>
 
     <p>
-        @Html.ActionLink("Cadastrar vaga", "Create")
+        @Html.ActionLink("Cadastrar vaga", "Cadastrar")
     </p>
     <table class="table">
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Nome)
             </th>
-            <th></th>
+            <th>
+                @Html.DisplayNameFor(model=> model.Porte)
+            </th>
         </tr>
 
         @foreach (var item in Model)
@@ -24,9 +26,12 @@
                     @Html.DisplayFor(modelItem => item.Nome)
                 </td>
                 <td>
-                    @Html.ActionLink("Editar", "Edit", new { id = item.Id }) |
-                    @Html.ActionLink("Detalhes", "Details", new { id = item.Id }) |
-                    @Html.ActionLink("Deletar", "Delete", new { id = item.Id })
+                    @Html.DisplayFor(modelItem => item.Porte)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Editar", new { id = item.Id }) |
+                    @Html.ActionLink("Detalhes", "Detalhes", new { id = item.Id }) |
+                    @Html.ActionLink("Deletar", "Deletar", new { id = item.Id })
                 </td>
             </tr>
         }

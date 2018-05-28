@@ -41,6 +41,15 @@ namespace Go_Parking.Models
         
     }
 
+    public class Pesquisa
+    {
+        public DateTimeOffset DataEntrada { get; set; }
+        public DateTimeOffset DataSaida { get; set; }
+        public string VeiculoId { get; set; }
+        public string HoraEntrada { get; set; }
+        public string HoraSaida { get; set; }
+    }
+
     public class Reserva
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -58,8 +67,6 @@ namespace Go_Parking.Models
         public virtual int VagaId { get; set; }
         public virtual int VeiculoId { get; set; }
 
-        public virtual ApplicationUser User { get; set; }
-        public virtual Vaga Vagas { get; set; }
-        public virtual Veiculo Veiculos { get; set; }
+       
     }
 }

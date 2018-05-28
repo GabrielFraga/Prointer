@@ -25,48 +25,7 @@ namespace Go_Parking.Controllers
         }
 
         // GET: Veiculoes/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Veiculo veiculo = db.Veiculos.Find(id);
-            if (veiculo == null)
-            {
-                return HttpNotFound();
-            }
-            return View(veiculo);
-        }
-
-        // GET: Veiculoes/Create
-        public ActionResult Create()
-        {
-            
-            ViewBag.UserId = new SelectList(db.Users, "Id", "Email");
-            return View();
-        }
-
-        // POST: Veiculoes/Create
-        // To protect from overposting attacks, pleasse enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Modelo,placa,UserId")] Veiculo veiculo)
-        {
-            if (ModelState.IsValid)
-            {
-                veiculo.UserId = User.Identity.GetUserId();
-                db.Veiculos.Add(veiculo);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            ViewBag.UserId = new SelectList(db.Users, "Id", "Email");
-            return View(veiculo);
-        }
-
-        // GET: Veiculoes/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult Detalhes(int? id)
         {
             if (id == null)
             {
@@ -81,15 +40,71 @@ namespace Go_Parking.Controllers
             return View(veiculo);
         }
 
-        // POST: Veiculoes/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // GET: Veiculos/Cadastrar
+        public ActionResult Cadastrar()
+        {
+            var Lista = new List<string>()
+        {
+                {"Carro"},{"Moto"}
+        };
+            var ListaPortes = new List<SelectListItem>();
+            foreach (var item in Lista)
+                ListaPortes.Add(new SelectListItem() { Value = item, Text = item}); //Preenche a lista com os portes presentes
+            ViewBag.ListaPortes = ListaPortes;
+            return View();
+        }
+
+        // POST: Veiculos/Cadastrar
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Modelo,placa,UserId")] Veiculo veiculo)
+        public ActionResult Cadastrar([Bind(Include = "Id,Modelo,Placa,Porte")] Veiculo veiculo)
         {
             if (ModelState.IsValid)
             {
+                veiculo.UserId = User.Identity.GetUserId();
+                db.Veiculos.Add(veiculo);
+                db.SaveChanges();
+                return RedirectToAction("Index"); 
+            }
+            ViewBag.UserId = new SelectList(db.Users, "Id", "Email");
+            return View(veiculo);
+        }
+
+        // GET: Veiculos/Editar/5
+        public ActionResult Editar(int? id)
+        {
+
+            var Lista = new List<string>()
+             {
+                {"Carro"},{"Moto"}
+              };
+            var ListaPortes = new List<SelectListItem>();
+            foreach (var item in Lista)
+                ListaPortes.Add(new SelectListItem() { Value = item, Text = item }); //Preenche a lista com os portes presentes
+            ViewBag.ListaPortes = ListaPortes;
+
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Veiculo veiculo = db.Veiculos.Find(id);
+            if (veiculo == null)
+            {
+                return HttpNotFound();
+            }
+            return View(veiculo);
+        }
+
+        // POST: Veiculos/Editar/5
+      
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Editar([Bind(Include = "Id,Modelo,Placa,Porte")] Veiculo veiculo)
+        {
+            if (ModelState.IsValid)
+            {
+                veiculo.UserId = User.Identity.GetUserId();
                 db.Entry(veiculo).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -98,8 +113,8 @@ namespace Go_Parking.Controllers
             return View(veiculo);
         }
 
-        // GET: Veiculoes/Delete/5
-        public ActionResult Delete(int? id)
+        // GET: Veiculoe/Deletar/5
+        public ActionResult Deletar(int? id)
         {
             if (id == null)
             {
@@ -114,7 +129,7 @@ namespace Go_Parking.Controllers
         }
 
         // POST: Veiculoes/Delete/5
-        [HttpPost, ActionName("Delete")]
+        [HttpPost, ActionName("Deletar")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {

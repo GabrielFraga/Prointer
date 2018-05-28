@@ -15,17 +15,21 @@
             $('#datetimepicker1').datetimepicker({
                 locale: 'pt-br',
                 useCurrent: 'hour',
-                minDate: moment(),
+              //  minDate: moment(),
                 sideBySide: true,
-                format: 'D/MM/YYYY',
-                enabledHours: [9, 10, 11, 12, 13, 14, 15, 16]
+                format: 'DD/MM/YYYY',
+                enabledHours: [9, 10, 11, 12, 13, 14, 15, 16],
+             
+            });
+            $("#datetimepicker1").on("dp.change", function (e) {
+                $('#datetimepicker2').data("DateTimePicker").minDate(e.date);
             });
             $('#datetimepicker2').datetimepicker({
                 locale: 'pt-br',
-                minDate: moment(),
-                sideBySide: true,
-                format: 'D/MM/YYYY',
+                //minDate: $('#datetimepicker2').datetimepicker('option', 'minDate'),
+                format: 'DD/MM/YYYY',
                 enabledHours: [9, 10, 11, 12, 13, 14, 15, 16]
+               
             });
 
 
@@ -124,13 +128,7 @@
                 </div> 
         </div>
 
-            <!--   <div class="col-md-3">
-                <h4 class="text-center">Selecione o veículo</h4> <br />
-                <div class="col-xs-12">
-                   
-                </div>
-            </div>
-             -->
+          
 </div>
     <div class="col-xs-12" id="ListaVagas">
         <div class="form group">
@@ -139,7 +137,7 @@
                 {
                     <div class="col-md-4">
                         <div class="vaga">
-                            <h4 class="text-center"> @Html.Label(vaga.Nome)</h4>
+                            <h4 class="text-center"> @Html.Label(vaga.Nome) | @Html.Label(vaga.Porte) </h4>
                             <div class="col-md-6">
                                 <label class="container">
                                     @Html.RadioButtonFor(model => model.Vagas, vaga.Id, new { @class = "radio" })

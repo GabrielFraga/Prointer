@@ -299,6 +299,10 @@
     <Compile Include="Migrations\201805210242526_correcao4.Designer.cs">
       <DependentUpon>201805210242526_correcao4.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805271624261_NovasColunas.cs" />
+    <Compile Include="Migrations\201805271624261_NovasColunas.Designer.cs">
+      <DependentUpon>201805271624261_NovasColunas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -719,10 +723,10 @@
     <Content Include="Views\Role\Details.cshtml" />
     <Content Include="Views\Role\Delete.cshtml" />
     <Content Include="Views\Funcionario\Index.cshtml" />
-    <Content Include="Views\Veiculos\Create.cshtml" />
-    <Content Include="Views\Veiculos\Delete.cshtml" />
-    <Content Include="Views\Veiculos\Details.cshtml" />
-    <Content Include="Views\Veiculos\Edit.cshtml" />
+    <Content Include="Views\Veiculos\Cadastrar.cshtml" />
+    <Content Include="Views\Veiculos\Deletar.cshtml" />
+    <Content Include="Views\Veiculos\Detalhes.cshtml" />
+    <Content Include="Views\Veiculos\Editar.cshtml" />
     <Content Include="Views\Veiculos\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
     <Content Include="Views\Reservas\Index.cshtml" />
@@ -731,10 +735,10 @@
     <Content Include="Views\Reservas\Deletar.cshtml" />
     <Content Include="Views\Account\Funcionario.cshtml" />
     <None Include="Views\Shared\_LoginStart.cshtml" />
-    <Content Include="Views\Vagas\Create.cshtml" />
-    <Content Include="Views\Vagas\Delete.cshtml" />
-    <Content Include="Views\Vagas\Details.cshtml" />
-    <Content Include="Views\Vagas\Edit.cshtml" />
+    <Content Include="Views\Vagas\Cadastrar.cshtml" />
+    <Content Include="Views\Vagas\Deletar.cshtml" />
+    <Content Include="Views\Vagas\Detalhes.cshtml" />
+    <Content Include="Views\Vagas\Editar.cshtml" />
     <Content Include="Views\Vagas\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -811,6 +815,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805210242526_correcao4.resx">
       <DependentUpon>201805210242526_correcao4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805271624261_NovasColunas.resx">
+      <DependentUpon>201805271624261_NovasColunas.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

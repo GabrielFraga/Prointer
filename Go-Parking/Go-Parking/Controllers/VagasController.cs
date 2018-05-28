@@ -19,34 +19,28 @@ namespace Go_Parking.Controllers
         {
             return View(db.Vagas.ToList());
         }
-
-        // GET: Vagas/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Vaga vaga = db.Vagas.Find(id);
-            if (vaga == null)
-            {
-                return HttpNotFound();
-            }
-            return View(vaga);
-        }
+            
 
         // GET: Vagas/Create
-        public ActionResult Create()
+        public ActionResult Cadastrar()
         {
-            return View();
+          
+                var Lista = new List<string>()
+             {
+                {"Carro"},{"Moto"}
+             };
+                var ListaPortes = new List<SelectListItem>();
+                foreach (var item in Lista)
+                    ListaPortes.Add(new SelectListItem() { Value = item, Text = item }); //Preenche a lista com os portes presentes
+                ViewBag.ListaPortes = ListaPortes;
+
+                return View();
         }
 
-        // POST: Vagas/Create
-        // Para se proteger de mais ataques, ative as propriedades específicas a que você quer se conectar. Para 
-        // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
+        // POST: Vagas/Create    
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Nome")] Vaga vaga)
+        public ActionResult Cadastrar([Bind(Include = "Id,Nome,Porte")] Vaga vaga)
         {
             if (ModelState.IsValid)
             {
@@ -59,9 +53,21 @@ namespace Go_Parking.Controllers
         }
 
         // GET: Vagas/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult Editar(int? id)
         {
-            if (id == null)
+            
+                var Lista = new List<string>()
+              {
+                {"Carro"},{"Moto"}
+               };
+                var ListaPortes = new List<SelectListItem>();
+                foreach (var item in Lista)
+                    ListaPortes.Add(new SelectListItem() { Value = item, Text = item }); //Preenche a lista com os portes presentes
+                ViewBag.ListaPortes = ListaPortes;
+            
+
+
+                if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
@@ -74,11 +80,10 @@ namespace Go_Parking.Controllers
         }
 
         // POST: Vagas/Edit/5
-        // Para se proteger de mais ataques, ative as propriedades específicas a que você quer se conectar. Para 
-        // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
+     
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Nome")] Vaga vaga)
+        public ActionResult Editar([Bind(Include = "Id,Nome,Porte")] Vaga vaga)
         {
             if (ModelState.IsValid)
             {
@@ -89,8 +94,22 @@ namespace Go_Parking.Controllers
             return View(vaga);
         }
 
-        // GET: Vagas/Delete/5
-        public ActionResult Delete(int? id)
+        // GET: Vagas/Detalhes/5
+        public ActionResult Detalhes(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Vaga vaga = db.Vagas.Find(id);
+            if (vaga == null)
+            {
+                return HttpNotFound();
+            }
+            return View(vaga);
+        }
+        // GET: Vagas/Deletar/5
+        public ActionResult Deletar(int? id)
         {
             if (id == null)
             {
@@ -104,8 +123,8 @@ namespace Go_Parking.Controllers
             return View(vaga);
         }
 
-        // POST: Vagas/Delete/5
-        [HttpPost, ActionName("Delete")]
+        // POST: Vagas/Deletar/5
+        [HttpPost, ActionName("Deletar")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {

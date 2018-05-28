@@ -15,5 +15,6 @@ namespace Go_Parking.Models
         public int Id { get; set; }
         [Display(Name = "Vaga")]
         public string Nome { get; set; }
+        public string Porte { get; set; }
     }
 }
