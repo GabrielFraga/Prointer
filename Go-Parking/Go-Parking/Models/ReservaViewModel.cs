@@ -9,7 +9,7 @@ using System.Web.Mvc;
 
 namespace Go_Parking.Models
 {
-    public class FazerReserva
+    public class ListarObjetos
     {
         public List<Reserva> Reservas{ get; set; }
         public List<Vaga> Vagas { get; set; }        
@@ -41,10 +41,10 @@ namespace Go_Parking.Models
         
     }
 
-    public class Pesquisa
+    public class Pesquisar
     {
-        public DateTimeOffset DataEntrada { get; set; }
-        public DateTimeOffset DataSaida { get; set; }
+        public DateTimeOffset Entrada { get; set; }
+        public DateTimeOffset Saida { get; set; }
         public string VeiculoId { get; set; }
         public string HoraEntrada { get; set; }
         public string HoraSaida { get; set; }

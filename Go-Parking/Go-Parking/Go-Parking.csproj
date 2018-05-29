@@ -207,7 +207,11 @@
     <Compile Include="Controllers\ReservasController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Controllers\VagasController.cs" />
-    <Compile Include="Controllers\VeiculosController.cs" />
+    <Compile Include="Migrations\201805292206062_tagOcupada.cs" />
+    <Compile Include="Migrations\201805292206062_tagOcupada.Designer.cs">
+      <DependentUpon>201805292206062_tagOcupada.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VeiculosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -818,6 +822,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805271624261_NovasColunas.resx">
       <DependentUpon>201805271624261_NovasColunas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805292206062_tagOcupada.resx">
+      <DependentUpon>201805292206062_tagOcupada.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
