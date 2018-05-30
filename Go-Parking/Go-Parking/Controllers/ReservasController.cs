@@ -143,15 +143,15 @@ namespace Go_Parking.Controllers
         }
 
 
-        public ActionResult Detalhes(string sortOrder, string correntFilter, string searchString, int? Page)
+        public ActionResult Detalhes(string sortOrder, string currentFilter, string searchString, int? Page)
         {
             ViewBag.CurrentSort = sortOrder;
-            ViewBag.NomeParam = String.IsNullOrEmpty(sortOrder) ? "Name_desc" : "";
-            ViewBag.ValorParam = String.IsNullOrEmpty(sortOrder) ? "Valor" : "";
-            ViewBag.VeiculoParam = String.IsNullOrEmpty(sortOrder) ? "Veiculo" : "";
-            ViewBag.DateParam = sortOrder == "DataEntrada" ? "Date_desc" : "DataEntrada";
-            ViewBag.DatesParam = sortOrder == "DataSaida" ? "Date_desc" : "DataSaida";
-            ViewBag.PagaParam = sortOrder == "Paga" ? "Paga_desc" : "Paga";
+            ViewBag.VagaParam = sortOrder == "Vaga_asc" ? "Vaga_desc" : "Vaga_asc";
+            ViewBag.ValorParam = sortOrder == "Valor_asc" ? "Valor_desc" : "Valor_asc";            
+            ViewBag.DataEntradaParam = sortOrder == "DataEntrada_asc" ? "DataEntrada_desc" : "DataEntrada_asc";
+            ViewBag.DataSaidaParam = sortOrder == "DataSaida_asc" ? "DataSaida_desc" : "DataSaida_asc";
+            ViewBag.PagamentoParam = sortOrder == "Pagamento_asc" ? "Pagamento_desc" : "Pagamento_asc";
+
             if (searchString != null)
             {
                 Page = 1;
@@ -159,7 +159,7 @@ namespace Go_Parking.Controllers
 
             else
             {
-                searchString = correntFilter;
+                searchString = currentFilter;
             }
             ViewBag.currentFilter = searchString;
             var reserva = from s in db.Reservas
@@ -173,22 +173,41 @@ namespace Go_Parking.Controllers
 
             switch (sortOrder)
             {
-                case "Nome_desc":
+                case "Vaga_desc":
                     reserva = reserva.OrderByDescending(s => s.VagaId);
                     break;
-                case "DataEntrada":
+                case "DataEntrada_asc":
                     reserva = reserva.OrderBy(s => s.Entrada);
                     break;
-                case "Pagamento":
+                case "DataEntrada_desc":
+                    reserva = reserva.OrderByDescending(s => s.Entrada );
+                    break;
+                case "DataSaida_asc":
+                    reserva = reserva.OrderBy(s => s.Saida);
+                    break;
+                case "DataSaida_desc":
+                    reserva = reserva.OrderByDescending(s => s.Entrada);
+                    break;
+                case "Pagamento_asc":
                     reserva = reserva.OrderBy(s => s.FormaPagamento);
                     break;
+                case "Pagamento_desc":
+                    reserva = reserva.OrderByDescending(s => s.FormaPagamento);
+                    break;
+                case "Valor_asc":
+                    reserva = reserva.OrderBy(s => s.Valor);
+                    break;
+                case "Valor_desc":
+                    reserva = reserva.OrderByDescending(s => s.Valor);
+                    break;
+
                 default:
                     reserva = reserva.OrderBy(s => s.VagaId);
                     break;
             }
-            int pageSize = 30;
-            int pageNumbre = (Page ?? 1);
-            return View(reserva.ToPagedList(pageNumbre, pageSize));
+            int pageSize = 10;
+            int pageNumber = (Page ?? 1);
+            return View(reserva.ToPagedList(pageNumber, pageSize));
         }
 
 

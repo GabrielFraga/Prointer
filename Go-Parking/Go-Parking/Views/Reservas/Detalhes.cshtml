@@ -5,7 +5,7 @@
 }
 
 <h2>Detalhes</h2>
-@using (Html.BeginForm("Index", "Reserva", FormMethod.Get))
+@using (Html.BeginForm("Detalhes", "Reserva", FormMethod.Get))
 {
     <p>
         Procurar por data: @Html.TextBox("SearchString")
@@ -16,19 +16,19 @@
 <table class="table">
     <tr>
         <th>
-            @Html.ActionLink("Vaga", "Index", new { sortOrder = ViewBag.NomeParam })
+            @Html.ActionLink("Vaga", "Detalhes", new { sortOrder = ViewBag.VagaParam })
         </th>
         <th>
-            @Html.ActionLink("Data Entrada", "Index", new { sortOrder = ViewBag.DateParam })
+            @Html.ActionLink("Data Entrada", "Detalhes", new { sortOrder = ViewBag.DataEntradaParam })
         </th>
         <th>
-            @Html.ActionLink("Data Saida", "Index", new { sortOrder = ViewBag.DatesParam })
+            @Html.ActionLink("Data Saida", "Detalhes", new { sortOrder = ViewBag.DataSaidaParam })
         </th>
         <th>
-            @Html.ActionLink("Valor", "Index", new { sortOrder = ViewBag.ValorParam })
+            @Html.ActionLink("Valor", "Detalhes", new { sortOrder = ViewBag.ValorParam })
         </th>
         <th>
-            @Html.ActionLink("Forma de pagamento", "Index", new { sortOrder = ViewBag.PagaParam })
+            @Html.ActionLink("Forma de pagamento", "Detalhes", new { sortOrder = ViewBag.PagamentoParam })
         </th>
         @foreach (var item in Model)
         {
@@ -37,10 +37,10 @@
                 @Html.DisplayFor(modelItem => item.VagaId)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Entrada)
+                @Html.DisplayFor(modelItem => item.Entrada.DateTime)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Saida)
+                @Html.DisplayFor(modelItem => item.Saida.DateTime)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Valor)
@@ -53,10 +53,10 @@
         </tr>
     }
     </table>
-    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
-    @Html.PagedListPager(Model, page => Url.Action("Index", new
+    Página @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) de @Model.PageCount
+    @Html.PagedListPager(Model, page => Url.Action("Detalhes", new
     {
-        Page,
+        page,
         sortOrder = ViewBag.Currentsort,
         currentFilter = ViewBag.currentFilter
     }))
