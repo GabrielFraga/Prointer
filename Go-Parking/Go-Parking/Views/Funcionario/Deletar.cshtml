@@ -1,0 +1,42 @@
+﻿@model Go_Parking.Models.ApplicationUser
+
+@{
+    ViewBag.Title = "Deletar";
+}
+<div class="boxPagina" style="min-height:500px">
+
+    <h2>Deletar</h2>
+
+    <h3>Deseja deletar este funcionário?</h3>
+    <div>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Email)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Email)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.UserName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.UserName)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Voltar à listagem", "Index")
+            </div>
+        }
+    </div>
+</div>

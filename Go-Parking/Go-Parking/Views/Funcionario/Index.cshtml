@@ -4,18 +4,21 @@
     ViewBag.Title = "Funcionários";
 }
 
-<div class="jumbotron" style="padding:20px">
-    <h2>Funcionários Cadastrados</h2>
+<div class="boxPagina" style="min-height:500px" >
+    <h2>Funcionários</h2>
 
     <p>
-        @Html.ActionLink("Cadastre um novo funcionário", "Create")
+        @Html.ActionLink("Cadastrar funcionário", "Cadastrar")
     </p>
     <table class="table">
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.UserName )
+                @Html.DisplayNameFor(model => model.UserName)
             </th>
-            <th></th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+           
         </tr>
 
         @foreach (var item in Model)
@@ -25,9 +28,15 @@
                     @Html.DisplayFor(modelItem => item.UserName)
                 </td>
                 <td>
-                    @Html.ActionLink("Editar", "Edit", new { id = item.Id }) |
-                    @Html.ActionLink("Detalhes", "Details", new { id = item.Id }) |
-                    @Html.ActionLink("Deletar", "Delete", new { id = item.Id })
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                   
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Editar", new { id = item.Id }) |
+                    @Html.ActionLink("Detalhes", "Detalhes", new { id = item.Id }) |
+                    @Html.ActionLink("Deletar", "Deletar", new { id = item.Id })
                 </td>
             </tr>
         }

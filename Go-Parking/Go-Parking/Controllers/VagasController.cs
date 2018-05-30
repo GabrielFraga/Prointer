@@ -55,18 +55,15 @@ namespace Go_Parking.Controllers
         // GET: Vagas/Edit/5
         public ActionResult Editar(int? id)
         {
-            
-                var Lista = new List<string>()
-              {
+              var Lista = new List<string>()
+               {
                 {"Carro"},{"Moto"}
                };
                 var ListaPortes = new List<SelectListItem>();
                 foreach (var item in Lista)
                     ListaPortes.Add(new SelectListItem() { Value = item, Text = item }); //Preenche a lista com os portes presentes
                 ViewBag.ListaPortes = ListaPortes;
-            
-
-
+  
                 if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);

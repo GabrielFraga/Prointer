@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Go_Parking.Models;
+using System.Collections.Generic;
 
 namespace Go_Parking.Controllers
 {
@@ -54,7 +55,7 @@ namespace Go_Parking.Controllers
             }
         }
 
-
+     
         //
         // GET: /Account/Login
         [AllowAnonymous]

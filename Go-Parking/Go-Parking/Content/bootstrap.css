@@ -1412,10 +1412,11 @@ display: block;
 
 .boxPagina {
   padding: 20px 15px;
-  margin: 15px;
+  margin: 15px; 
+  min-height:500px;
   color: inherit;
   background-color: #eceff1;
-  /*background-image: linear-gradient(#555,#111111c9);*/
+ /* background-image: linear-gradient(#555,#11111140);*/
 
   box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),
        0 3px 1px -2px rgba(0,0,0,.2),
@@ -4842,9 +4843,12 @@ a.list-group-item.active > .badge,
 .nav-pills > li > a > .badge {
   margin-left: 3px;
 }
+
 .jumbotron {
   padding: 20px 15px;
   margin: 15px;
+  padding:20px; 
+  min-height:500px;
   color: inherit;
   background-color: #eceff1;
  /* background-image: linear-gradient(#555,#11111140);*/

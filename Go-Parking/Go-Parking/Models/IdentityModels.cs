@@ -56,6 +56,8 @@ namespace Go_Parking.Models
 
         //public System.Data.Entity.DbSet<Go_Parking.Models.ApplicationUser> ApplicationUsers { get; set; }
 
+        //public System.Data.Entity.DbSet<Go_Parking.Models.ApplicationUser> ApplicationUsers { get; set; }
+
         //public System.Data.Entity.DbSet<Go_Parking.Models.ReservaVagaViewModel> ReservaVagaViewModels { get; set; }
 
         //  public System.Data.Entity.DbSet<Go_Parking.Models.ApplicationUser> ApplicationUsers { get; set; }

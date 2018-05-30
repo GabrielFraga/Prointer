@@ -116,4 +116,6 @@ namespace Go_Parking.Models
         [Display(Name = "E-mail")]
         public string Email { get; set; }
     }
+
+
 }
