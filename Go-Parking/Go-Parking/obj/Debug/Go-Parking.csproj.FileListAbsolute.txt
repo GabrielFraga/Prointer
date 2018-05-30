@@ -221,3 +221,12 @@ C:\Users\gabri\Prointer\Go-Parking\Go-Parking\obj\Debug\Go_Parking.Migrations.co
 C:\Users\gabri\Prointer\Go-Parking\Go-Parking\obj\Debug\Go_Parking.Migrations.correcao4.resources
 C:\Users\gabri\Prointer\Go-Parking\Go-Parking\obj\Debug\Go_Parking.Migrations.NovasColunas.resources
 C:\Users\gabri\Prointer\Go-Parking\Go-Parking\obj\Debug\Go_Parking.Migrations.tagOcupada.resources
+E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\obj\Debug\Go_Parking.Migrations.OcupacaoVagas.resources
+E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\obj\Debug\Go_Parking.Migrations.NovaColuna.resources
+E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\obj\Debug\Go_Parking.Migrations.ColunaValor.resources
+E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\obj\Debug\Go_Parking.Migrations.correcao.resources
+E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\obj\Debug\Go_Parking.Migrations.correcao2.resources
+E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\obj\Debug\Go_Parking.Migrations.correcao3.resources
+E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\obj\Debug\Go_Parking.Migrations.correcao4.resources
+E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\obj\Debug\Go_Parking.Migrations.NovasColunas.resources
+E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\obj\Debug\Go_Parking.Migrations.tagOcupada.resources
