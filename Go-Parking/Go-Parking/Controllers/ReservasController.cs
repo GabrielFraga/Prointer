@@ -7,6 +7,7 @@ using Go_Parking.Models;
 using Microsoft.AspNet.Identity;
 using System.Globalization;
 using System.Net;
+using PagedList;
 
 namespace Go_Parking.Controllers
 {
@@ -142,12 +143,54 @@ namespace Go_Parking.Controllers
         }
 
 
-        public ActionResult Detalhes()
+        public ActionResult Detalhes(string sortOrder, string correntFilter, string searchString, int? Page)
         {
-            var model = db.Reservas;
+            ViewBag.CurrentSort = sortOrder;
+            ViewBag.NomeParam = String.IsNullOrEmpty(sortOrder) ? "Name_desc" : "";
+            ViewBag.ValorParam = String.IsNullOrEmpty(sortOrder) ? "Valor" : "";
+            ViewBag.VeiculoParam = String.IsNullOrEmpty(sortOrder) ? "Veiculo" : "";
+            ViewBag.DateParam = sortOrder == "DataEntrada" ? "Date_desc" : "DataEntrada";
+            ViewBag.DatesParam = sortOrder == "DataSaida" ? "Date_desc" : "DataSaida";
+            ViewBag.PagaParam = sortOrder == "Paga" ? "Paga_desc" : "Paga";
+            if (searchString != null)
+            {
+                Page = 1;
+            }
 
-            return View(model.ToList());
+            else
+            {
+                searchString = correntFilter;
+            }
+            ViewBag.currentFilter = searchString;
+            var reserva = from s in db.Reservas
+                          select s;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                reserva = reserva.Where(s => s.Entrada.ToString().Contains(searchString)
+                || s.Saida.ToString().Contains(searchString));
+
+            }
+
+            switch (sortOrder)
+            {
+                case "Nome_desc":
+                    reserva = reserva.OrderByDescending(s => s.VagaId);
+                    break;
+                case "DataEntrada":
+                    reserva = reserva.OrderBy(s => s.Entrada);
+                    break;
+                case "Pagamento":
+                    reserva = reserva.OrderBy(s => s.FormaPagamento);
+                    break;
+                default:
+                    reserva = reserva.OrderBy(s => s.VagaId);
+                    break;
+            }
+            int pageSize = 30;
+            int pageNumbre = (Page ?? 1);
+            return View(reserva.ToPagedList(pageNumbre, pageSize));
         }
+
 
         protected override void Dispose(bool disposing)
         {
