@@ -166,8 +166,9 @@ namespace Go_Parking.Controllers
                           select s;
             if (!String.IsNullOrEmpty(searchString))
             {
+                
                 reserva = reserva.Where(s => s.Entrada.ToString().Contains(searchString)
-                || s.Saida.ToString().Contains(searchString));
+                || s.Saida.Date.ToString().Contains(searchString)); 
 
             }
 
