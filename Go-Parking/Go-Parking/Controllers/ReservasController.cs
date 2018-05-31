@@ -143,7 +143,7 @@ namespace Go_Parking.Controllers
         }
 
 
-        public ActionResult Detalhes(string sortOrder, string currentFilter, string searchString, int? Page)
+        public ActionResult Detalhes(string sortOrder, string dataInicial,string dataFinal, string periodoInicial,string periodoFinal, int? Page)
         {
             ViewBag.CurrentSort = sortOrder;
             ViewBag.VagaParam = sortOrder == "Vaga_asc" ? "Vaga_desc" : "Vaga_asc";
@@ -152,24 +152,26 @@ namespace Go_Parking.Controllers
             ViewBag.DataSaidaParam = sortOrder == "DataSaida_asc" ? "DataSaida_desc" : "DataSaida_asc";
             ViewBag.PagamentoParam = sortOrder == "Pagamento_asc" ? "Pagamento_desc" : "Pagamento_asc";
 
-            if (searchString != null)
+            if ((periodoInicial != null)|| (periodoFinal != null))
             {
                 Page = 1;
             }
 
             else
             {
-                searchString = currentFilter;
+                periodoInicial = dataInicial;
+                periodoFinal = dataFinal;
             }
-            ViewBag.currentFilter = searchString;
+            ViewBag.dataInicial = periodoInicial;
+            ViewBag.dataFinal = periodoFinal;
             var reserva = from s in db.Reservas
                           select s;
-            if (!String.IsNullOrEmpty(searchString))
+            if (!String.IsNullOrEmpty(periodoInicial) && (!String.IsNullOrEmpty(periodoFinal)))
             {
-                
-                reserva = reserva.Where(s => s.Entrada.ToString().Contains(searchString)
-                || s.Saida.Date.ToString().Contains(searchString)); 
-
+                var dataincialPesquisa = DateTimeOffset.Parse(periodoInicial);
+                var datafinalPesquisa = DateTimeOffset.Parse(periodoFinal);
+                reserva = reserva.Where(s => s.Entrada >= dataincialPesquisa) ; 
+                reserva = reserva.Where(s => s.Saida <= datafinalPesquisa);
             }
 
             switch (sortOrder)
