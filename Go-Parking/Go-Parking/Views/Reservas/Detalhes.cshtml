@@ -1,5 +1,5 @@
 ﻿@using PagedList.Mvc;
-@model  PagedList.IPagedList<Go_Parking.Models.Reserva>
+@model  PagedList.IPagedList<Go_Parking.Models.Relatorio>
 @{
     ViewBag.Title = "Detalhes";
 }
@@ -72,55 +72,99 @@
     <table class="table">
         <tr>
             <th>
-                @Html.ActionLink("Vaga", "Detalhes", new { sortOrder = ViewBag.VagaParam,
+                @Html.ActionLink("Vaga", "Detalhes", new {
+               sortOrder = ViewBag.VagaParam,
                dataInicial = ViewBag.dataInicial,
                dataFinal = ViewBag.dataFinal
            })
             </th>
             <th>
-                @Html.ActionLink("Data Entrada", "Detalhes", new { sortOrder = ViewBag.DataEntradaParam,
+                @Html.ActionLink("Cliente", "Detalhes", new
+           {
+               sortOrder = ViewBag.ClienteParam,
                dataInicial = ViewBag.dataInicial,
                dataFinal = ViewBag.dataFinal
            })
             </th>
             <th>
-                @Html.ActionLink("Data Saida", "Detalhes", new { sortOrder = ViewBag.DataSaidaParam,
+                @Html.ActionLink("E-mail", "Detalhes", new
+           {
+               sortOrder = ViewBag.EmailParam,
+               dataInicial = ViewBag.dataInicial,
+               dataFinal = ViewBag.dataFinal
+           })
+            </th>
+            <th>
+                @Html.ActionLink("Veículo", "Detalhes", new
+           {
+               sortOrder = ViewBag.Veiculo,
+               dataInicial = ViewBag.dataInicial,
+               dataFinal = ViewBag.dataFinal
+           })
+            </th>
+            <th>
+                @Html.ActionLink("Valor", "Detalhes", new
+           {
+               sortOrder = ViewBag.ValorParam,
+               dataInicial = ViewBag.dataInicial,
+               dataFinal = ViewBag.dataFinal
+           })
+            </th>
+            <th>
+                @Html.ActionLink("Tempo Estacionado", "Detalhes", new
+           {
+               sortOrder = ViewBag.TempoParam,
+               dataInicial = ViewBag.dataInicial,
+               dataFinal = ViewBag.dataFinal
+           })
+            </th>
+            <th>
+                @Html.ActionLink("Data Entrada", "Detalhes", new
+           {
+               sortOrder = ViewBag.DataEntradaParam,
+               dataInicial = ViewBag.dataInicial,
+               dataFinal = ViewBag.dataFinal
+           })
+            </th>
+
+            <th>
+                @Html.ActionLink("Data Saida", "Detalhes", new
+           {
+               sortOrder = ViewBag.DataSaidaParam,
                dataInicial = ViewBag.dataInicial,
                dataFinal = ViewBag.dataFinal
 
-           })
-            </th>
-            <th>
-                @Html.ActionLink("Valor", "Detalhes", new { sortOrder = ViewBag.ValorParam,
-               dataInicial = ViewBag.dataInicial,
-               dataFinal = ViewBag.dataFinal
-           })
-            </th>
-            <th>
-                @Html.ActionLink("Forma de pagamento", "Detalhes", new { sortOrder = ViewBag.PagamentoParam,
-               dataInicial = ViewBag.dataInicial,
-               dataFinal = ViewBag.dataFinal
            })
             </th>
             @foreach (var item in Model)
             {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.VagaId)
+                    @Html.DisplayFor(modelItem => item.VagaNome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UsuarioNome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Modelo) - @Html.DisplayFor(modelItem => item.Placa)
+
+                </td>
+                <td>
+                    R$@Html.DisplayFor(modelItem => item.Valor),00
+
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HorasReservadas)
+
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Entrada.DateTime)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Saida.DateTime)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Valor)
-
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.FormaPagamento)
-
                 </td>
             </tr>
             }

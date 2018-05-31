@@ -50,6 +50,25 @@ namespace Go_Parking.Models
         public string HoraSaida { get; set; }
     }
 
+    public class Relatorio
+    {        
+        [Display(Name = "Vaga")]
+        public string  VagaNome { get; set; }
+        [Display(Name = "Cliente")]
+        public string UsuarioNome { get; set; }
+        [Display(Name = "E-mail")]
+        public string Email { get; set; }
+        public string Modelo { get; set; }
+        public string Placa { get; set; }
+        public double Valor { get; set; }
+        [Display(Name = "Forma de Pagamento")]
+        public string FormaPagamento { get; set; }
+        [Display(Name = "Tempo Reservado")]
+        public TimeSpan HorasReservadas { get; set; }
+        public DateTimeOffset Entrada { get; set; }
+        public DateTimeOffset Saida { get; set; }
+    }
+
     public class Reserva
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

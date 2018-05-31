@@ -150,7 +150,13 @@ namespace Go_Parking.Controllers
             ViewBag.ValorParam = sortOrder == "Valor_asc" ? "Valor_desc" : "Valor_asc";            
             ViewBag.DataEntradaParam = sortOrder == "DataEntrada_asc" ? "DataEntrada_desc" : "DataEntrada_asc";
             ViewBag.DataSaidaParam = sortOrder == "DataSaida_asc" ? "DataSaida_desc" : "DataSaida_asc";
-            ViewBag.PagamentoParam = sortOrder == "Pagamento_asc" ? "Pagamento_desc" : "Pagamento_asc";
+            ViewBag.TempoParam = sortOrder == "Tempo_asc" ? "Tempo_desc" : "Tempo_asc";
+            ViewBag.ClienteParam = sortOrder == "Cliente_asc" ? "Cliente_desc" : "Cliente_asc";
+            ViewBag.EmailParam = sortOrder == "Email_asc" ? "Email_desc" : "Email_asc";
+            ViewBag.VeiculoParam = sortOrder == "Veiculo_asc" ? "Veiculo_desc" : "Veiculo_asc";
+
+
+
 
             if ((periodoInicial != null)|| (periodoFinal != null))
             {
@@ -164,53 +170,105 @@ namespace Go_Parking.Controllers
             }
             ViewBag.dataInicial = periodoInicial;
             ViewBag.dataFinal = periodoFinal;
-            var reserva = from s in db.Reservas
-                          select s;
+                        
+            var reservas = new List<Relatorio>();
+
+            foreach (var r in db.Reservas)
+            {
+                var relatorio = new Relatorio();
+
+                relatorio.VagaNome = db.Vagas
+                    .Where(u => u.Id == r.VagaId)
+                    .Select(o=>o.Nome)
+                    .FirstOrDefault();
+                relatorio.UsuarioNome = db.Users
+                    .Where(u => u.Id == r.UserId)
+                    .Select(o => o.UserName)
+                    .FirstOrDefault();
+                relatorio.Email = db.Users
+                    .Where(u => u.Id == r.UserId)
+                    .Select(o => o.Email)
+                    .FirstOrDefault();
+                relatorio.Modelo = db.Veiculos
+                    .Where(u => u.Id == r.VeiculoId)
+                    .Select(o => o.Modelo)
+                    .FirstOrDefault();
+                relatorio.Placa = db.Veiculos
+                    .Where(u => u.Id == r.VeiculoId)
+                    .Select(o => o.Placa)
+                    .FirstOrDefault();
+                relatorio.Valor = r.Valor;
+                relatorio.HorasReservadas = r.Saida.Subtract(r.Entrada);
+                relatorio.Entrada = r.Entrada;
+                relatorio.Saida = r.Saida;
+                reservas.Add(relatorio);
+            }
+
+            var listaReservas = from s in reservas select s;
+
             if (!String.IsNullOrEmpty(periodoInicial) && (!String.IsNullOrEmpty(periodoFinal)))
             {
                 var dataincialPesquisa = DateTimeOffset.Parse(periodoInicial);
                 var datafinalPesquisa = DateTimeOffset.Parse(periodoFinal);
-                reserva = reserva.Where(s => s.Entrada >= dataincialPesquisa) ; 
-                reserva = reserva.Where(s => s.Saida <= datafinalPesquisa);
+                datafinalPesquisa = datafinalPesquisa.AddHours(16);
+                listaReservas = listaReservas.Where(s => s.Entrada >= dataincialPesquisa); 
+                listaReservas = listaReservas.Where(s => s.Saida <= datafinalPesquisa);
             }
 
             switch (sortOrder)
             {
                 case "Vaga_desc":
-                    reserva = reserva.OrderByDescending(s => s.VagaId);
+                    listaReservas = listaReservas.OrderByDescending(s => s.VagaNome);
                     break;
                 case "DataEntrada_asc":
-                    reserva = reserva.OrderBy(s => s.Entrada);
+                    listaReservas = listaReservas.OrderBy(s => s.Entrada);
                     break;
                 case "DataEntrada_desc":
-                    reserva = reserva.OrderByDescending(s => s.Entrada );
+                    listaReservas = listaReservas.OrderByDescending(s => s.Entrada );
                     break;
                 case "DataSaida_asc":
-                    reserva = reserva.OrderBy(s => s.Saida);
+                    listaReservas = listaReservas.OrderBy(s => s.Saida);
                     break;
                 case "DataSaida_desc":
-                    reserva = reserva.OrderByDescending(s => s.Entrada);
+                    listaReservas = listaReservas.OrderByDescending(s => s.Entrada);
                     break;
-                case "Pagamento_asc":
-                    reserva = reserva.OrderBy(s => s.FormaPagamento);
+                case "Tempo_asc":
+                    listaReservas = listaReservas.OrderBy(s => s.HorasReservadas);
                     break;
-                case "Pagamento_desc":
-                    reserva = reserva.OrderByDescending(s => s.FormaPagamento);
+                case "Tempo_desc":
+                    listaReservas = listaReservas.OrderByDescending(s => s.HorasReservadas);
+                    break;
+                case "Cliente_asc":
+                    listaReservas = listaReservas.OrderBy(s => s.UsuarioNome);
+                    break;
+                case "Cliente_desc":
+                    listaReservas = listaReservas.OrderByDescending(s => s.UsuarioNome);
+                    break;
+                case "Email_asc":
+                    listaReservas = listaReservas.OrderBy(s => s.Email);
+                    break;
+                case "Email_desc":
+                    listaReservas = listaReservas.OrderByDescending(s => s.Email);
+                    break;
+                case "Veiculo_asc":
+                    listaReservas = listaReservas.OrderBy(s => s.Modelo);
+                    break;
+                case "Veiculo_desc":
+                    listaReservas = listaReservas.OrderByDescending(s => s.Modelo);
                     break;
                 case "Valor_asc":
-                    reserva = reserva.OrderBy(s => s.Valor);
+                    listaReservas = listaReservas.OrderBy(s => s.Valor);
                     break;
                 case "Valor_desc":
-                    reserva = reserva.OrderByDescending(s => s.Valor);
+                    listaReservas = listaReservas.OrderByDescending(s => s.Valor);
                     break;
-
                 default:
-                    reserva = reserva.OrderBy(s => s.VagaId);
+                    listaReservas = listaReservas.OrderBy(s => s.VagaNome);
                     break;
             }
             int pageSize = 10;
             int pageNumber = (Page ?? 1);
-            return View(reserva.ToPagedList(pageNumber, pageSize));
+            return View(listaReservas.ToPagedList(pageNumber, pageSize));
         }
 
 
