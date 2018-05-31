@@ -3,45 +3,48 @@
 @{
     ViewBag.Title = "Deletar";
 }
+<div class="boxPagina">
 
-<h2>Delete</h2>
+    <h2>Deletar</h2>
 
-<div>
-    <h4>Veiculo</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        
-        <dt>
-            @Html.DisplayNameFor(model => model.Modelo)
-        </dt>
+    <div>
+        <h4>Veiculo</h4>
+        <hr />
+        <dl class="dl-horizontal">
 
-        <dd>
-            @Html.DisplayFor(model => model.Modelo)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Modelo)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Placa)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Modelo)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Placa)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Porte)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Placa)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Porte)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Placa)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Porte)
+            </dt>
 
-    </dl>
+            <dd>
+                @Html.DisplayFor(model => model.Porte)
+            </dd>
 
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
+        </dl>
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Deletar" class="btn btn-default" /> |
-            @Html.ActionLink("Voltar à listagem", "Index")
-        </div>
-    }
-</div>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Deletar" class="btn btn-default" /> |
+                @Html.ActionLink("Voltar à listagem", "Index")
+            </div>
+        }
+    </div>
+    </div>

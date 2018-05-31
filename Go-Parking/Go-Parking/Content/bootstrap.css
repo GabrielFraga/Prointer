@@ -896,16 +896,19 @@ th {
 }
 html {
   font-size: 10px;
-
+  height:100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
+  position: relative;
+  padding: 0;
+  background-color: #F6F6F6;
+  /*font-family: 'Open Sans', sans-serif;*/
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
-  line-height: 1.42857143;
-  color: #333;
-  background-color: #cfd8dc;
-
+  color: #555;
+  opacity: 1;
+  margin-left: -20px;
 
 }
 input,
@@ -1389,6 +1392,124 @@ pre code {
   max-height: 340px;
   overflow-y: scroll;
 }
+
+.page-aside {
+  background: none repeat scroll 0 0 #FFFFFF;
+  width: 280px;
+  height: 100%;
+  position: relative;
+  display: table-cell;
+  border-right: 1px solid #E9E9E9;
+  float:left;
+  height:525px;
+
+}
+.page-aside > div {
+  width: 280px;
+}
+.page-aside div.fixed {
+  position: fixed;
+  height: 100%;
+}
+.page-aside div.content {
+  padding: 20px 20px;
+}
+@media (max-width: 767px) {
+  .page-aside {
+    width: 100%;
+    display: block;
+    height: auto;
+    position: relative;
+  }
+  .page-aside div.fixed,
+  .page-aside > div {
+    width: 100%;
+    display: block;
+    position: relative;
+  }
+}
+.collapsa {
+    display: none;
+}
+.app.filters .app-nav .content {
+    padding-top: 0;
+}
+.block-flat, .block-wizard {
+    margin-top: 3px;
+}
+
+.block-flat, .block-wizard {
+    margin-bottom: 40px;
+    padding: 20px 20px;
+    background: #FFF;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-left: 1px solid #efefef;
+    border-right: 1px solid #efefef;
+    border-bottom: 1px solid #e2e2e2;
+    box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.04);
+}
+.boxPagina {
+      -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #f8f8f8;
+    background-image: -moz-linear-gradient(center top, #FFFFFF 50%, #f8f8f8 100%);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#f8f8f8));
+    background-image: -webkit-linear-gradient(top, #FFFFFF, #f8f8f8);
+    background-image: -o-linear-gradient(top, #FFFFFF, #f8f8f8);
+    background-image: linear-gradient(to bottom, #FFFFFF 50%, #f8f8f8 100%);
+    border-color: #DEDFE0 #C8C8C8 #C8C8C8;
+    border-image: none;
+    border-right: 1px solid #C8C8C8;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.08);
+    color: #333333;   
+    display: inline-block;
+    padding:20px;
+    min-height:500px;
+    font-size: 14px;
+    width: 100%;
+    transition: border-color 0.21s ease-out 0s;
+}
+
+.textoTopo{
+    padding-top:15px;
+    padding-left:15px;
+    padding-right:15px;
+    padding-bottom:255px;
+}
+
+.vaga{
+        -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #f8f8f8;
+    background-image: -moz-linear-gradient(center top, #FFFFFF 50%, #f8f8f8 100%);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#f8f8f8));
+    background-image: -webkit-linear-gradient(top, #FFFFFF, #f8f8f8);
+    background-image: -o-linear-gradient(top, #FFFFFF, #f8f8f8);
+    background-image: linear-gradient(to bottom, #FFFFFF 50%, #f8f8f8 100%);
+    border-color: #DEDFE0 #C8C8C8 #C8C8C8;
+    border-image: none;
+    border-right: 1px solid #C8C8C8;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.08);
+    color: #333333;   
+    font-size: 11px;
+    margin-right: 1.5%;
+    margin-bottom: 15px;
+    width: 90.2%;
+    padding: 16px 9px 28px;
+    transition: border-color 0.21s ease-out 0s;
+    float:right;
+
+}
+
 .container {
 display: block;
   position: relative;
@@ -1409,51 +1530,15 @@ display: block;
   position: relative;
   opacity: 0;
 }
-
-.boxPagina {
-  padding: 20px 15px;
-  margin: 15px; 
-  min-height:500px;
-  color: inherit;
-  background-color: #eceff1;
- /* background-image: linear-gradient(#555,#11111140);*/
-
-  box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),
-       0 3px 1px -2px rgba(0,0,0,.2),
-       0 1px 5px 0 rgba(0,0,0,.12);
-}
-
-.textoTopo{
-    padding-top:15px;
-    padding-left:15px;
-    padding-right:15px;
-    padding-bottom:255px;
-}
-
-.vaga{
-    padding-top:15px;
-    padding-left:5px;
-    padding-right:15px;
-    padding-bottom:60px;
-    margin:12px;
-    color:#333;
-    background-color: #eceff1;
-   /* background-image: linear-gradient(#555,#11111140);*/
-
-        box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),
-                    0 3px 1px -2px rgba(0,0,0,.2),
-                    0 1px 5px 0 rgba(0,0,0,.12);
-}
 /* Create a custom radio button */
 .checkmark {
   position: absolute;
-  top: 15px;
-  left: -20px;
+  top: 22px;
+  left: -24px;
   height: 45px;
-  width: 283px;
+  width: 169px;
   background-color: #bbe0ff;
-  
- 
+   
 }
 /* On mouse-over, add a grey background color */
 .container:hover input ~ .checkmark {
@@ -4487,7 +4572,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   color: #ccc;
 }
 .navbar-inverse {
-  background-color: #263238;
+  background-color: #212229;
   border-color: #080808;
 }
 .navbar-inverse .navbar-brand {
@@ -4502,11 +4587,11 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   color: #9d9d9d;
 }
 .navbar-inverse .navbar-nav > li > a {
-  color: #9d9d9d;
+  color: #fff;
 }
 .navbar-inverse .navbar-nav > li > a:hover,
 .navbar-inverse .navbar-nav > li > a:focus {
-  color: #fff;
+  color: #777;
   background-color: transparent;
 }
 .navbar-inverse .navbar-nav > .active > a,
@@ -5766,7 +5851,7 @@ button.close {
     background-clip: padding-box;
     border: 1px solid #999;
     border: 1px solid rgba(0, 0, 0, .2);
-    border-radius: 6px;
+    /*border-radius: 6px;*/
     outline: 0;
     -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
     box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
@@ -5833,7 +5918,7 @@ button.close {
 @media (min-width: 768px) {
   .modal-dialog {
     width: 750px;
-    margin: 30px auto;
+    margin: 68px auto;
   }
   .modal-content {
     -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, .5);

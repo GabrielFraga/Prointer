@@ -3,64 +3,65 @@
 @{
     ViewBag.Title = "Detalhes";
 }
+<div class="boxPagina">
 
-<h2>Detalhes</h2>
-@using (Html.BeginForm("Detalhes", "Reserva", FormMethod.Get))
-{
-    <p>
-        Procurar por data: @Html.TextBox("SearchString")
-        <input type="submit" value="Pesquisar" name="Pesquisar" />
-    </p>
-
-}
-<table class="table">
-    <tr>
-        <th>
-            @Html.ActionLink("Vaga", "Detalhes", new { sortOrder = ViewBag.VagaParam })
-        </th>
-        <th>
-            @Html.ActionLink("Data Entrada", "Detalhes", new { sortOrder = ViewBag.DataEntradaParam })
-        </th>
-        <th>
-            @Html.ActionLink("Data Saida", "Detalhes", new { sortOrder = ViewBag.DataSaidaParam })
-        </th>
-        <th>
-            @Html.ActionLink("Valor", "Detalhes", new { sortOrder = ViewBag.ValorParam })
-        </th>
-        <th>
-            @Html.ActionLink("Forma de pagamento", "Detalhes", new { sortOrder = ViewBag.PagamentoParam })
-        </th>
-        @foreach (var item in Model)
-        {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.VagaId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Entrada.DateTime)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Saida.DateTime)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Valor)
-
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FormaPagamento)
-
-            </td>
-        </tr>
-    }
-    </table>
-    Página @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) de @Model.PageCount
-    @Html.PagedListPager(Model, page => Url.Action("Detalhes", new
+    <h2>Detalhes</h2>
+    @using (Html.BeginForm("Detalhes", "Reserva", FormMethod.Get))
     {
-        page,
-        sortOrder = ViewBag.Currentsort,
-        currentFilter = ViewBag.currentFilter
-    }))
+        <p>
+            Procurar por data: @Html.TextBox("SearchString")
+            <input type="submit" value="Pesquisar" name="Pesquisar" />
+        </p>
+
+    }
+    <table class="table">
+        <tr>
+            <th>
+                @Html.ActionLink("Vaga", "Detalhes", new { sortOrder = ViewBag.VagaParam })
+            </th>
+            <th>
+                @Html.ActionLink("Data Entrada", "Detalhes", new { sortOrder = ViewBag.DataEntradaParam })
+            </th>
+            <th>
+                @Html.ActionLink("Data Saida", "Detalhes", new { sortOrder = ViewBag.DataSaidaParam })
+            </th>
+            <th>
+                @Html.ActionLink("Valor", "Detalhes", new { sortOrder = ViewBag.ValorParam })
+            </th>
+            <th>
+                @Html.ActionLink("Forma de pagamento", "Detalhes", new { sortOrder = ViewBag.PagamentoParam })
+            </th>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VagaId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Entrada.DateTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Saida.DateTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Valor)
+
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FormaPagamento)
+
+                </td>
+            </tr>
+            }
+        </table>
+        Página @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) de @Model.PageCount
+        @Html.PagedListPager(Model, page => Url.Action("Detalhes", new
+{
+    page,
+    sortOrder = ViewBag.Currentsort,
+    currentFilter = ViewBag.currentFilter
+}))
 
 
-
+    </div>
 

@@ -9,7 +9,7 @@
     <script type="text/javascript" src="~/Scripts/moment-with-locales.min.js"></script>
     <script type="text/javascript" src="~/Scripts/bootstrap.min.js"></script>
     <script type="text/javascript" src="~/Scripts/bootstrap-datetimepicker.min.js"></script>
-    <link rel="stylesheet" href="~/Content/search-bar.css" />
+  <!--  <link rel="stylesheet" href="~/Content/search-bar.css" />-->
     <script type="text/javascript">
         $(function () {
             $('#datetimepicker1').datetimepicker({
@@ -66,68 +66,74 @@
     </script>
 </head>
 <body>
+    <div style="width:100%" >
+    <div class="page-aside app filters ">
+        <div class="content">
+            <h4>Agendamento de reserva</h4> <br />
+        </div>
+        <div class="app-nav">           
+                <div class="content">
+                   
+                    @using (Html.BeginForm("Index", "Reservas", FormMethod.Get, new { @Id = "Pesquisar" }))
+                    {
+                        <div class="row">
+                            @Html.AntiForgeryToken()
+                            <div class="col-md-8 col-sm-6" style="right:12px">
 
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.Entrada, htmlAttributes: new { @class = "control-label", @style = "font-weight:bold" })
+                                    <div class='input-group date' id='datetimepicker1' name="Entrada" >
+                                        @Html.EditorFor(model => model.Entrada, new { htmlAttributes = new { @class = "form-control", @style = "width:90%" } })
+                                        @Html.ValidationMessageFor(model => model.Entrada, "", new { @class = "text-danger" })
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.Saida, htmlAttributes: new { @class = "control-label", @style = "font-weight:bold" })
+                                    <div class='input-group date' id='datetimepicker2' name="Saida">
+                                        @Html.EditorFor(model => model.Saida, new { htmlAttributes = new { @class = "form-control", @style = "width:90%" } })
+                                        @Html.ValidationMessageFor(model => model.Saida, "", new { @class = "text-danger" })
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-6" style="right:19px">
+                                <div class="form-group">
+                                        <label style="font-weight:bold; color:#fff" class="control-label" >Hora:</label>
+                                    @Html.DropDownList("HoraEntrada", new SelectList(ViewBag.ListaHorarios, "Value", "Text"), new { @class = "form-control" })
+                                </div>
+                                <div class="form-group">
+                                      <label style="font-weight:bold; color:#fff" class="control-label ">Hora:</label>
+                                    @Html.DropDownList("HoraSaida", new SelectList(ViewBag.ListaHorarios, "Value", "Text"), new { @class = "form-control" })
+                                </div>
+                            </div>
 
-    @using (Html.BeginForm("Index", "Reservas", FormMethod.Get, new { @Id = "Pesquisar" }))
-    {
-        @Html.AntiForgeryToken()
-
-        <div class="col-md-12 middlebar">
-            <div class="col-md-12" style="margin-left:110px">
-                <h4 style="margin-left:320px">Agendamento de reserva</h4> <br />
-                <div class="col-md-3">
-
-                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.Entrada, htmlAttributes: new { @class = "control-label col-md-2", @style = "font-weight:bold" })
-                        <div class='input-group date' id='datetimepicker1' name="Entrada">
-                            @Html.EditorFor(model => model.Entrada, new { htmlAttributes = new { @class = "form-control", @style = "width:90%" } })
-                            @Html.ValidationMessageFor(model => model.Entrada, "", new { @class = "text-danger" })
-                            <span class="input-group-addon">
-                                <span class="glyphicon glyphicon-calendar"></span>
-                            </span>
+                            <div class="col-md-12 col-sm-12 " style="right:9px; margin-bottom:15px">
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.Veiculos, htmlAttributes: new { @class = "control-label", @style = "font-weight:bold" })
+                                    <div class="col-md-10">
+                                        @Html.DropDownList("VeiculoId", Model.Veiculos, new { @class = "form-control " })
+                                    </div>
+                                </div>                                
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12 col-sm-12">
+                                    <input type="submit" value="Pesquisar" name="Pesquisar" class="btn btn-primary pull-right" />
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.Saida, htmlAttributes: new { @class = "control-label col-md-2", @style = "font-weight:bold" })
-                        <div class='input-group date' id='datetimepicker2' name="Saida">
-                            @Html.EditorFor(model => model.Saida, new { htmlAttributes = new { @class = "form-control", @style = "width:90%" } })
-                            @Html.ValidationMessageFor(model => model.Saida, "", new { @class = "text-danger" })
-                            <span class="input-group-addon">
-                                <span class="glyphicon glyphicon-calendar"></span>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-1">
-                    <div class="form-group">
-                        <!--    <label style="font-weight:bold" class="control-label col-md-2">Hora:</label>-->
-                        @Html.DropDownList("HoraEntrada", new SelectList(ViewBag.ListaHorarios, "Value", "Text"), new { @class = "form-control", })
-                    </div>
-                    <div class="form-group">
-                        <!--   <label style="font-weight:bold" class="control-label col-md-2">Hora:</label>-->
-                        @Html.DropDownList("HoraSaida", new SelectList(ViewBag.ListaHorarios, "Value", "Text"), new { @class = "form-control" })
-                    </div>
-                </div>
-
-                <div class="col-md-3">
-                    <div class="form group ">
-                        @Html.LabelFor(model => model.Veiculos, htmlAttributes: new { @class = "control-label col-md-2", @style = "font-weight:bold" })
-                        <div class="col-md-10">
-                            @Html.DropDownList("VeiculoId", Model.Veiculos, new { @class = "form-control " })
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="col-md-10">
-                            <input type="submit" value="Pesquisar" name="Pesquisar" class="btn-primary pull-right" />
-                        </div>
-                    </div>
+                    }
                 </div>
             </div>
-        </div>
 
-    }
+        </div>
+    
+    <div class="col-md-8" style="">
 @using (Html.BeginForm("Index", "Reservas", FormMethod.Post, new { @class = "form-horizontal", role = "form", @Id = "Reservar"}))
 {
     if (Model.Vagas != null)
@@ -137,6 +143,9 @@
 
         <div class="col-xs-12" id="ListaVagas">
             <div class="form group">
+
+                <h3 class="text-center">Selecione uma vaga</h3> <br />
+
                 @{
                     foreach (var vaga in Model.Vagas)
                     {
@@ -166,5 +175,7 @@
 
                         }
                     }
+        </div>
+        </div>
 </body>
 </html>
