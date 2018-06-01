@@ -172,6 +172,7 @@ namespace Go_Parking.Controllers
                 return HttpNotFound();
             }
             var model = (VagaReservasViewModel)TempData["VagaReservada"];
+            TempData["Id"] = id;
             ViewBag.NomeVaga = db.Vagas.Where(o=>o.Id==id).Select(n=>n.Nome).FirstOrDefault();
             return View(model);
         }
@@ -181,7 +182,7 @@ namespace Go_Parking.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult _LiberarVaga()
         {
-            var reserva = db.Reservas.Find((int)TempData["id"]);
+            var reserva = db.Reservas.Find((int)TempData["Id"]);
 
             if (ModelState.IsValid)
                {
