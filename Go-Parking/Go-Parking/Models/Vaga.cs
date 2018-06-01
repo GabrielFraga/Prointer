@@ -11,12 +11,11 @@ namespace Go_Parking.Models
     {        
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
-        [Display(Name = "Vaga Id")]
         public int Id { get; set; }
-        [Display(Name = "Vaga")]
         public string Nome { get; set; }
         public string Porte { get; set; }
         public bool Ocupada { get; set; }
+
 
         
     }

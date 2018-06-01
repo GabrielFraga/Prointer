@@ -139,7 +139,7 @@ namespace Go_Parking.Controllers
             db.Reservas.Add(model); //adiciona a reserva ao banco na tabela reservas
             db.SaveChanges();       //Salva as alterações feitas
 
-            return RedirectToAction("Detalhes");    //Redireciona o usuário para a tela de detalhes, relatório
+            return RedirectToAction("Index", "Home");    //Redireciona o usuário para a tela de detalhes, relatório
         }
 
 
@@ -281,7 +281,7 @@ namespace Go_Parking.Controllers
             base.Dispose(disposing);
         }
 
-        public ActionResult Deletar(int? id)
+        public ActionResult _Deletar(int? id)
         {
             if (id == null)
             {
@@ -296,14 +296,15 @@ namespace Go_Parking.Controllers
         }
 
         // POST: Veiculoes/Delete/5
-        [HttpPost, ActionName("Deletar")]
+        [HttpPost, ActionName("_Deletar")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
             Reserva reserva = db.Reservas.Find(id);
             db.Reservas.Remove(reserva);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            TempData["Deletado"] = "Reserva deletada com sucesso";
+            return RedirectToAction("Index","Vagas");
         }
 
     }

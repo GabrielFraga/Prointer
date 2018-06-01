@@ -211,7 +211,7 @@
     <Compile Include="Migrations\201805292206062_tagOcupada.Designer.cs">
       <DependentUpon>201805292206062_tagOcupada.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\VeiculosController.cs" />
+    <Compile Include="Controllers\VeiculosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -314,6 +314,7 @@
     <Compile Include="Models\ReservaViewModel.cs" />
     <Compile Include="Models\RoleViewModel.cs" />
     <Compile Include="Models\Vaga.cs" />
+    <Compile Include="Models\VagaViewModel.cs" />
     <Compile Include="Models\Veiculo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -736,17 +737,18 @@
     <Content Include="Views\Reservas\Index.cshtml" />
     <Content Include="Views\Reservas\Detalhes.cshtml" />
     <Content Include="Views\Reservas\_Confirmacao.cshtml" />
-    <Content Include="Views\Reservas\Deletar.cshtml" />
     <Content Include="Views\Account\Funcionario.cshtml" />
     <Content Include="Views\Funcionario\Detalhes.cshtml" />
     <Content Include="Views\Funcionario\Deletar.cshtml" />
     <Content Include="Views\Funcionario\Editar.cshtml" />
+    <Content Include="Views\Reservas\_Deletar.cshtml" />
     <None Include="Views\Shared\_LoginStart.cshtml" />
     <Content Include="Views\Vagas\Cadastrar.cshtml" />
     <Content Include="Views\Vagas\Deletar.cshtml" />
     <Content Include="Views\Vagas\Detalhes.cshtml" />
     <Content Include="Views\Vagas\Editar.cshtml" />
     <Content Include="Views\Vagas\Index.cshtml" />
+    <Content Include="Views\Vagas\_LiberarVaga.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

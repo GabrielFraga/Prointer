@@ -36,9 +36,6 @@ namespace Go_Parking.Models
         {
             return new ApplicationDbContext();
         }
-
-
-
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions

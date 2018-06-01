@@ -1,34 +1,94 @@
-﻿@model Go_Parking.Models.Vaga
+﻿@model IEnumerable<Go_Parking.Models.VagaReservasViewModel>
 
 @{
     ViewBag.Title = "Detalhes";
 }
+
+<head>
+    <script type="text/javascript" src="~/Scripts/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/moment.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/moment-with-locales.js"></script>
+    <script type="text/javascript" src="~/Scripts/moment-with-locales.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/bootstrap-datetimepicker.min.js"></script>
+    
+</head>
+
+@{
+    if (TempData["MensagemErro"] != null)
+    {
+        <script type="text/javascript">
+        
+            alert("Vaga não está ocupada");
+        </script>
+    }
+}
+
 <div class="boxPagina">
-<h2>Detalhes</h2>
+    <h2>Reservas na vaga @ViewBag.VagaNome hoje</h2>
 
-<div>
-    <h4>Vaga</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Nome)
-        </dt>
+    <div>
+        <h4>@ViewBag.VagaNome</h4>   
 
-        <dd>
-            @Html.DisplayFor(model => model.Nome)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Porte)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Porte)
-        </dd>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.UsuarioNome)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Email)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Modelo )
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.HorasReservadas)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Entrada)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Saida)
+                </th>
 
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Editar", "Editar", new { id = Model.Id }) |
-    @Html.ActionLink("Voltar à listagem", "Index")
-</p>
+                <th>
+                    <span>Ações</span>
+                </th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UsuarioNome )
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email )
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Modelo) - @Html.DisplayFor(modelItem => item.Placa)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HorasReservadas.Hours):
+                        @Html.DisplayFor(modelItem => item.HorasReservadas.Minutes):
+                        @Html.DisplayFor(modelItem => item.HorasReservadas.Seconds)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Entrada.DateTime)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Saida.DateTime )
+                    </td>
+                    <td>
+                        @Html.ActionLink("Acrescentar Tempo", "AddTempo", "Reservas", new { id = item.ReservaId }, null) |
+                        @Html.ActionLink("Liberar Vaga", "_LiberarVaga", new { id = item.ReservaId }) |
+                        @Html.ActionLink("Cancelar Reserva", "_Deletar", "Reservas", new { id = item.ReservaId }, null)
+                    </td>
+                </tr>
+            }
+
+
+        </table>
     </div>
+</div>

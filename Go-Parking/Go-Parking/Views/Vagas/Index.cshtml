@@ -1,8 +1,38 @@
-﻿@model IEnumerable<Go_Parking.Models.Vaga>
+﻿@model IEnumerable<Go_Parking.Models.VagasViewModel>
 
 @{
     ViewBag.Title = "Vagas";
 }
+
+
+<head>
+    <script type="text/javascript" src="~/Scripts/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/moment.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/moment-with-locales.js"></script>
+    <script type="text/javascript" src="~/Scripts/moment-with-locales.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/bootstrap-datetimepicker.min.js"></script>
+
+</head>
+
+@{
+    if (TempData["MensagemSucesso"] != null)
+    {
+        <script type="text/javascript">
+                
+            alert("Vaga liberada com sucesso!");
+        </script>
+    }
+    else if (TempData["Deletado"] != null)
+    {
+        <script type="text/javascript">
+
+            alert("Reserva cancelada com sucesso!");
+        </script>
+    }
+}
+
+
 <div class="boxPagina">
     <h2>Vagas</h2>
 
@@ -17,6 +47,12 @@
             <th>
                 @Html.DisplayNameFor(model=> model.Porte)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Reservas)
+            </th>
+            <th>
+                <span>Ações</span>
+            </th>
         </tr>
 
         @foreach (var item in Model)
@@ -27,6 +63,9 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Porte)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Reservas)
                 </td>
                 <td>
                     @Html.ActionLink("Editar", "Editar", new { id = item.Id }) |

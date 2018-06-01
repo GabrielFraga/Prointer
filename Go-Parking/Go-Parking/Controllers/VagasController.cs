@@ -17,7 +17,27 @@ namespace Go_Parking.Controllers
         // GET: Vagas
         public ActionResult Index()
         {
-            return View(db.Vagas.ToList());
+            var vagas = db.Vagas.ToList();
+            var listaVagas = new List<VagasViewModel>();
+            foreach (var v in db.Vagas)
+            {
+                var model = new VagasViewModel();
+                model.Id = v.Id;
+                model.Nome = v.Nome;
+                model.Porte = v.Porte;
+
+                foreach (var i in db.Reservas.Where(u => u.VagaId == model.Id))
+                {
+                    var entrada = i.Entrada; 
+                    if (entrada.DateTime > DateTime.Today)
+                    {
+                        model.Reservas = +1;
+                    }
+                }
+                listaVagas.Add(model);
+            }          
+
+            return View(listaVagas);
         }
             
 
@@ -103,8 +123,84 @@ namespace Go_Parking.Controllers
             {
                 return HttpNotFound();
             }
-            return View(vaga);
+
+            var model = new List<VagaReservasViewModel>();
+
+            ViewBag.VagaNome = db.Vagas.Where(d => d.Id == id).Select(u => u.Nome).FirstOrDefault();
+            foreach (var i in db.Reservas.Where(u => u.VagaId == vaga.Id))
+            {
+                var entrada = i.Entrada;
+                if (entrada.DateTime > DateTime.Today)
+                {
+                    var reserva = new VagaReservasViewModel();
+                    reserva.UsuarioNome = db.Users
+                        .Where(u => u.Id == i.UserId)
+                        .Select(p => p.UserName)
+                        .FirstOrDefault();
+                    reserva.Email = db.Users
+                        .Where(u => u.Id == i.UserId)
+                        .Select(p => p.Email)
+                        .FirstOrDefault();
+                    reserva.Modelo = db.Veiculos
+                        .Where(u => u.Id == i.VeiculoId)
+                        .Select(o => o.Modelo)
+                        .FirstOrDefault();
+                    reserva.Placa = db.Veiculos
+                        .Where(u => u.Id == i.VeiculoId)
+                        .Select(o => o.Placa)
+                        .FirstOrDefault();
+                    reserva.HorasReservadas = i.Saida.Subtract(i.Entrada);
+                    reserva.Entrada = i.Entrada;
+                    reserva.Saida = i.Saida;
+                    reserva.ReservaId = i.Id;
+                    model.Add(reserva);
+                    TempData["VagaReservada"] = reserva;
+                }
+            }
+            return View(model);
         }
+
+        public ActionResult _LiberarVaga(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Reserva reserva = db.Reservas.Find(id);
+            if (reserva == null)
+            {
+                return HttpNotFound();
+            }
+            var model = (VagaReservasViewModel)TempData["VagaReservada"];
+            ViewBag.NomeVaga = db.Vagas.Where(o=>o.Id==id).Select(n=>n.Nome).FirstOrDefault();
+            return View(model);
+        }
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult _LiberarVaga()
+        {
+            var reserva = db.Reservas.Find((int)TempData["id"]);
+
+            if (ModelState.IsValid)
+               {
+                if (reserva.Saida.DateTime < DateTime.Now)
+                    TempData["MensagemErro"] = "Vaga não está ocupada.";
+                return RedirectToAction("Detalhes", new { id = reserva.VagaId });
+                }
+                else {
+
+                    reserva.Saida = DateTimeOffset.Now;
+
+                    db.Entry(reserva).State = EntityState.Modified;
+                    db.SaveChanges();
+                    TempData["MensagemSucesso"] = "Vaga liberada com sucesso";
+                    return RedirectToAction("Index");
+                    }                       
+        }
+
+
         // GET: Vagas/Deletar/5
         public ActionResult Deletar(int? id)
         {

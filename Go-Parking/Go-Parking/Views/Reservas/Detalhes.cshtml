@@ -157,8 +157,9 @@
 
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.HorasReservadas)
-
+                    @Html.DisplayFor(modelItem => item.HorasReservadas.Hours):
+                    @Html.DisplayFor(modelItem => item.HorasReservadas.Minutes):
+                    @Html.DisplayFor(modelItem => item.HorasReservadas.Seconds)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Entrada.DateTime)
