@@ -58,7 +58,7 @@ namespace Go_Parking.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Cadastrar([Bind(Include = "Id,Modelo,Placa,Porte")] Veiculo veiculo)
+        public ActionResult Cadastrar([Bind(Include = "Id,Modelo,Placa,Porte,Marca,Cor")] Veiculo veiculo)
         {
             if (ModelState.IsValid)
             {
@@ -100,7 +100,7 @@ namespace Go_Parking.Controllers
       
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Editar([Bind(Include = "Id,Modelo,Placa,Porte")] Veiculo veiculo)
+        public ActionResult Editar([Bind(Include = "Id,Modelo,Placa,Porte,Marca,Cor")] Veiculo veiculo)
         {
             if (ModelState.IsValid)
             {

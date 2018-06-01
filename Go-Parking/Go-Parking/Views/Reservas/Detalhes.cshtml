@@ -36,37 +36,39 @@
 </head>
 
 <body>
-<div class="boxPagina">
-
-    <h2><b>Relatório</b></h2>
-    @using (Html.BeginForm("Detalhes", "Reservas", FormMethod.Get))
+    <div class="boxPagina">
+        <div align="justify"> <p><h2><b>Relatório</b></h2></p></div>
+        @using (Html.BeginForm("Detalhes", "Reservas", FormMethod.Get))
     {
-        <div class="col-md-7" style="left:250px">
+            <div align="left" class="col-md-7" style="left:300px">
 
-            <div class="form-group" style="float:left">
-                @Html.Label("Período inicial")
+                <div class="form-group" style="float:left">
+                   <div align ="center"> @Html.Label("Período inicial")</div>
                     <div class='input-group date' id='datetimepicker1'>
-                    <input name="periodoInicial" type="text" class="form-control" style="width:90%" />
-                    <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                    </span>
+                        <input name="periodoInicial" type="text" class="form-control" style="width:90%" />
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                    </div>
                 </div>
-            </div>
-            <div class="form-group" >
-                @Html.Label("Período final")
+        
+            <div  class="form-group">
+                <div align="center">@Html.Label("Período final")</div>
                 <div class='input-group date' id='datetimepicker2'>
-                    <input name="periodoFinal" type="text" class="form-control" style="width:90%"/>
+                    <input name="periodoFinal" type="text" class="form-control" style="width:90%" />
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
                     </span>
                 </div>
+              
             </div>
+            
             <div class="col-md-11" style="right:22px">
                 <div class="form-group pull-right">
                     <input type="submit" value="Pesquisar" name="Pesquisar" class="btn btn-primary pull-right" />
                 </div>
             </div>
-        </div>
+    </div>
 
     }
     <table class="table">

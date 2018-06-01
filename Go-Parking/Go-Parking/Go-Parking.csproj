@@ -211,6 +211,17 @@
     <Compile Include="Migrations\201805292206062_tagOcupada.Designer.cs">
       <DependentUpon>201805292206062_tagOcupada.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
+=======
+    <Compile Include="Migrations\201805312230093_Marca.cs" />
+    <Compile Include="Migrations\201805312230093_Marca.Designer.cs">
+      <DependentUpon>201805312230093_Marca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805312233134_Cor.cs" />
+    <Compile Include="Migrations\201805312233134_Cor.Designer.cs">
+      <DependentUpon>201805312233134_Cor.cs</DependentUpon>
+    </Compile>
+>>>>>>> eb109e96e165f632c8332545f7a180654ff178bb
     <Compile Include="Controllers\VeiculosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -830,6 +841,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805292206062_tagOcupada.resx">
       <DependentUpon>201805292206062_tagOcupada.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805312230093_Marca.resx">
+      <DependentUpon>201805312230093_Marca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805312233134_Cor.resx">
+      <DependentUpon>201805312233134_Cor.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
