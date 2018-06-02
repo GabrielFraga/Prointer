@@ -82,6 +82,7 @@ namespace Go_Parking.Controllers
             foreach (var u in db.Users)
                 if (u.Roles.Select(o => o.RoleId).SingleOrDefault() == RoleId)
                 {
+                   
                     Funcionarios.Add(u);
                 }
            
