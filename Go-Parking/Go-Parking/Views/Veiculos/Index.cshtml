@@ -1,13 +1,31 @@
 ﻿@model IEnumerable<Go_Parking.Models.Veiculo>
 
-@{
-    ViewBag.Title = "Index";
-}
-<div class="boxPagina">
+
+<head>
+
+    @{
+        /**/
+
+        if (TempData["SemVeiculo"] != null)
+        {
+            <script type="text/javascript">
+                alert("Você ainda não cadastrou seu veículo");
+            </script>
+        }
+    }
+</head>
+
+<body>
+
+
+    <div class="boxPagina">
         <h2>Veículos</h2>
 
         <p>
-            @Html.ActionLink("Cadastrar Veículo", "Cadastrar")
+
+            <a href="@Url.Action("Cadastrar", "Veiculos")" class="btn btn-primary">
+                <span class="glyphicon glyphicon-plus "></span> Cadastrar Veiculo
+            </a>
         </p>
         <table class="table">
             <tr>
@@ -27,36 +45,39 @@
                 <th>
                     @Html.DisplayNameFor(model => model.Porte)
                 </th>
+                <th>
+                    <p>Ações</p>
+                </th>
             </tr>
 
             @foreach (var item in Model)
             {
-            <tr>
+                <tr>
 
-                <td>
-                    @Html.DisplayFor(modelItem => item.Cor)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Marca)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Modelo)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Placa)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Porte)
-                </td>
-                <td>
-                    @Html.ActionLink(". ", "Editar", new { id = item.Id }, htmlAttributes: new { @class = "glyphicon glyphicon-pencil btn" })
-                    @Html.ActionLink(". ", "Detalhes", new { id = item.Id }, htmlAttributes: new { @class = "glyphicon glyphicon-search btn" })
-                    @Html.ActionLink(". ", "Deletar", new { id = item.Id }, htmlAttributes: new { @class = "glyphicon glyphicon-trash btn btn" })
-                </td>
-            </tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Cor)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Marca)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Modelo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Placa)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Porte)
+                    </td>
+                    <td>
+                        @Html.ActionLink(" ", "Editar", new { id = item.Id }, htmlAttributes: new { @class = "glyphicon glyphicon-pencil btn btn-success " })
+                        @Html.ActionLink(" ", "Detalhes", new { id = item.Id }, htmlAttributes: new { @class = "glyphicon glyphicon-search btn btn-warning" })
+                        @Html.ActionLink(" ", "Deletar", new { id = item.Id }, htmlAttributes: new { @class = "glyphicon glyphicon-trash btn btn btn-danger" })
+                    </td>
+                </tr>
             }
 
         </table>
     </div>
-  
+</body>
  

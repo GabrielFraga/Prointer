@@ -37,7 +37,10 @@
     <h2>Vagas</h2>
 
     <p>
-        @Html.ActionLink("Cadastrar vaga", "Cadastrar")
+
+        <a href="@Url.Action("Cadastrar", "Vagas")" class="btn btn-primary">
+            <span class="glyphicon glyphicon-plus "></span> Cadastrar Vaga
+        </a>
     </p>
     <table class="table">
         <tr>
@@ -68,9 +71,9 @@
                     @Html.DisplayFor(modelItem => item.Reservas)
                 </td>
                 <td>
-                    @Html.ActionLink(".", "Editar", new { id = item.Id }, htmlAttributes: new { @class = "glyphicon glyphicon-pencil btn" }) 
-                    @Html.ActionLink(".", "Detalhes", new { id = item.Id }, htmlAttributes: new { @class = "glyphicon glyphicon-search btn" }) 
-                    @Html.ActionLink(".", "Deletar", new { id = item.Id }, htmlAttributes: new { @class = "glyphicon glyphicon-trash btn btn" })
+                    @Html.ActionLink(" ", "Editar", new { id = item.Id }, htmlAttributes: new { @class = "glyphicon glyphicon-pencil btn btn-success" }) 
+                    @Html.ActionLink(" ", "Detalhes", new { id = item.Id }, htmlAttributes: new { @class = "glyphicon glyphicon-search btn btn-warning" }) 
+                    @Html.ActionLink(" ", "Deletar", new { id = item.Id }, htmlAttributes: new { @class = "glyphicon glyphicon-trash btn btn btn-danger " })
                 </td>
             </tr>
         }

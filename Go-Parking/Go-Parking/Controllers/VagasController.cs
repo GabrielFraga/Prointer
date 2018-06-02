@@ -149,9 +149,14 @@ namespace Go_Parking.Controllers
                         .Where(u => u.Id == i.VeiculoId)
                         .Select(o => o.Placa)
                         .FirstOrDefault();
+                    reserva.Cor = db.Veiculos
+                        .Where(u => u.Id == i.VeiculoId)
+                        .Select(o => o.Cor)
+                        .FirstOrDefault();
                     reserva.HorasReservadas = reserva.HorasReservadas.Add(i.Saida.Subtract(i.Entrada));
                     reserva.Entrada = i.Entrada;
                     reserva.Saida = i.Saida;
+                    reserva.Valor = i.Valor;
                     reserva.ReservaId = i.Id;
                     model.Add(reserva);
                     TempData["VagaReservada"] = reserva;

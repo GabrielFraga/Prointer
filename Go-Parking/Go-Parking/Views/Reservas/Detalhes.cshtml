@@ -9,6 +9,8 @@
     <script type="text/javascript" src="~/Scripts/moment-with-locales.min.js"></script>
     <script type="text/javascript" src="~/Scripts/bootstrap.min.js"></script>
     <script type="text/javascript" src="~/Scripts/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jscolor.js"></script>
+
     <script type="text/javascript">
         $(function () {
             $('#datetimepicker1').datetimepicker({
@@ -149,7 +151,9 @@
                     @Html.DisplayFor(modelItem => item.Email)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Modelo) - @Html.DisplayFor(modelItem => item.Placa)
+                    @Html.DisplayFor(modelItem => item.Modelo) - 
+                    @Html.DisplayFor(modelItem => item.Placa) 
+                    <p style="border:1px solid gray; background-color: #@Html.DisplayFor(modelItem =>item.Cor); width:20px; height:20px;"> </p>
 
                 </td>
                 <td>

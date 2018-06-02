@@ -25,7 +25,16 @@ namespace Go_Parking.Controllers
         public ActionResult Index(string Entrada = "", string Saida = "", string VeiculoId = "", string HoraEntrada = "", string HoraSaida = "")
         {
 
+
             var usuarioId = User.Identity.GetUserId(); //Captura a Id do usuário conectado
+
+
+            if ((string.IsNullOrEmpty(db.Veiculos.Where(u => u.UserId == usuarioId).Select(p => p.UserId).FirstOrDefault())))
+            {
+                TempData["SemVeiculo"] = "Você ainda não cadastrou seu veículo";
+                return RedirectToAction("Index","Veiculos");
+            }
+
             var model = new ListarObjetos // Instancia o objeto que mostrará o dados para o usuário
             {
                 Veiculos = db.Veiculos     //Lista de veículos que possuíem o id do usuário (Veículos do usuário logado)
@@ -201,6 +210,10 @@ namespace Go_Parking.Controllers
                 relatorio.Placa = db.Veiculos
                     .Where(u => u.Id == r.VeiculoId)
                     .Select(o => o.Placa)
+                    .FirstOrDefault();
+                relatorio.Cor = db.Veiculos
+                    .Where(u => u.Id == r.VeiculoId)
+                    .Select(o => o.Cor)
                     .FirstOrDefault();
                 relatorio.Valor = r.Valor;
                 relatorio.HorasReservadas = relatorio.HorasReservadas.Add(r.Saida.Subtract(r.Entrada));

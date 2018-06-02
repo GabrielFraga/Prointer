@@ -26,9 +26,8 @@
 
 <div class="boxPagina">
     <h2>Reservas na vaga @ViewBag.VagaNome hoje</h2>
-
+    <hr />
     <div>
-        <h4>@ViewBag.VagaNome</h4>   
 
 
         <table class="table">
@@ -40,11 +39,15 @@
                     @Html.DisplayNameFor(model => model.Email)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Modelo )
+                    <p>Veículo</p>
                 </th>
                 <th>
                     @Html.DisplayNameFor(model => model.HorasReservadas)
                 </th>
+                <th>
+                     <p>Valor Estimado</p>
+                </th>
+
                 <th>
                     @Html.DisplayNameFor(model => model.Entrada)
                 </th>
@@ -68,9 +71,15 @@
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Modelo) - @Html.DisplayFor(modelItem => item.Placa)
+                        <p style="border:1px solid gray; background-color: #@Html.DisplayFor(modelItem =>item.Cor); width:20px; height:20px;"> </p>
+
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.HorasReservadas.TimeOfDay)
+                    </td>
+                    <td>
+                        R$@Html.DisplayFor(modelItem => item.Valor),00
+
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Entrada.DateTime)
@@ -79,9 +88,22 @@
                         @Html.DisplayFor(modelItem => item.Saida.DateTime )
                     </td>
                     <td>
-                        @Html.ActionLink("Acrescentar Tempo", "AddTempo", "Reservas", new { id = item.ReservaId }, null) |
-                        @Html.ActionLink("Liberar Vaga", "_LiberarVaga", new { id = item.ReservaId }) |
-                        @Html.ActionLink("Cancelar Reserva", "_Deletar", "Reservas", new { id = item.ReservaId }, null)
+
+                        <a href="@Url.Action("_LiberarVaga","Vagas", new { id = item.ReservaId })" class="btn btn-warning">
+                            <span class="glyphicon glyphicon-check  "></span> Liberar 
+                        </a>
+                   
+                             <a href="@Url.Action("_Deletar","Reservas", new { id = item.ReservaId })" class="btn btn-danger">
+                            <span class="glyphicon glyphicon-trash  "></span> Cancelar Reserva
+                        </a>
+                    
+                                     
+                    
+                    
+                        
+
+                       
+                    
                     </td>
                 </tr>
             }

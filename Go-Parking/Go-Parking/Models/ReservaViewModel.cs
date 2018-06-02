@@ -61,6 +61,7 @@ namespace Go_Parking.Models
         public string Modelo { get; set; }
         public string Placa { get; set; }
         public double Valor { get; set; }
+        public string Cor { get; set; }
         [Display(Name = "Forma de Pagamento")]
         public string FormaPagamento { get; set; }
         [Display(Name = "Tempo Reservado")]
