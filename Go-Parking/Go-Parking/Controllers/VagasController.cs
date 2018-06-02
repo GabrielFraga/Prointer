@@ -14,7 +14,7 @@ namespace Go_Parking.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: Vagas
+
         public ActionResult Index()
         {
             var vagas = db.Vagas.ToList();
@@ -28,16 +28,25 @@ namespace Go_Parking.Controllers
 
                 foreach (var i in db.Reservas.Where(u => u.VagaId == model.Id))
                 {
-                    var entrada = i.Entrada; 
+                    var entrada = i.Entrada;
                     if (entrada.DateTime > DateTime.Today)
                     {
                         model.Reservas = +1;
                     }
                 }
                 listaVagas.Add(model);
-            }          
+            }
 
             return View(listaVagas);
+        }
+        
+
+
+
+        // GET: Vagas
+        public ActionResult _Listagem()
+        {
+            return View();
         }
             
 
@@ -198,7 +207,8 @@ namespace Go_Parking.Controllers
                 else {
 
                     reserva.Saida = DateTimeOffset.Now;
-
+                    var tempoReservado = reserva.Saida.Subtract(reserva.Entrada).Hours; //É subtraído a hora de saída da hora de entrada para obter o tempo reservado.            
+                    reserva.Valor = 10 * tempoReservado;
                     db.Entry(reserva).State = EntityState.Modified;
                     db.SaveChanges();
                     TempData["MensagemSucesso"] = "Vaga liberada com sucesso";

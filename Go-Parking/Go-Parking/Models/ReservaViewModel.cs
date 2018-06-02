@@ -50,6 +50,13 @@ namespace Go_Parking.Models
         public string HoraSaida { get; set; }
     }
 
+    public class VagaReserva
+    {
+        public List<Relatorio> Reservas { get; set; }
+        public  List<VagasViewModel> Vagas { get; set; }
+    }
+
+
     public class Relatorio
     {        
         [Display(Name = "Vaga")]

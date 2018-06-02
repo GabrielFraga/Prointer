@@ -18,7 +18,8 @@ namespace Go_Parking.Controllers
             if (User.IsInRole("Cliente"))
             { 
             var userID = User.Identity.GetUserId();
-            var reservas = new List<Relatorio>();
+            var VagasReservas = new VagaReserva();
+                var lista = new List<Relatorio>();
             foreach (var r in db.Reservas.Where(u => u.UserId == userID))
             {
                 var relatorio = new Relatorio();
@@ -47,17 +48,40 @@ namespace Go_Parking.Controllers
                 relatorio.HorasReservadas =  relatorio.HorasReservadas.Add(r.Saida.Subtract(r.Entrada));
                 relatorio.Entrada = r.Entrada;
                 relatorio.Saida = r.Saida;
-                reservas.Add(relatorio);
+                lista.Add(relatorio);
             }
 
-            var listaReservas = from s in reservas select s;
+            var listaReservas = from s in lista select s;
             listaReservas = listaReservas.OrderByDescending(s => s.Entrada);
-            return View(listaReservas);
+                VagasReservas.Reservas = listaReservas.ToList();
+            return View(VagasReservas);
         }
-            
-                return View();
+            else
+            {
+                var vagas = db.Vagas.ToList();
+                var listaVagas = new List<VagasViewModel>();
+                foreach (var v in db.Vagas)
+                {
+                    var model = new VagasViewModel();
+                    model.Id = v.Id;
+                    model.Nome = v.Nome;
+                    model.Porte = v.Porte;
 
-            
+                    foreach (var i in db.Reservas.Where(u => u.VagaId == model.Id))
+                    {
+                        var entrada = i.Entrada;
+                        if (entrada.DateTime > DateTime.Today)
+                        {
+                            model.Reservas = +1;
+                        }
+                    }
+                    listaVagas.Add(model);
+                }
+                var lista = new VagaReserva();
+                lista.Vagas = listaVagas;
+                return View(lista);
+
+            }
         }
         public ActionResult _ReservasCliente()
         {

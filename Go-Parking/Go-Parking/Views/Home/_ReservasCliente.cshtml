@@ -1,100 +1,26 @@
-﻿@using PagedList.Mvc;
-@model  PagedList.IPagedList<Go_Parking.Models.Relatorio>
-
-<table class="table">
-    <tr>
-        <th>
-            @Html.ActionLink("Vaga", "_ReservasCliente", new
-                           {
-                               sortOrder = ViewBag.VagaParam,
-                               dataInicial = ViewBag.dataInicial,
-                               dataFinal = ViewBag.dataFinal
-                           })
-        </th>
-
-        <th>
-            @Html.ActionLink("Veículo", "_ReservasCliente", new
-                           {
-                               sortOrder = ViewBag.Veiculo,
-                               dataInicial = ViewBag.dataInicial,
-                               dataFinal = ViewBag.dataFinal
-                           })
-        </th>
-        <th>
-            @Html.ActionLink("Valor", "_ReservasCliente", new
-                           {
-                               sortOrder = ViewBag.ValorParam,
-                               dataInicial = ViewBag.dataInicial,
-                               dataFinal = ViewBag.dataFinal
-                           })
-        </th>
-        <th>
-            @Html.ActionLink("Tempo Estacionado", "_ReservasCliente", new
-                           {
-                               sortOrder = ViewBag.TempoParam,
-                               dataInicial = ViewBag.dataInicial,
-                               dataFinal = ViewBag.dataFinal
-                           })
-        </th>
-        <th>
-            @Html.ActionLink("Data Entrada", "_ReservasCliente", new
-                           {
-                               sortOrder = ViewBag.DataEntradaParam,
-                               dataInicial = ViewBag.dataInicial,
-                               dataFinal = ViewBag.dataFinal
-                           })
-        </th>
-
-        <th>
-            @Html.ActionLink("Data Saida", "_ReservasCliente", new
-                           {
-                               sortOrder = ViewBag.DataSaidaParam,
-                               dataInicial = ViewBag.dataInicial,
-                               dataFinal = ViewBag.dataFinal
-
-                           })
-        </th>
-        @foreach (var item in Model)
-        {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.VagaNome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UsuarioNome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Modelo) - @Html.DisplayFor(modelItem => item.Placa)
-
-            </td>
-            <td>
-                R$@Html.DisplayFor(modelItem => item.Valor),00
-
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.HorasReservadas.Hours):
-                @Html.DisplayFor(modelItem => item.HorasReservadas.Minutes):
-                @Html.DisplayFor(modelItem => item.HorasReservadas.Seconds)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Entrada.DateTime)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Saida.DateTime)
-            </td>
-        </tr>
-        }
-    </table>
-    Página @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) de @Model.PageCount
-    @Html.PagedListPager(Model, page => Url.Action("_ReservasCliente", new
-                   {
-                       page,
-                       sortOrder = ViewBag.Currentsort,
-                       dataInicial = ViewBag.dataInicial,
-                       dataFinal = ViewBag.dataFinal
-                   }))
+﻿@model Go_Parking.Models.Relatorio
 
 
+<tr>
+    <td>
+        @Html.DisplayFor(model => model.VagaNome)
+    </td>
+
+    <td>
+        @Html.DisplayFor(model => model.Modelo) - @Html.DisplayFor(model => model.Placa)
+
+    </td>
+    <td>
+        R$@Html.DisplayFor(model => model.Valor),00
+
+    </td>
+    <td>
+        @Html.DisplayFor(model => model.HorasReservadas.TimeOfDay)
+    </td>
+    <td>
+        @Html.DisplayFor(model => model.Entrada.DateTime)
+    </td>
+    <td>
+        @Html.DisplayFor(model => model.Saida.DateTime)
+    </td>
+</tr>

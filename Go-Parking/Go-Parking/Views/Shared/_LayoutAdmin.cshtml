@@ -41,18 +41,19 @@
                         {
                             <li>@Html.ActionLink("Vagas", "Index", "Vagas")</li>
                             <li>@Html.ActionLink("Funcionários", "Index", "Funcionario")</li>
-                            <li>@Html.ActionLink("Relatório", "Detalhes", "ReservaS")</li>
+                            <li>@Html.ActionLink("Relatório", "Detalhes", "Reservas")</li>
                         }
                         else if (User.IsInRole("Funcionário"))
                         {
                             <li>@Html.ActionLink("Vagas", "Index", "Vagas")</li>
+                            <li>@Html.ActionLink("Histórico", "Detalhes", "Reservas")</li>
+
                         }
                         else if (User.IsInRole("Cliente"))
                         {
                             <li>@Html.ActionLink("Meus Veículos", "Index", "Veiculos")</li>
                             <li>@Html.ActionLink("Reservar Vaga", "Index", "Reservas")</li>
-                          <!--  <li>Html.ActionLink("Contato", "Contact", "Home")</li>
-                            <li>Html.ActionLink("Sobre", "About", "Home")</li>-->
+
                         }
                     }
                 </ul>

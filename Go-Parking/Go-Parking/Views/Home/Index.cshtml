@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Go_Parking.Models.Relatorio>
+﻿@model Go_Parking.Models.VagaReserva
 
 
 <head>
@@ -8,61 +8,10 @@
 
 @if (User.Identity.IsAuthenticated)
 {
-
-
+    
     if (User.IsInRole("Admin"))
     {
 
-        <div class="boxPagina">
-            <div align="center">
-                <h5><b>Vagas disponíveis</b></h5>
-                <p class="lead"><h5>Número de vagas disponíveis</h5></p>
-            </div>
-        </div>
-
-        <div class="boxPagina">
-            <div align="center">
-                <h5><b>Meus Veículos</b></h5>
-                <p>
-                <p class="lead"><h5>Número de veículos registrados</h5></p>
-            </div>
-        </div>
-
-        <div class="boxPagina">
-            <div align="center">
-                <h5><b>Minhas vagas</b></h5>
-                <p>
-                <p class="lead"> <h5>Número de vagas agendadas</h5></p>
-            </div>
-        </div>
-    }
-    else if (User.IsInRole("Funcionário"))
-    {
-        <div class="boxPagina">
-            <div align="center">
-                <h5><b>Vagas disponíveis</b></h5>
-                <p class="lead"><h5>Número de vagas disponíveis</h5></p>
-            </div>
-        </div>
-
-        <div class="boxPagina">
-            <div align="center">
-                <h5><b>Meus Veículos</b></h5>
-                <p>
-                <p class="lead"><h5>Número de veículos registrados</h5></p>
-            </div>
-        </div>
-
-        <div class="boxPagina">
-            <div align="center">
-                <h5><b>Minhas vagas</b></h5>
-                <p>
-                <p class="lead"> <h5>Número de vagas agendadas</h5></p>
-            </div>
-        </div>
-    }
-    else if (User.IsInRole("Cliente"))
-    {
         <div>
             <a href="@Url.Action("Index", "Manage")">
                 <div class="boxInicial pull-left">
@@ -73,71 +22,144 @@
                 </div>
             </a>
 
-            <a href="@Url.Action("Index", "Veiculos")">
+            <a href="@Url.Action("Index", "Funcionario")">
 
                 <div class="boxInicial" style="margin-left:20px">
                     <p class="text-center" style="margin-top:30px;">
-                        <img src="~/Content/imagens/traffic1.png" width="45" height="45" />
+                        <img src="~/Content/imagens/team.png" width="45" height="45" />
                     </p>
-                    <h3 class="text-center" style="margin-top:20px">Veículos</h3>
+                    <h3 class="text-center" style="margin-top:20px">Funcionários</h3>
                 </div>
             </a>
 
-            <a href="@Url.Action("Index", "Reservas")">
+            <a href="@Url.Action("Detalhes", "Reservas")">
                 <div class="boxInicial pull-right">
                     <p class="text-center" style="margin-top:30px;color:#4D90FE">
-                        <span class="color:#4D90FE glyphicon glyphicon-calendar" style="font-size:40px"></span>
+                        <img src="~/Content/imagens/newspaper.png" width="45" height="45" />
                     </p>
-                    <h3 class="text-center" style="margin-top:20px">Faça já sua reserva</h3>
+                    <h3 class="text-center" style="margin-top:20px">Relatório</h3>
                 </div>
             </a>
         </div>
-        <div class="boxHistorico">
-            <div align="center">
-                <h3>Histórico de Reservas</h3>
-                <table class="table">
-                    <tr>
-                        <th>@Html.DisplayNameFor(model=>model.VagaNome )</th>
 
-                        <th><p>Veículo</p></th>
-
-                        <th>@Html.DisplayNameFor(model => model.Valor )</th>
-
-                        <th>@Html.DisplayNameFor(model => model.HorasReservadas )</th>
-
-                        <th>@Html.DisplayNameFor(model => model.Entrada )</th>
-
-                        <th>@Html.DisplayNameFor(model => model.Saida )</th>
-
-                        @foreach (var item in Model)
-                        {
-                        <tr>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.VagaNome)
-                            </td>                   
-                           
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Modelo) - @Html.DisplayFor(modelItem => item.Placa)
-
-                            </td>
-                            <td>
-                                R$@Html.DisplayFor(modelItem => item.Valor),00
-
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.HorasReservadas.TimeOfDay)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Entrada.DateTime )
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Saida.DateTime )
-                            </td>
-                        </tr>
-                        }
-                    </table>                
-
+    }
+    else if (User.IsInRole("Funcionário"))
+    {
+        <div>
+            <a href="@Url.Action("Index", "Manage")">
+                <div class="boxInicialFuncionario pull-left">
+                    <p class="text-center" style="margin-top:30px; color:#4D90FE">
+                        <span class="color:#4D90FE glyphicon glyphicon-user" style="font-size:40px"></span>
+                    </p>
+                    <h3 class="text-center" style="margin-top:20px">Meu perfil</h3>
                 </div>
+            </a>
+            <a href="@Url.Action("Detalhes", "Reservas")">
+                <div class="boxInicialFuncionario pull-right">
+                    <p class="text-center" style="margin-top:30px;color:#4D90FE">
+                        <img src="~/Content/imagens/newspaper.png" width="45" height="45" />
+                    </p>
+                    <h3 class="text-center" style="margin-top:20px">Histórico</h3>
+                </div>
+            </a>
         </div>
     }
-}
+
+
+    if (User.IsInRole("Admin") || (User.IsInRole("Funcionário")))
+    {
+        <div class="boxHistorico">
+                <h3 class="text-center" >Status das Vagas</h3>
+                @{ if (User.IsInRole("Admin"))
+                    {
+                        <p>
+                            <a href="@Url.Action("Cadastrar", "Vagas")" class="btn btn-primary">
+                                <span class="glyphicon glyphicon-plus "></span> Cadastrar Vaga
+                            </a>
+                        </p>
+                    }
+                }
+                <table class="table">
+                    <tr>
+                        <th>
+                            <p>Vaga</p>
+                        </th>
+                        <th>
+                            <p>Porte</p>
+
+                        </th>
+                        <th>
+                            <p>Qtd. Reservas hoje</p>
+                        </th>
+                        <th>
+                            <span>Ações</span>
+                        </th>
+                    </tr>
+                    @{ foreach (var item in Model.Vagas)
+                        {
+
+                            @Html.Partial("~/Views/Vagas/_Listagem.cshtml", item)
+                        }
+                    }
+                </table>
+        </div>
+                        }
+
+                        else if (User.IsInRole("Cliente"))
+                        {
+                            <div>
+                                <a href="@Url.Action("Index", "Manage")">
+                                    <div class="boxInicial pull-left">
+                                        <p class="text-center" style="margin-top:30px; color:#4D90FE">
+                                            <span class="color:#4D90FE glyphicon glyphicon-user" style="font-size:40px"></span>
+                                        </p>
+                                        <h3 class="text-center" style="margin-top:20px">Meu perfil</h3>
+                                    </div>
+                                </a>
+
+                                <a href="@Url.Action("Index", "Veiculos")">
+
+                                    <div class="boxInicial" style="margin-left:20px">
+                                        <p class="text-center" style="margin-top:30px;">
+                                            <img src="~/Content/imagens/traffic1.png" width="45" height="45" />
+                                        </p>
+                                        <h3 class="text-center" style="margin-top:20px">Veículos</h3>
+                                    </div>
+                                </a>
+
+                                <a href="@Url.Action("Index", "Reservas")">
+                                    <div class="boxInicial pull-right">
+                                        <p class="text-center" style="margin-top:30px;color:#4D90FE">
+                                            <span class="color:#4D90FE glyphicon glyphicon-calendar" style="font-size:40px"></span>
+                                        </p>
+                                        <h3 class="text-center" style="margin-top:20px">Faça já sua reserva</h3>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="boxHistorico">
+                                <div align="center">
+                                    <h3>Histórico de Reservas</h3>
+                                    <table class="table">
+                                        <tr>
+                                            <th><p>Vaga</p></th>
+
+                                            <th><p>Veículo</p></th>
+
+                                            <th><p>Valor Estimado</p></th>
+
+                                            <th><p>Tempo reservado</p></th>
+
+                                            <th><p>Entrada</p></th>
+
+                                            <th><p>Saída</p></th>
+
+                                            @foreach (var item in Model.Reservas)
+                                            {
+                                                @Html.Partial("_ReservasCliente", item)
+                                            }
+                                    </table>
+
+                                </div>
+                            </div>
+                            }
+                        }

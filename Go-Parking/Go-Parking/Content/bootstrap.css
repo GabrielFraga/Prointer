@@ -1449,6 +1449,36 @@ pre code {
     border-bottom: 1px solid #e2e2e2;
     box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.04);
 }
+.boxInicialFuncionario:hover  {
+  border-color:#4D90FE;
+  cursor:pointer;
+}
+.boxInicialFuncionario {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #f8f8f8;
+    background-image: -moz-linear-gradient(center top, #FFFFFF 50%, #f8f8f8 100%);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#f8f8f8));
+    background-image: -webkit-linear-gradient(top, #FFFFFF, #f8f8f8);
+    background-image: -o-linear-gradient(top, #FFFFFF, #f8f8f8);
+    background-image: linear-gradient(to bottom, #FFFFFF 50%, #f8f8f8 100%);
+    border-color: #DEDFE0 #C8C8C8 #C8C8C8;
+    border-image: none;
+    border-right: 1px solid #C8C8C8;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.08);
+    color: #333333;   
+    display: inline-block;
+    padding:20px;
+    margin-bottom:20px; 
+    min-height:190px;
+    font-size: 14px;
+    width: 49%;
+    transition: border-color 0.21s ease-out 0s;
+}
 .boxInicial:hover  {
   border-color:#4D90FE;
   cursor:pointer;
@@ -1501,8 +1531,6 @@ pre code {
     padding:20px;
     margin-bottom:20px;
     min-height: 294px;
-    max-height:297px;
-    overflow:scroll;
     font-size: 14px;
     width: 100%;
     transition: border-color 0.21s ease-out 0s;

@@ -1,0 +1,38 @@
+﻿
+@model Go_Parking.Models.VagasViewModel
+
+<tr>
+
+    <td>
+        @Html.DisplayFor(model => model.Nome)
+    </td>
+    <td>
+        @Html.DisplayFor(model => model.Porte)
+    </td>
+    <td>
+        @Html.DisplayFor(model => model.Reservas)
+    </td>
+    <td>
+
+        @{ if (User.IsInRole("Admin"))
+            {
+                <a>
+                    @Html.ActionLink(" ", "Editar", "Vagas", new { id = Model.Id }, htmlAttributes: new { @class = "glyphicon glyphicon-pencil btn btn-success" })
+                </a>
+                <a>
+                    @Html.ActionLink(" ", "Detalhes", "Vagas", new { id = Model.Id }, htmlAttributes: new { @class = "glyphicon glyphicon-search btn btn-warning" })
+                </a>
+                <a>
+                    @Html.ActionLink(" ", "Deletar", "Vagas", new { id = Model.Id }, htmlAttributes: new { @class = "glyphicon glyphicon-trash btn btn btn-danger " })
+                </a>
+            }
+            else
+            {
+                @Html.ActionLink(" ", "Detalhes", "Vagas", new { id = Model.Id }, htmlAttributes: new { @class = "glyphicon glyphicon-search btn btn-warning" })
+
+            }
+        }
+
+
+    </td>
+</tr>
