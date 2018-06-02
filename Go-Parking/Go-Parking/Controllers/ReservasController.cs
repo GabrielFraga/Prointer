@@ -46,6 +46,11 @@ namespace Go_Parking.Controllers
                 var DataHoraEntrada = DateTimeOffset.Parse(Entrada).Add(TimeSpan.Parse(HoraEntrada));
                 var DataHoraSaida = DateTimeOffset.Parse(Saida).Add(TimeSpan.Parse(HoraSaida));
 
+                if(DataHoraSaida<=DataHoraEntrada)
+                {
+                    TempData["DataInvalida"] = "Tempo de reserva inválido. Tente novamente.";
+                    return RedirectToAction("Index");
+                }
                 TempData["Entrada"] = DataHoraEntrada;
                 TempData["Saida"] = DataHoraSaida;
                 TempData["VeiculoId"] = VeiculoId;

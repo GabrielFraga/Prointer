@@ -45,25 +45,21 @@
                 alert('Selecione uma vaga!');
                 return false;
             }
-        }
-        jQuery(function () {
-            jQuery('#Pesquisar').on('submit', validarData);
-        })
-
-        function validarData() {
-            entrada = $('#HoraEntrada :selected').text();
-            saida = $('#HoraSaida :selected').text();
-
-            var diff = parseFloat(saida) - parseFloat(entrada);
-
-            var booleanVlaueIsChecked = false;
-            if (diff <= 0.20) {
-                booleanVlaueIsChecked = true;
-                alert("Tempo de reserva inválido. Por favor, tente novamente.");
-                return false;
-            }
-        }
+        }       
+        
     </script>
+
+    @{
+        if (TempData["DataInvalida"] != null)
+        {
+            <script type="text/javascript">               
+            alert("Tempo de reserva inválido. Tente novamente");
+            </script>
+        }
+    }
+
+
+
 </head>
 <body>
     <div style="width:100%" >
