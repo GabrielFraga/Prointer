@@ -70,9 +70,7 @@
                         @Html.DisplayFor(modelItem => item.Modelo) - @Html.DisplayFor(modelItem => item.Placa)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.HorasReservadas.Hours):
-                        @Html.DisplayFor(modelItem => item.HorasReservadas.Minutes):
-                        @Html.DisplayFor(modelItem => item.HorasReservadas.Seconds)
+                        @Html.DisplayFor(modelItem => item.HorasReservadas.TimeOfDay)
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Entrada.DateTime)

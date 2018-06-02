@@ -64,7 +64,7 @@ namespace Go_Parking.Models
         [Display(Name = "Forma de Pagamento")]
         public string FormaPagamento { get; set; }
         [Display(Name = "Tempo Reservado")]
-        public TimeSpan HorasReservadas { get; set; }
+        public DateTimeOffset HorasReservadas { get; set; }
         public DateTimeOffset Entrada { get; set; }
         public DateTimeOffset Saida { get; set; }
     }

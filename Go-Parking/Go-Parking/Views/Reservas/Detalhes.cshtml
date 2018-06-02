@@ -1,8 +1,6 @@
 ﻿@using PagedList.Mvc;
 @model  PagedList.IPagedList<Go_Parking.Models.Relatorio>
-@{
-    ViewBag.Title = "Detalhes";
-}
+
 
 <head>
     <script type="text/javascript" src="~/Scripts/jquery-1.12.4.min.js"></script>
@@ -159,9 +157,7 @@
 
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.HorasReservadas.Hours):
-                    @Html.DisplayFor(modelItem => item.HorasReservadas.Minutes):
-                    @Html.DisplayFor(modelItem => item.HorasReservadas.Seconds)
+                    @Html.DisplayFor(modelItem => item.HorasReservadas.TimeOfDay)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Entrada.DateTime)

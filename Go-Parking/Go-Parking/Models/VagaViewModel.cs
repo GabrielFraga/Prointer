@@ -28,7 +28,7 @@ namespace Go_Parking.Models
         public string Modelo { get; set; }
         public string Placa { get; set; }
         [Display(Name = "Tempo Reservado")]
-        public TimeSpan HorasReservadas { get; set; }
+        public DateTimeOffset HorasReservadas { get; set; }
         public DateTimeOffset Entrada { get; set; }
         public DateTimeOffset Saida { get; set; }
     }

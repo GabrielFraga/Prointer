@@ -1,8 +1,5 @@
-﻿@{
-    /**/
+﻿@model IEnumerable<Go_Parking.Models.Relatorio>
 
-    ViewBag.Title = "Home Page";
-}
 
 <head>
 
@@ -75,29 +72,72 @@
                     <h3 class="text-center" style="margin-top:20px">Meu perfil</h3>
                 </div>
             </a>
+
             <a href="@Url.Action("Index", "Veiculos")">
 
                 <div class="boxInicial" style="margin-left:20px">
-                    <p>
-                        <span class="glyphicon glyphicons-ca -car"></span>
+                    <p class="text-center" style="margin-top:30px;">
+                        <img src="~/Content/imagens/traffic1.png" width="45" height="45" />
                     </p>
-
-
-                    <h3>Veículos</h3>
-
+                    <h3 class="text-center" style="margin-top:20px">Veículos</h3>
                 </div>
             </a>
+
             <a href="@Url.Action("Index", "Reservas")">
                 <div class="boxInicial pull-right">
-                    <h3>Faça já sua reserva</h3>
+                    <p class="text-center" style="margin-top:30px;color:#4D90FE">
+                        <span class="color:#4D90FE glyphicon glyphicon-calendar" style="font-size:40px"></span>
+                    </p>
+                    <h3 class="text-center" style="margin-top:20px">Faça já sua reserva</h3>
                 </div>
             </a>
         </div>
         <div class="boxHistorico">
             <div align="center">
                 <h3>Histórico de Reservas</h3>
+                <table class="table">
+                    <tr>
+                        <th>@Html.DisplayNameFor(model=>model.VagaNome )</th>
 
-            </div>
+                        <th><p>Veículo</p></th>
+
+                        <th>@Html.DisplayNameFor(model => model.Valor )</th>
+
+                        <th>@Html.DisplayNameFor(model => model.HorasReservadas )</th>
+
+                        <th>@Html.DisplayNameFor(model => model.Entrada )</th>
+
+                        <th>@Html.DisplayNameFor(model => model.Saida )</th>
+
+                        @foreach (var item in Model)
+                        {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.VagaNome)
+                            </td>                   
+                           
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Modelo) - @Html.DisplayFor(modelItem => item.Placa)
+
+                            </td>
+                            <td>
+                                R$@Html.DisplayFor(modelItem => item.Valor),00
+
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.HorasReservadas.TimeOfDay)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Entrada.DateTime )
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Saida.DateTime )
+                            </td>
+                        </tr>
+                        }
+                    </table>                
+
+                </div>
         </div>
     }
 }

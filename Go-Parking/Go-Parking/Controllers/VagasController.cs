@@ -149,7 +149,7 @@ namespace Go_Parking.Controllers
                         .Where(u => u.Id == i.VeiculoId)
                         .Select(o => o.Placa)
                         .FirstOrDefault();
-                    reserva.HorasReservadas = i.Saida.Subtract(i.Entrada);
+                    reserva.HorasReservadas = reserva.HorasReservadas.Add(i.Saida.Subtract(i.Entrada));
                     reserva.Entrada = i.Entrada;
                     reserva.Saida = i.Saida;
                     reserva.ReservaId = i.Id;

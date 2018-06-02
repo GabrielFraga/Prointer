@@ -203,7 +203,7 @@ namespace Go_Parking.Controllers
                     .Select(o => o.Placa)
                     .FirstOrDefault();
                 relatorio.Valor = r.Valor;
-                relatorio.HorasReservadas = r.Saida.Subtract(r.Entrada);
+                relatorio.HorasReservadas = relatorio.HorasReservadas.Add(r.Saida.Subtract(r.Entrada));
                 relatorio.Entrada = r.Entrada;
                 relatorio.Saida = r.Saida;
                 reservas.Add(relatorio);

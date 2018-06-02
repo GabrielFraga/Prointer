@@ -1500,7 +1500,8 @@ pre code {
     display: inline-block;
     padding:20px;
     margin-bottom:20px; 
-    min-height:297px;
+    max-height:297px;
+    overflow:scroll;
     font-size: 14px;
     width: 100%;
     transition: border-color 0.21s ease-out 0s;
