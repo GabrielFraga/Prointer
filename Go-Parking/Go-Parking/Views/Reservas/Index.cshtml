@@ -9,7 +9,8 @@
     <script type="text/javascript" src="~/Scripts/moment-with-locales.min.js"></script>
     <script type="text/javascript" src="~/Scripts/bootstrap.min.js"></script>
     <script type="text/javascript" src="~/Scripts/bootstrap-datetimepicker.min.js"></script>
-  <!--  <link rel="stylesheet" href="~/Content/search-bar.css" />-->
+
+    <!--  <link rel="stylesheet" href="~/Content/search-bar.css" />-->
     <script type="text/javascript">
         $(function () {
             $('#datetimepicker1').datetimepicker({
@@ -45,17 +46,19 @@
                 alert('Selecione uma vaga!');
                 return false;
             }
-        }       
-        
+        }
+
     </script>
 
     @{
-        if (TempData["DataInvalida"] != null)
-        {
-            <script type="text/javascript">               
-            alert("Tempo de reserva inválido. Tente novamente");
-            </script>
-        }
+                    /**/
+
+                    if (TempData["DataInvalida"] != null)
+                    {
+                        <script type="text/javascript">
+                            alert("Tempo de reserva inválido. Tente novamente");
+                        </script>
+                    }
     }
 
 

@@ -3,10 +3,16 @@
 
     ViewBag.Title = "Home Page";
 }
+
+<head>
+
+</head>
+
+
 @if (User.Identity.IsAuthenticated)
 {
 
-    
+
     if (User.IsInRole("Admin"))
     {
 
@@ -60,26 +66,37 @@
     }
     else if (User.IsInRole("Cliente"))
     {
-        <div class="boxPagina">
-            <div align="center">
-                <h5><b>Vagas disponíveis</b></h5>
-                <p class="lead"><h5>Número de vagas disponíveis</h5></p>
-            </div>
-        </div>
+        <div>
+            <a href="@Url.Action("Index", "Manage")">
+                <div class="boxInicial pull-left">
+                    <p class="text-center" style="margin-top:30px; color:#4D90FE">
+                        <span class="color:#4D90FE glyphicon glyphicon-user" style="font-size:40px"></span>
+                    </p>
+                    <h3 class="text-center" style="margin-top:20px">Meu perfil</h3>
+                </div>
+            </a>
+            <a href="@Url.Action("Index", "Veiculos")">
 
-        <div class="boxPagina">
-            <div align="center">
-                <h5><b>Meus Veículos</b></h5>
-                <p>
-                <p class="lead"><h5>Número de veículos registrados</h5></p>
-            </div>
-        </div>
+                <div class="boxInicial" style="margin-left:20px">
+                    <p>
+                        <span class="glyphicon glyphicons-ca -car"></span>
+                    </p>
 
-        <div class="boxPagina">
+
+                    <h3>Veículos</h3>
+
+                </div>
+            </a>
+            <a href="@Url.Action("Index", "Reservas")">
+                <div class="boxInicial pull-right">
+                    <h3>Faça já sua reserva</h3>
+                </div>
+            </a>
+        </div>
+        <div class="boxHistorico">
             <div align="center">
-                <h5><b>Minhas vagas</b></h5>
-                <p>
-                <p class="lead"> <h5>Número de vagas agendadas</h5></p>
+                <h3>Histórico de Reservas</h3>
+
             </div>
         </div>
     }
