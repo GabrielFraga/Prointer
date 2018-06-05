@@ -677,10 +677,15 @@
     <Content Include="Scripts\DataTables\responsive.jqueryui.min.js" />
     <Content Include="Scripts\DataTables\responsive.semanticui.js" />
     <Content Include="Scripts\DataTables\responsive.semanticui.min.js" />
+    <Content Include="Scripts\excelexport.js" />
     <Content Include="Scripts\jquery-1.12.4.js" />
     <Content Include="Scripts\jquery-1.12.4.min.js" />
     <Content Include="Scripts\jquery-1.12.4.min.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-2.0.1.min.js" />
+    <Content Include="Scripts\jquery.base64.js" />
+    <Content Include="Scripts\jquery.base64.min.js" />
+    <Content Include="Scripts\jquery.btechco.excelexport.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
@@ -752,6 +757,8 @@
     <Content Include="Views\Funcionario\Editar.cshtml" />
     <Content Include="Views\Reservas\_Deletar.cshtml" />
     <Content Include="Views\Home\_ReservasCliente.cshtml" />
+    <Content Include="Views\Reservas\Teste.cshtml" />
+    <Content Include="Views\Manage\AtualizarDados.cshtml" />
     <None Include="Views\Shared\_LoginStart.cshtml" />
     <Content Include="Views\Vagas\Cadastrar.cshtml" />
     <Content Include="Views\Vagas\Deletar.cshtml" />

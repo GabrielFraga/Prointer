@@ -7,6 +7,8 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Go_Parking.Models;
+using System.Net;
+using System.Data.Entity;
 
 namespace Go_Parking.Controllers
 {
@@ -50,12 +52,15 @@ namespace Go_Parking.Controllers
             }
         }
 
+
+        private ApplicationDbContext db = new ApplicationDbContext();
         //
         // GET: /Manage/Index
         public ActionResult Index()
         {          
 
             var userId = User.Identity.GetUserId();
+            ViewBag.Id = userId;
             var user = UserManager.FindById(userId);
             var model = new IndexViewModel
             {
@@ -95,6 +100,37 @@ namespace Go_Parking.Controllers
             return View(model);
         }
 
+        public ActionResult AtualizarDados(string id = "")
+        {
+
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            var user = db.Users.Find(id);
+            if (user == null)
+            {
+                return HttpNotFound();
+            }
+            return View(user);
+        }
+
+        // POST: Vagas/Edit/5
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult AtualizarDados([Bind(Include = "UserName,Email")] ApplicationUser user)
+        {
+            if (ModelState.IsValid)
+            {
+                
+                
+                db.Entry(user).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(user);
+        }
 
         protected override void Dispose(bool disposing)
         {
@@ -106,6 +142,7 @@ namespace Go_Parking.Controllers
 
             base.Dispose(disposing);
         }
+
 
 #region Helpers
         // Used for XSRF protection when adding external logins

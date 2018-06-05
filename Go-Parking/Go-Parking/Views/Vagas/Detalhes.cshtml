@@ -11,14 +11,14 @@
     <script type="text/javascript" src="~/Scripts/moment-with-locales.min.js"></script>
     <script type="text/javascript" src="~/Scripts/bootstrap.min.js"></script>
     <script type="text/javascript" src="~/Scripts/bootstrap-datetimepicker.min.js"></script>
-    
+
 </head>
 
 @{
     if (TempData["MensagemErro"] != null)
     {
         <script type="text/javascript">
-        
+
             alert("Vaga não está ocupada");
         </script>
     }
@@ -42,10 +42,10 @@
                     <p>Veículo</p>
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.HorasReservadas)
+                    <p>Tempo</p>                                
                 </th>
                 <th>
-                     <p>Valor Estimado</p>
+                    <p>Valor</p>
                 </th>
 
                 <th>
@@ -64,14 +64,14 @@
             {
                 <tr>
                     <td>
-                        @Html.DisplayFor(modelItem => item.UsuarioNome )
+                        @Html.DisplayFor(modelItem => item.UsuarioNome)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Email )
+                        @Html.DisplayFor(modelItem => item.Email)
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Modelo) - @Html.DisplayFor(modelItem => item.Placa)
-                        <p style="border:1px solid gray; background-color: #@Html.DisplayFor(modelItem =>item.Cor); width:20px; height:20px;"> </p>
+                        <p style="border:1px solid gray; background-color: #@Html.DisplayFor(modelItem =>item.Cor); width:125px; height:20px;"> </p>
 
                     </td>
                     <td>
@@ -85,25 +85,18 @@
                         @Html.DisplayFor(modelItem => item.Entrada.DateTime)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Saida.DateTime )
+                        @Html.DisplayFor(modelItem => item.Saida.DateTime)
                     </td>
                     <td>
 
                         <a href="@Url.Action("_LiberarVaga","Vagas", new { id = item.ReservaId })" class="btn btn-warning">
-                            <span class="glyphicon glyphicon-check  "></span> Liberar 
+                            <span class="glyphicon glyphicon-check  "></span> Liberar
                         </a>
-                   
-                             <a href="@Url.Action("_Deletar","Reservas", new { id = item.ReservaId })" class="btn btn-danger">
-                            <span class="glyphicon glyphicon-trash  "></span> Cancelar Reserva
-                        </a>
-                    
-                                     
-                    
-                    
-                        
 
-                       
-                    
+                        <a href="@Url.Action("_Deletar","Reservas", new { id = item.ReservaId })" class="btn btn-danger">
+                            <span class="glyphicon glyphicon-trash  "></span> Cancelar
+                        </a>
+
                     </td>
                 </tr>
             }

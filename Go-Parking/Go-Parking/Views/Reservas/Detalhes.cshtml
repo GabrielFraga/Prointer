@@ -79,7 +79,7 @@
                dataInicial = ViewBag.dataInicial,
                dataFinal = ViewBag.dataFinal
            })
-            </th>
+            </th>            
             <th>
                 @Html.ActionLink("Cliente", "Detalhes", new
            {
@@ -113,7 +113,7 @@
            })
             </th>
             <th>
-                @Html.ActionLink("Tempo Estacionado", "Detalhes", new
+                @Html.ActionLink("Tempo Reservado", "Detalhes", new
            {
                sortOrder = ViewBag.TempoParam,
                dataInicial = ViewBag.dataInicial,
@@ -121,7 +121,7 @@
            })
             </th>
             <th>
-                @Html.ActionLink("Data Entrada", "Detalhes", new
+                @Html.ActionLink("Entrada", "Detalhes", new
            {
                sortOrder = ViewBag.DataEntradaParam,
                dataInicial = ViewBag.dataInicial,
@@ -130,7 +130,7 @@
             </th>
 
             <th>
-                @Html.ActionLink("Data Saida", "Detalhes", new
+                @Html.ActionLink("Saída", "Detalhes", new
            {
                sortOrder = ViewBag.DataSaidaParam,
                dataInicial = ViewBag.dataInicial,
@@ -153,7 +153,7 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Modelo) - 
                     @Html.DisplayFor(modelItem => item.Placa) 
-                    <p style="border:1px solid gray; background-color: #@Html.DisplayFor(modelItem =>item.Cor); width:20px; height:20px;"> </p>
+                    <p style="border:1px solid gray; background-color: #@Html.DisplayFor(modelItem =>item.Cor); width:125px; height:20px;"> </p>
 
                 </td>
                 <td>

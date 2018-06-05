@@ -200,12 +200,12 @@ namespace Go_Parking.Controllers
 
             if (ModelState.IsValid)
                {
-                if (reserva.Saida.DateTime < DateTime.Now)
+                if ((reserva.Saida.DateTime < DateTime.Now) || (reserva.Saida.DateTime > DateTime.Now))
                     TempData["MensagemErro"] = "Vaga não está ocupada.";
                 return RedirectToAction("Detalhes", new { id = reserva.VagaId });
+                
                 }
                 else {
-
                     reserva.Saida = DateTimeOffset.Now;
                     var tempoReservado = reserva.Saida.Subtract(reserva.Entrada).Hours; //É subtraído a hora de saída da hora de entrada para obter o tempo reservado.            
                     reserva.Valor = 10 * tempoReservado;

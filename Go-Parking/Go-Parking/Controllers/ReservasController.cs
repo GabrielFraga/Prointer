@@ -136,6 +136,9 @@ namespace Go_Parking.Controllers
             return View("_Confirmacao", model); //Passa os dados para o model Confirmação
         }
         
+       
+
+
         [HttpGet]
         public ActionResult Confirmacao(Reserva model) //Recebe os dados
         {
@@ -281,7 +284,7 @@ namespace Go_Parking.Controllers
                     listaReservas = listaReservas.OrderByDescending(s => s.Valor);
                     break;
                 default:
-                    listaReservas = listaReservas.OrderBy(s => s.VagaNome);
+                    listaReservas = listaReservas.OrderByDescending(s => s.Saida);
                     break;
             }
             int pageSize = 10;
