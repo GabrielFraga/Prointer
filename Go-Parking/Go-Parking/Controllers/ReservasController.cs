@@ -84,7 +84,7 @@ namespace Go_Parking.Controllers
 
                 }
                 model.Vagas = model.Vagas.Where(p => p.Ocupada == false)
-                    .Where(p => p.Porte == (db.Veiculos.Where(o=>o.Id == VeiculoID).Select(i=>i.Porte).FirstOrDefault()))
+                    .Where(p => p.Tipo == (db.Veiculos.Where(o=>o.Id == VeiculoID).Select(i=>i.Tipo).FirstOrDefault()))
                     .ToList();
                 return View(model);
             }
@@ -132,7 +132,6 @@ namespace Go_Parking.Controllers
 
             TempData["Reserva"] = model; //Salva dados da reserva para posteriormente salvar no banco. Aguardando confirmação
 
-
             return View("_Confirmacao", model); //Passa os dados para o model Confirmação
         }
         
@@ -155,12 +154,12 @@ namespace Go_Parking.Controllers
                 
             db.Reservas.Add(model); //adiciona a reserva ao banco na tabela reservas
             db.SaveChanges();       //Salva as alterações feitas
-
+            TempData["MensagemSucesso"] = "Vaga Reservada";
             return RedirectToAction("Index", "Home");    //Redireciona o usuário para a tela de detalhes, relatório
         }
 
 
-        public ActionResult Detalhes(string sortOrder, string dataInicial,string dataFinal, string periodoInicial,string periodoFinal, int? Page)
+        public ActionResult Historico(string sortOrder, string dataInicial,string dataFinal, string periodoInicial,string periodoFinal, int? Page)
         {
             ViewBag.CurrentSort = sortOrder;
             ViewBag.VagaParam = sortOrder == "Vaga_asc" ? "Vaga_desc" : "Vaga_asc";
@@ -171,9 +170,6 @@ namespace Go_Parking.Controllers
             ViewBag.ClienteParam = sortOrder == "Cliente_asc" ? "Cliente_desc" : "Cliente_asc";
             ViewBag.EmailParam = sortOrder == "Email_asc" ? "Email_desc" : "Email_asc";
             ViewBag.VeiculoParam = sortOrder == "Veiculo_asc" ? "Veiculo_desc" : "Veiculo_asc";
-
-
-
 
             if ((periodoInicial != null)|| (periodoFinal != null))
             {

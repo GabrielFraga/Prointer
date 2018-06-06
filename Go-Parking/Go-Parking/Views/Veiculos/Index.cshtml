@@ -43,7 +43,7 @@
                     @Html.DisplayNameFor(model => model.Placa)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Porte)
+                    @Html.DisplayNameFor(model => model.Tipo)
                 </th>
                 <th>
                     <p>Ações</p>
@@ -67,7 +67,7 @@
                         @Html.DisplayFor(modelItem => item.Placa)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Porte)
+                        @Html.DisplayFor(modelItem => item.Tipo)
                     </td>
                     <td>
                         @Html.ActionLink(" ", "Editar", new { id = item.Id }, htmlAttributes: new { @class = "glyphicon glyphicon-pencil btn btn-success " })

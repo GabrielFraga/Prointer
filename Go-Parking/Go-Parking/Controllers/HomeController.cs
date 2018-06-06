@@ -65,7 +65,7 @@ namespace Go_Parking.Controllers
                     var model = new VagasViewModel();
                     model.Id = v.Id;
                     model.Nome = v.Nome;
-                    model.Porte = v.Porte;
+                    model.Tipo = v.Tipo;
 
                     foreach (var i in db.Reservas.Where(u => u.VagaId == model.Id))
                     {

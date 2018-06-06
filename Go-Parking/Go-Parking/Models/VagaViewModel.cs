@@ -12,7 +12,7 @@ namespace Go_Parking.Models
         public int Id { get; set; }
         [Display(Name = "Vaga")]
         public string Nome { get; set; }
-        public string Porte { get; set; }
+        public string Tipo { get; set; }
         public bool Ocupada { get; set; }
         [Display(Name="Reservas hoje")]
         public int Reservas { get; set; }

@@ -315,6 +315,10 @@
     <Compile Include="Migrations\201805271624261_NovasColunas.Designer.cs">
       <DependentUpon>201805271624261_NovasColunas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806060232550_PorteParaTipo.cs" />
+    <Compile Include="Migrations\201806060232550_PorteParaTipo.Designer.cs">
+      <DependentUpon>201806060232550_PorteParaTipo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -749,7 +753,7 @@
     <Content Include="Views\Veiculos\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
     <Content Include="Views\Reservas\Index.cshtml" />
-    <Content Include="Views\Reservas\Detalhes.cshtml" />
+    <Content Include="Views\Reservas\Historico.cshtml" />
     <Content Include="Views\Reservas\_Confirmacao.cshtml" />
     <Content Include="Views\Account\Funcionario.cshtml" />
     <Content Include="Views\Funcionario\Detalhes.cshtml" />
@@ -757,7 +761,6 @@
     <Content Include="Views\Funcionario\Editar.cshtml" />
     <Content Include="Views\Reservas\_Deletar.cshtml" />
     <Content Include="Views\Home\_ReservasCliente.cshtml" />
-    <Content Include="Views\Reservas\Teste.cshtml" />
     <Content Include="Views\Manage\AtualizarDados.cshtml" />
     <None Include="Views\Shared\_LoginStart.cshtml" />
     <Content Include="Views\Vagas\Cadastrar.cshtml" />
@@ -853,6 +856,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805312233134_Cor.resx">
       <DependentUpon>201805312233134_Cor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806060232550_PorteParaTipo.resx">
+      <DependentUpon>201806060232550_PorteParaTipo.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -234,3 +234,4 @@ E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\obj\Debug\Go_Pa
 E:\Dados Usuario\Documents\GitHub\Prointer\Go-Parking\Go-Parking\obj\Debug\Go_Parking.Migrations.Cor.resources
 C:\Users\gabri\Prointer\Go-Parking\Go-Parking\obj\Debug\Go_Parking.Migrations.Marca.resources
 C:\Users\gabri\Prointer\Go-Parking\Go-Parking\obj\Debug\Go_Parking.Migrations.Cor.resources
+C:\Users\gabri\Prointer\Go-Parking\Go-Parking\obj\Debug\Go_Parking.Migrations.PorteParaTipo.resources

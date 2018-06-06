@@ -38,7 +38,7 @@
 <body>
     <div class="boxPagina">
         <div align="justify"> <p><h2><b>Relatório</b></h2></p></div>
-        @using (Html.BeginForm("Detalhes", "Reservas", FormMethod.Get))
+        @using (Html.BeginForm("Historico", "Reservas", FormMethod.Get))
     {
             <div align="left" class="col-md-7" style="left:300px">
 
@@ -74,14 +74,14 @@
     <table class="table">
         <tr>
             <th>
-                @Html.ActionLink("Vaga", "Detalhes", new {
+                @Html.ActionLink("Vaga", "Historico", new {
                sortOrder = ViewBag.VagaParam,
                dataInicial = ViewBag.dataInicial,
                dataFinal = ViewBag.dataFinal
            })
             </th>            
             <th>
-                @Html.ActionLink("Cliente", "Detalhes", new
+                @Html.ActionLink("Cliente", "Historico", new
            {
                sortOrder = ViewBag.ClienteParam,
                dataInicial = ViewBag.dataInicial,
@@ -89,7 +89,7 @@
            })
             </th>
             <th>
-                @Html.ActionLink("E-mail", "Detalhes", new
+                @Html.ActionLink("E-mail", "Historico", new
            {
                sortOrder = ViewBag.EmailParam,
                dataInicial = ViewBag.dataInicial,
@@ -97,7 +97,7 @@
            })
             </th>
             <th>
-                @Html.ActionLink("Veículo", "Detalhes", new
+                @Html.ActionLink("Veículo", "Historico", new
            {
                sortOrder = ViewBag.Veiculo,
                dataInicial = ViewBag.dataInicial,
@@ -105,7 +105,7 @@
            })
             </th>
             <th>
-                @Html.ActionLink("Valor", "Detalhes", new
+                @Html.ActionLink("Valor", "Historico", new
            {
                sortOrder = ViewBag.ValorParam,
                dataInicial = ViewBag.dataInicial,
@@ -113,7 +113,7 @@
            })
             </th>
             <th>
-                @Html.ActionLink("Tempo Reservado", "Detalhes", new
+                @Html.ActionLink("Tempo Reservado", "Historico", new
            {
                sortOrder = ViewBag.TempoParam,
                dataInicial = ViewBag.dataInicial,
@@ -121,7 +121,7 @@
            })
             </th>
             <th>
-                @Html.ActionLink("Entrada", "Detalhes", new
+                @Html.ActionLink("Entrada", "Historico", new
            {
                sortOrder = ViewBag.DataEntradaParam,
                dataInicial = ViewBag.dataInicial,
@@ -130,7 +130,7 @@
             </th>
 
             <th>
-                @Html.ActionLink("Saída", "Detalhes", new
+                @Html.ActionLink("Saída", "Historico", new
            {
                sortOrder = ViewBag.DataSaidaParam,
                dataInicial = ViewBag.dataInicial,
@@ -173,7 +173,7 @@
             }
         </table>
         Página @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) de @Model.PageCount
-        @Html.PagedListPager(Model, page => Url.Action("Detalhes", new
+        @Html.PagedListPager(Model, page => Url.Action("Historico", new
    {
        page,
        sortOrder = ViewBag.Currentsort,

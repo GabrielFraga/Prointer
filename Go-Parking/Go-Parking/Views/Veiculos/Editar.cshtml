@@ -1,6 +1,5 @@
 ﻿@model Go_Parking.Models.Veiculo
 
-
 <head>
     <script type="text/javascript" src="~/Scripts/jquery-1.12.4.min.js"></script>
     <script type="text/javascript" src="~/Scripts/jscolor.js"></script>
@@ -11,7 +10,7 @@
     <script>
     $(document).ready(function () {
         var $seuCampoCpf = $("#Placa");
-        $seuCampoCpf.mask('AAA-9999', {reverse: false});
+        $seuCampoCpf.mask('SSS-0000', {reverse: false});
     });
     </script>
 </head>
@@ -64,9 +63,9 @@
                 </div>
 
                 <div class="form-group">
-                    @Html.LabelFor(model => model.Porte, htmlAttributes: new { @class = "control-label col-md-2", @style = "font-weight:bold" })
+                    @Html.LabelFor(model => model.Tipo, htmlAttributes: new { @class = "control-label col-md-2"})
                     <div class="col-md-10">
-                        @Html.DropDownList("Porte", new SelectList(ViewBag.ListaPortes, "Value", "Text"), new { @class = "form-control" })
+                        @Html.DropDownList("Tipo", new SelectList(ViewBag.ListaTipos, "Value", "Text"), new { @class = "form-control" })
                     </div>
                 </div>
 

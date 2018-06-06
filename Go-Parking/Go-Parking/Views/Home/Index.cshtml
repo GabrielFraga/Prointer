@@ -3,11 +3,20 @@
 
 <head>
 
+    @{
+        if (TempData["MensagemSucesso"] != null)
+        {
+            <script type="text/javascript">
+
+            alert("Reserva feita com sucesso!");
+            </script>
+        }
+       
+    }
 </head>
 
 
-@if (User.Identity.IsAuthenticated)
-{
+@if (User.Identity.IsAuthenticated){
     
     if (User.IsInRole("Admin"))
     {
@@ -32,12 +41,12 @@
                 </div>
             </a>
 
-            <a href="@Url.Action("Detalhes", "Reservas")">
+            <a href="@Url.Action("Historico", "Reservas")">
                 <div class="boxInicial pull-right">
                     <p class="text-center" style="margin-top:30px;color:#4D90FE">
                         <img src="~/Content/imagens/newspaper.png" width="45" height="45" />
                     </p>
-                    <h3 class="text-center" style="margin-top:20px">Relatório</h3>
+                    <h3 class="text-center" style="margin-top:20px">Histórico</h3>
                 </div>
             </a>
         </div>
@@ -54,7 +63,7 @@
                     <h3 class="text-center" style="margin-top:20px">Meu perfil</h3>
                 </div>
             </a>
-            <a href="@Url.Action("Detalhes", "Reservas")">
+            <a href="@Url.Action("Historico", "Reservas")">
                 <div class="boxInicialFuncionario pull-right">
                     <p class="text-center" style="margin-top:30px;color:#4D90FE">
                         <img src="~/Content/imagens/newspaper.png" width="45" height="45" />
@@ -85,7 +94,7 @@
                             <p>Vaga</p>
                         </th>
                         <th>
-                            <p>Porte</p>
+                            <p>Tipo</p>
 
                         </th>
                         <th>

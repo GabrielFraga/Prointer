@@ -24,7 +24,7 @@ namespace Go_Parking.Controllers
                 var model = new VagasViewModel();
                 model.Id = v.Id;
                 model.Nome = v.Nome;
-                model.Porte = v.Porte;
+                model.Tipo = v.Tipo;
 
                 foreach (var i in db.Reservas.Where(u => u.VagaId == model.Id))
                 {
@@ -58,10 +58,10 @@ namespace Go_Parking.Controllers
              {
                 {"Carro"},{"Moto"}
              };
-                var ListaPortes = new List<SelectListItem>();
+                var ListaTipos = new List<SelectListItem>();
                 foreach (var item in Lista)
-                    ListaPortes.Add(new SelectListItem() { Value = item, Text = item }); //Preenche a lista com os portes presentes
-                ViewBag.ListaPortes = ListaPortes;
+                    ListaTipos.Add(new SelectListItem() { Value = item, Text = item }); //Preenche a lista com os portes presentes
+                ViewBag.ListaTipos = ListaTipos;
 
                 return View();
         }
@@ -69,7 +69,7 @@ namespace Go_Parking.Controllers
         // POST: Vagas/Create    
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Cadastrar([Bind(Include = "Id,Nome,Porte")] Vaga vaga)
+        public ActionResult Cadastrar([Bind(Include = "Id,Nome,Tipo")] Vaga vaga)
         {
             if (ModelState.IsValid)
             {
@@ -88,10 +88,10 @@ namespace Go_Parking.Controllers
                {
                 {"Carro"},{"Moto"}
                };
-                var ListaPortes = new List<SelectListItem>();
+                var ListaTipos = new List<SelectListItem>();
                 foreach (var item in Lista)
-                    ListaPortes.Add(new SelectListItem() { Value = item, Text = item }); //Preenche a lista com os portes presentes
-                ViewBag.ListaPortes = ListaPortes;
+                    ListaTipos.Add(new SelectListItem() { Value = item, Text = item }); //Preenche a lista com os portes presentes
+                ViewBag.ListaTipos = ListaTipos;
   
                 if (id == null)
             {
@@ -109,7 +109,7 @@ namespace Go_Parking.Controllers
      
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Editar([Bind(Include = "Id,Nome,Porte")] Vaga vaga)
+        public ActionResult Editar([Bind(Include = "Id,Nome,Tipo")] Vaga vaga)
         {
             if (ModelState.IsValid)
             {

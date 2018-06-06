@@ -47,10 +47,10 @@ namespace Go_Parking.Controllers
         {
                 {"Carro"},{"Moto"}
         };
-            var ListaPortes = new List<SelectListItem>();
+            var ListaTipos = new List<SelectListItem>();
             foreach (var item in Lista)
-                ListaPortes.Add(new SelectListItem() { Value = item, Text = item}); //Preenche a lista com os portes presentes
-            ViewBag.ListaPortes = ListaPortes;
+                ListaTipos.Add(new SelectListItem() { Value = item, Text = item}); //Preenche a lista com os portes presentes
+            ViewBag.ListaTipos = ListaTipos;
             return View();
         }
 
@@ -58,7 +58,7 @@ namespace Go_Parking.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Cadastrar([Bind(Include = "Id,Modelo,Placa,Porte,Marca,Cor")] Veiculo veiculo)
+        public ActionResult Cadastrar([Bind(Include = "Id,Modelo,Placa,Tipo,Marca,Cor")] Veiculo veiculo)
         {
             if (ModelState.IsValid)
             {
@@ -79,10 +79,10 @@ namespace Go_Parking.Controllers
              {
                 {"Carro"},{"Moto"}
               };
-            var ListaPortes = new List<SelectListItem>();
+            var ListaTipos = new List<SelectListItem>();
             foreach (var item in Lista)
-                ListaPortes.Add(new SelectListItem() { Value = item, Text = item }); //Preenche a lista com os portes presentes
-            ViewBag.ListaPortes = ListaPortes;
+                ListaTipos.Add(new SelectListItem() { Value = item, Text = item }); //Preenche a lista com os portes presentes
+            ViewBag.ListaTipos = ListaTipos;
 
             if (id == null)
             {
@@ -100,7 +100,7 @@ namespace Go_Parking.Controllers
       
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Editar([Bind(Include = "Id,Modelo,Placa,Porte,Marca,Cor")] Veiculo veiculo)
+        public ActionResult Editar([Bind(Include = "Id,Modelo,Placa,Tipo,Marca,Cor")] Veiculo veiculo)
         {
             if (ModelState.IsValid)
             {

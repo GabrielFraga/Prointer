@@ -17,7 +17,7 @@ namespace Go_Parking.Models
         public string Modelo { get; set; }
         public string Marca { get; set; }
         public string Placa { get; set; }
-        public string Porte { get; set; }
+        public string Tipo { get; set; }
 
         public string UserId { get; set; }
 

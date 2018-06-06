@@ -41,12 +41,12 @@
                         {
                             <li>@Html.ActionLink("Vagas", "Index", "Vagas")</li>
                             <li>@Html.ActionLink("Funcionários", "Index", "Funcionario")</li>
-                            <li>@Html.ActionLink("Relatório", "Detalhes", "Reservas")</li>
+                            <li>@Html.ActionLink("Histórico", "Historico", "Reservas")</li>
                         }
                         else if (User.IsInRole("Funcionário"))
                         {
                             <li>@Html.ActionLink("Vagas", "Index", "Vagas")</li>
-                            <li>@Html.ActionLink("Histórico", "Detalhes", "Reservas")</li>
+                            <li>@Html.ActionLink("Histórico", "Historico", "Reservas")</li>
 
                         }
                         else if (User.IsInRole("Cliente"))
