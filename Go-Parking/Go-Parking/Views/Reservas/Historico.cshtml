@@ -26,7 +26,6 @@
             });
             $('#datetimepicker2').datetimepicker({
                 locale: 'pt-br',
-                //minDate: $('#datetimepicker2').datetimepicker('option', 'minDate'),
                 format: 'DD/MM/YYYY',
                 enabledHours: [9, 10, 11, 12, 13, 14, 15, 16]
             });
@@ -161,13 +160,13 @@
 
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.HorasReservadas.TimeOfDay)
+                    @Html.DisplayFor(modelItem => item.HorasReservadas)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Entrada.DateTime)
+                    @Html.DisplayFor(modelItem => item.Entrada)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Saida.DateTime)
+                    @Html.DisplayFor(modelItem => item.Saida)
                 </td>
             </tr>
             }

@@ -19,7 +19,7 @@
                         </dt>
 
                         <dd>
-                            @Html.DisplayFor(model => model.Entrada)
+                            @ViewBag.Entrada
                         </dd>
 
                         <dt>
@@ -27,7 +27,7 @@
                         </dt>
 
                         <dd>
-                            @Html.DisplayFor(model => model.Saida)
+                            @ViewBag.Saida
                         </dd>
 
                         <dt>
@@ -43,7 +43,7 @@
                         </dt>
 
                         <dd>
-                            @Html.DisplayFor(model => model.Valor)
+                            R$@Html.DisplayFor(model => model.Valor),00
                         </dd>
                     </dl>
                     <div class="col-md-12" style="margin-bottom:20px;">

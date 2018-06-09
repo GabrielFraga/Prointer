@@ -102,13 +102,18 @@ namespace Go_Parking.Controllers
             model.Saida = (DateTimeOffset)TempData["Saida"];       //Captura a hora selecionada na ViewBag
             model.VeiculoId = Convert.ToInt32((string)TempData["VeiculoId"]);
             model.UserId = User.Identity.GetUserId();                     //Salva a ID do usuário no model
-
-            var tempoReservado = model.Saida.Subtract(model.Entrada).Hours; //É subtraído a hora de saída da hora de entrada para obter o tempo reservado.             
-            ViewBag.TempoReservado = tempoReservado;                        //Envia o tempo reservado diretamente para a View 
-            model.Valor = 10 * tempoReservado; ;                            //Calcula o valor do tempo reservado baseado em um valor simbólico para exemplo.
-
             model.VagaId = Convert.ToInt32(Request.Form["Vagas"]); //Captura a vaga selecionada na lista de vagas
-                       
+
+
+            var tempoReservado = model.Saida.Subtract(model.Entrada); //É subtraído a hora de saída da hora de entrada para obter o tempo reservado.             
+            if (tempoReservado.Minutes == 30)
+                model.Valor = 5;
+            model.Valor = model.Valor + 10 * tempoReservado.Hours;
+            var teste = DateTimeOffset.Parse(tempoReservado.ToString());
+            ViewBag.TempoReservado = tempoReservado.Hours + ":"+ tempoReservado.Minutes.ToString("00.##");                        //Envia o tempo reservado diretamente para a View 
+            ViewBag.Entrada = model.Entrada.ToString("dd/MM/yy  HH:mm");
+            ViewBag.Saida = model.Saida.ToString("dd/MM/yy  HH:mm");
+
             var modelo = new ListarObjetos(); //Estancia o objeto novamente para listar as formas de pagamento
             var listaPagamentos = new List<SelectListItem>();
             foreach (var item in modelo.FormasPagamentos())
@@ -133,11 +138,8 @@ namespace Go_Parking.Controllers
             TempData["Reserva"] = model; //Salva dados da reserva para posteriormente salvar no banco. Aguardando confirmação
 
             return View("_Confirmacao", model); //Passa os dados para o model Confirmação
-        }
-        
+        }     
        
-
-
         [HttpGet]
         public ActionResult Confirmacao(Reserva model) //Recebe os dados
         {
@@ -148,7 +150,7 @@ namespace Go_Parking.Controllers
         [HttpPost] //Assim que o usuário confirma a reserva, esta classe é chamada. POST
         public ActionResult Confirmacao()
         {
-                  
+          
             var model = (Reserva)TempData["Reserva"]; //Estancia a reserva para receber o que já foi salvo da view anterior
             model.FormaPagamento=(Request.Form["FormaPagamentos"]).ToString(); //Recebe por fim  a forma de pagamento escolhida                
                 
@@ -215,9 +217,10 @@ namespace Go_Parking.Controllers
                     .Select(o => o.Cor)
                     .FirstOrDefault();
                 relatorio.Valor = r.Valor;
-                relatorio.HorasReservadas = relatorio.HorasReservadas.Add(r.Saida.Subtract(r.Entrada));
-                relatorio.Entrada = r.Entrada;
-                relatorio.Saida = r.Saida;
+                var intervalo = (r.Saida.Subtract(r.Entrada));
+                relatorio.HorasReservadas = intervalo.Hours + ":" + intervalo.Minutes.ToString("00.##");
+                relatorio.Entrada = r.Entrada.ToString("dd/MM/yy  HH:mm"); ;
+                relatorio.Saida = r.Saida.ToString("dd/MM/yy  HH:mm"); ;
                 reservas.Add(relatorio);
             }
 
@@ -227,9 +230,10 @@ namespace Go_Parking.Controllers
             {
                 var dataincialPesquisa = DateTimeOffset.Parse(periodoInicial);
                 var datafinalPesquisa = DateTimeOffset.Parse(periodoFinal);
-                datafinalPesquisa = datafinalPesquisa.AddHours(16);
-                listaReservas = listaReservas.Where(s => s.Entrada >= dataincialPesquisa); 
-                listaReservas = listaReservas.Where(s => s.Saida <= datafinalPesquisa);
+
+                datafinalPesquisa = datafinalPesquisa.AddHours(23);
+                listaReservas = listaReservas.Where(s => DateTimeOffset.Parse(s.Entrada) >= dataincialPesquisa); 
+                listaReservas = listaReservas.Where(s => DateTimeOffset.Parse(s.Saida) <= datafinalPesquisa);
             }
 
             switch (sortOrder)
@@ -238,16 +242,16 @@ namespace Go_Parking.Controllers
                     listaReservas = listaReservas.OrderByDescending(s => s.VagaNome);
                     break;
                 case "DataEntrada_asc":
-                    listaReservas = listaReservas.OrderBy(s => s.Entrada);
+                    listaReservas = listaReservas.OrderBy(s => DateTimeOffset.Parse(s.Entrada));
                     break;
                 case "DataEntrada_desc":
-                    listaReservas = listaReservas.OrderByDescending(s => s.Entrada );
+                    listaReservas = listaReservas.OrderByDescending(s => DateTimeOffset.Parse(s.Entrada) );
                     break;
                 case "DataSaida_asc":
-                    listaReservas = listaReservas.OrderBy(s => s.Saida);
+                    listaReservas = listaReservas.OrderBy(s => DateTimeOffset.Parse(s.Saida));
                     break;
                 case "DataSaida_desc":
-                    listaReservas = listaReservas.OrderByDescending(s => s.Entrada);
+                    listaReservas = listaReservas.OrderByDescending(s => DateTimeOffset.Parse(s.Saida));
                     break;
                 case "Tempo_asc":
                     listaReservas = listaReservas.OrderBy(s => s.HorasReservadas);
@@ -280,7 +284,7 @@ namespace Go_Parking.Controllers
                     listaReservas = listaReservas.OrderByDescending(s => s.Valor);
                     break;
                 default:
-                    listaReservas = listaReservas.OrderByDescending(s => s.Saida);
+                    listaReservas = listaReservas.OrderByDescending(s => DateTimeOffset.Parse(s.Saida));
                     break;
             }
             int pageSize = 10;
@@ -309,6 +313,9 @@ namespace Go_Parking.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.Entrada = reserva.Entrada.ToString("dd/MM/yy  HH:mm");
+            ViewBag.Saida = reserva.Saida.ToString("dd/MM/yy  HH:mm");
+
             return View(reserva);
         }
 

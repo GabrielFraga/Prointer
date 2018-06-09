@@ -30,8 +30,8 @@ namespace Go_Parking.Models
         public Double Valor { get; set; }
         public string Cor { get; set; }
         [Display(Name = "Tempo Reservado")]
-        public DateTimeOffset HorasReservadas { get; set; }
-        public DateTimeOffset Entrada { get; set; }
-        public DateTimeOffset Saida { get; set; }
+        public string HorasReservadas { get; set; }
+        public string Entrada { get; set; }
+        public string Saida { get; set; }
     }
 }

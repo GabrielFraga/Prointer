@@ -162,16 +162,18 @@ namespace Go_Parking.Controllers
                         .Where(u => u.Id == i.VeiculoId)
                         .Select(o => o.Cor)
                         .FirstOrDefault();
-                    reserva.HorasReservadas = reserva.HorasReservadas.Add(i.Saida.Subtract(i.Entrada));
-                    reserva.Entrada = i.Entrada;
-                    reserva.Saida = i.Saida;
+                    var intervalo = (i.Saida.Subtract(i.Entrada));
+                    reserva.HorasReservadas = intervalo.Hours + ":" + intervalo.Minutes.ToString("00.##");
+                    reserva.Entrada = i.Entrada.ToString("dd/MM/yy  HH:mm");
+                    reserva.Saida = i.Saida.ToString("dd/MM/yy  HH:mm");
                     reserva.Valor = i.Valor;
                     reserva.ReservaId = i.Id;
                     model.Add(reserva);
                     TempData["VagaReservada"] = reserva;
                 }
             }
-            return View(model);
+
+            return View(model.OrderByDescending(s=> DateTimeOffset.Parse(s.Saida)));
         }
 
         public ActionResult _LiberarVaga(int? id)
@@ -207,9 +209,11 @@ namespace Go_Parking.Controllers
                 }
                 else {
                     reserva.Saida = DateTimeOffset.Now;
-                    var tempoReservado = reserva.Saida.Subtract(reserva.Entrada).Hours; //É subtraído a hora de saída da hora de entrada para obter o tempo reservado.            
-                    reserva.Valor = 10 * tempoReservado;
-                    db.Entry(reserva).State = EntityState.Modified;
+                var tempoReservado = reserva.Saida.Subtract(reserva.Entrada); //É subtraído a hora de saída da hora de entrada para obter o tempo reservado.             
+                if (tempoReservado.Minutes >= 30)
+                    reserva.Valor = 5;
+                reserva.Valor = reserva.Valor + 10 * tempoReservado.Hours;
+                db.Entry(reserva).State = EntityState.Modified;
                     db.SaveChanges();
                     TempData["MensagemSucesso"] = "Vaga liberada com sucesso";
                     return RedirectToAction("Index");

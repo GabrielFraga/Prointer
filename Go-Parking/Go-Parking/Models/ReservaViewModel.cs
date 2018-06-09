@@ -23,8 +23,8 @@ namespace Go_Parking.Models
         {
             return new List<string>{
                 {"Dinheiro"},
-                {"Crédito"},
-                {"Débito"}
+                {"Cartão de Crédito"},
+                {"Cartão de Débito"}
             };
         }
 
@@ -34,7 +34,9 @@ namespace Go_Parking.Models
             {
                 {"9:00"},{"9:30"},{"10:00"},{"10:30"},{"11:00"},
                 {"11:30"},{"12:00"},{"12:30"},{"13:00"},{"13:30"},
-                {"14:00"},{"14:30"},{"15:00"},{"15:30"},{"16:00"},              
+                {"14:00"},{"14:30"},{"15:00"},{"15:30"},{"16:00"},
+                {"17:00"},{"17:30"},{"18:00"},{"18:30"},{"19:00"},
+                {"19:30"},{"20:00"},{"20:30"},{"21:00"}
             };
             
         }    
@@ -72,9 +74,9 @@ namespace Go_Parking.Models
         [Display(Name = "Forma de Pagamento")]
         public string FormaPagamento { get; set; }
         [Display(Name = "Tempo Reservado")]
-        public DateTimeOffset HorasReservadas { get; set; }
-        public DateTimeOffset Entrada { get; set; }
-        public DateTimeOffset Saida { get; set; }
+        public string HorasReservadas { get; set; }
+        public string Entrada { get; set; }
+        public string Saida { get; set; }
     }
 
     public class Reserva

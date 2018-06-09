@@ -45,14 +45,15 @@ namespace Go_Parking.Controllers
                     .Select(o => o.Placa)
                     .FirstOrDefault();
                 relatorio.Valor = r.Valor;
-                relatorio.HorasReservadas =  relatorio.HorasReservadas.Add(r.Saida.Subtract(r.Entrada));
-                relatorio.Entrada = r.Entrada;
-                relatorio.Saida = r.Saida;
+                var intervalo = (r.Saida.Subtract(r.Entrada));
+                relatorio.HorasReservadas = intervalo.Hours + ":" + intervalo.Minutes.ToString("00.##");
+                relatorio.Entrada = r.Entrada.ToString("dd/MM/yy  HH:mm"); 
+                relatorio.Saida = r.Saida.ToString("dd/MM/yy  HH:mm"); 
                 lista.Add(relatorio);
             }
 
             var listaReservas = from s in lista select s;
-            listaReservas = listaReservas.OrderByDescending(s => s.Entrada);
+            listaReservas = listaReservas.OrderByDescending(s => DateTimeOffset.Parse(s.Saida));
                 VagasReservas.Reservas = listaReservas.ToList();
             return View(VagasReservas);
         }

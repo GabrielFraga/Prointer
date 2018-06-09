@@ -26,10 +26,7 @@
 
 <div class="boxPagina">
     <h2>Reservas na vaga @ViewBag.VagaNome hoje</h2>
-    <hr />
     <div>
-
-
         <table class="table">
             <tr>
                 <th>
@@ -75,17 +72,17 @@
 
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.HorasReservadas.TimeOfDay)
+                        @Html.DisplayFor(modelItem => item.HorasReservadas)
                     </td>
                     <td>
                         R$@Html.DisplayFor(modelItem => item.Valor),00
 
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Entrada.DateTime)
+                        @Html.DisplayFor(modelItem => item.Entrada)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Saida.DateTime)
+                        @Html.DisplayFor(modelItem => item.Saida)
                     </td>
                     <td>
 
