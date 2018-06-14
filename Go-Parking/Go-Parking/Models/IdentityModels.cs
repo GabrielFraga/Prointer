@@ -28,7 +28,7 @@ namespace Go_Parking.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("ConexaoMisael", throwIfV1Schema: false)
+            : base("ConexaoPadrao", throwIfV1Schema: false)
         {
         }
 

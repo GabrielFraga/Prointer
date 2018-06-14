@@ -1,13 +1,10 @@
 ﻿@model IEnumerable<Go_Parking.Models.RoleViewModel>
-
-@{
-    ViewBag.Title = "Index";
-}
-
-<h2>Index</h2>
+   
+ <div class="boxPagina">
+<h2>Perfis</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Cadastrar", "Create")
 </p>
 <table class="table">
     <tr>
@@ -23,11 +20,12 @@
             @Html.DisplayFor(modelItem => item.Name)
         </td>
         <td>
-            @Html.ActionLink(".", "Edit", new { id=item.Id }, htmlAttributes: new { @class = "glyphicon glyphicon-pencil btn" }) 
-            @Html.ActionLink(".", "Details", new { id=item.Id }, htmlAttributes: new { @class = "glyphicon glyphicon-search btn" }) 
-            @Html.ActionLink(".", "Delete", new { id=item.Id }, htmlAttributes: new { @class = "glyphicon glyphicon-trash btn btn" })
+            @Html.ActionLink(" ", "Edit", new { id=item.Id }, htmlAttributes: new { @class = "glyphicon glyphicon-pencil btn btn-success" }) 
+            @Html.ActionLink(" ", "Details", new { id=item.Id }, htmlAttributes: new { @class = "glyphicon glyphicon-search btn btn-warning" }) 
+            @Html.ActionLink(" ", "Delete", new { id=item.Id }, htmlAttributes: new { @class = "glyphicon glyphicon-trash btn btn btn-danger" })
         </td>
     </tr>
 }
 
 </table>
+        </div>
